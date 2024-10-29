@@ -11,7 +11,7 @@ Value Types:
 
 Reference Types:
 =====================
-=> Examples: class, interface, delegate, string, array, object
+=> Examples: class, interface, delegate, string,array, object
 => Stored on the heap memory.
 => Variables hold a reference (memory address) to the data, not the data itself
 => When you assign a reference type to another variable, both variables refer to the same object because it stores reference address of the actual value.
