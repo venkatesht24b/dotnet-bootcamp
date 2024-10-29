@@ -1,0 +1,386 @@
+1.a=10 b=3       				output
+						Addition: 13
+						Subtraction: 7
+						Multiplication: 30
+						Division: 3
+						Modulus: 1
+
+
+
+2.x=7.5 y=2.5					output
+						Addition: 10.0
+						Subtraction: 5.0
+						Multiplication: 18.75
+						Division: 3
+						Modulus: 0
+
+
+3.a=10.5 b=3.5					output
+						Addition: 14.0
+						Subtraction: 7.0
+						Multiplication: 36.75
+						Division: 3
+						Modulus: 0
+
+
+4.x=10.5 y=3.5					output
+						Addition: 14.0
+						Subtraction: 7.0
+						Multiplication: 36.75
+						Division: 3.0
+						Modulus: 0
+
+
+5.num = 5
+  a = 5						output
+  b = 7						Increment after: 5, Increment before: 7    	
+  c = 7						Decrement after: 7, Decrement before: 5   
+  d = 5						Final value: 5
+
+
+6.a = 10					output
+ b = 5						Result: 19
+
+
+
+7.a = 10					output
+ b = 5						Result: 29
+
+
+
+8.baseValue = 100				output
+  modifier = 7					Results of compound operations:				
+  divisor = 3					Operation 1: 107
+results[0]=107					Operation 2: 100
+results[1]=100					Operation 3: 700
+results[2]=700					Operation 4: 233
+results[3]=77					Operation 5: 2
+results[4]=2						
+complexResult = 3				Result of complex calculation: 3
+
+precedenceResult = 18                   	Result demonstrating operator precedence: 18
+
+
+
+9. result = 10					output
+   result = 15					Result after compound operations: 1
+   result = 12
+   result = 24
+   result = 6
+   result = 1
+
+
+10.x = 15					output
+  y = 5						Result of complex expression: 24
+  z = 3
+result = 24
+
+
+
+11. a = 10					output
+    b = 5					Result: 19
+    result = 19
+
+
+12. a = 10					output
+    b = 5					Result: 29
+    result = 29
+
+13. a = 10					output
+    b = 5					Result: 19
+    result = 29
+
+
+14. a = 10					output
+    b = 5					Result: 29
+    result = 29
+
+
+16.a = 10					output
+   b = 5					a > b: true
+						a < b: false
+						a == b: false
+						a != b: true
+						a >= b: true
+						a <= b: false
+
+
+
+17.a = 10.5    					output
+   b = 5.5					a > b: true
+						a < b: false
+						a == b: false
+						a != b: true
+						a >= b: true
+						a <= b: false
+
+
+18.						output
+   x = 3.5					x == y: true
+   y = 3.5					x != y: false
+						x >= y: true
+						x <= y: true
+
+
+
+19.age = 20					output
+   (age >= 18)=true				Eligible to vote
+			
+
+20.score = 75					output
+   (score >= 50 && score <= 100)=true		Passed
+
+
+21.num = 10					output
+   (num % 2 == 0)=true				Even number
+
+22.a = 10, b = 5					output
+   result =(a > b) && (a % 2 == 0)=true			Logical AND result: true
+
+23.x = 10, y = 20, z = 15				output
+   result =(x < y) && (y > z) && (x != z)=true		Complex relational result: true
+
+
+24.arr = { 2, 4, 6, 8 }				output
+   found =true					First element < Last element: true
+
+
+25. x = 10, y = 5, z = 3			output
+    result1 = 15				Result of (x * y + z) / z - y % z: 15
+    a = 10, b = 5				Result of a + b * 2 - 3 / 2: 19
+    result2 = 19				Result of (a + b) * 2 - 3 / 2: 29
+    result3 = 29				a > b: true
+    x1 = 10, y1 = 20, z1 = 15		        a < b: false
+    result4 =true				a == b: false
+    num1 = 10, num2 = 5, num3 = 3		a != b: true
+    result5 = true				a >= b: true
+    result6 = 24				a <= b: false
+    result7= 44					Complex relational result: true
+						Logical AND result: true							
+						Result of num1 + num2 * num3 - 2 / 2: 24
+						Result of (num1 + num2) * num3 - 2 / 2:44
+
+
+26.x = 10, y = 5, z = 3  		        output
+    result1 =true				Logical AND result: true
+    result2 =true				Logical OR result: true
+    result3 =false				Logical NOT result: false
+    result4 =true				Complex logical result: true
+    result5 =true	                        Complex logical result with OR: true
+    result6 =false				Complex logical result with NOT and OR: false
+
+
+27.num = 15					output
+   isBetween10And20 = true		   	Number is between 10 and 20: true
+
+
+28.num1 = -5, num2 = 10				output
+   isPositive = true    		   	At least one number is positive: true
+
+29.num1 = 5, num2 = 10				output
+  result = true		   			Both numbers are positive and not equal: true
+
+
+30.age = 20;					output
+   canVote = true				Can vote and drive: true
+   canDrive = true				Cannot do either: false
+   canVoteAndDrive = true
+   cannotDoEither = false
+
+31.year = 2024					output
+   divisor = 4					Year is a leap year and divisible by 4:true
+   isLeapYear = true
+   divisibleByDivisor = true
+   result = true
+
+32.username = "admin"				output
+   password = "secure"				Access granted: true
+   isAdmin = true
+   isGuest = false
+   accessGranted = true
+
+33.num = 15					output
+   isBetween10And20 = true		   	Number is between 10 and 20: true
+
+
+34..num1 = -5, num2 = 10				output
+   isPositive = true    		   	At least one number is positive: true
+
+
+35.num1 = 5, num2 = 10				output
+  result = true		   			Both numbers are positive and not equal: true
+
+36.age = 20;					output
+   canVote = true				Can vote and drive: true
+   canDrive = true				Cannot do either: false
+   canVoteAndDrive = true
+   cannotDoEither = false
+
+37.year = 2024					output
+   divisor = 4					Year is a leap year and divisible by 4:true
+   isLeapYear = true
+   divisibleByDivisor = true
+   result = true
+
+
+38.username = "admin"				output
+   password = "secure"				Access granted: true
+   isAdmin = true
+   isGuest = false
+   accessGranted = true
+
+
+
+39.a = 6					output
+   b=3						a & b:2
+						a | b:7
+						a ^ b:5
+
+
+40. a = 5					output
+						~a: -6
+
+41. num = 7					output
+    isOdd = true				Number is odd: true
+
+
+42.num = 4;					output
+   multiplied = 16				Multiplied by 4 using <<: 16
+   divided = 2					Divided by 2 using >>: 2
+
+43. a = 5, b = 3				output
+    a = a ^ b=6					After swap: a = 3, b = 5
+    b = a ^ b=5
+    a = a ^ b=3
+
+
+44. num = 13					output
+    count = 0					Number of set bits: 3
+    count = 1,count = 2,count = 3
+    num = 6,num = 3,num = 1,num = 0
+
+45.num = 13					output
+    count = 0					Number of set bits: 3
+    count = 1,count = 2,count = 3
+    num = 6,num = 3,num = 1,num = 0
+
+
+46.a = 60					output
+   b = 13					a = 60 (00111100)
+   c=12                                         b = 13 (00001101)
+   d = 61					a & b = 12 (00001100)
+   e = 49					a | b = 61 (00111101)
+ f = -61 					a ^ b = 49 (00110001)
+ left = 240					~a = -61 (00000000000000000000000011000011)
+ right = 15					a << 2 = 240 (11110000)
+ result1=true					a >> 2 = 15 (00001111)
+ result2=true
+ result3=true				        Tricky Combinations:
+ setBitsInA = 4        			        (a & b) != 0 && (a | b) > 0: true
+ setBitsInB = 3					(a ^ b) > (a & b) || (a | b) < (a ^ b): true
+ moreBitsSet = true				((a << 2) > (b >> 1)) && ((a | b) > (a & b)): true
+  
+ finalResult =  True				Set bits in a: 4
+						Set bits in b: 3
+						a has more set bits than b: true
+
+						Final challenge result: true
+
+
+47.a = 10					output
+x = 10						Initial value of a: 10
+y = 8.5						After a += 5: 15
+text = "Hello"					After a -= 3: 12
+numbers = { 2, 4, 6, 8 }		        After a *= 2: 24
+value = 5					After a /= 4: 6
+z = 14						After a %= 3: 0
+						After a &= 5: 0
+						After a |= 2: 2
+						After a ^= 3: 1
+						After a <<= 2: 4
+						After a >>= 1: 2
+						15
+						12
+						24
+						6
+						1
+						11.0
+						10.0
+						30.0
+						15.0
+						1.0
+						Hello
+						Hello, 
+						Hello, iConnect
+						Hello, iConnect!
+						12, 8, 3, 4
+						50
+						10
+						11
+						13
+
+
+
+48.a = 5          				output
+name = "Alice"					5
+age = 20					Hello, Alice!
+number = 9					Adult
+score = 85					Odd
+marks = 76					B
+						Pass with Honors
+
+
+
+
+49. name = null     				output
+    displayName = Guest				Hello, Guest!
+    number = null				The value is: 100
+    defaultValue = 100				Word count: 
+    words = null				City: 
+    person = null				Product Category: 
+    order = null
+
+50.name = null					output
+   age = null					Guest
+   username = null				18
+   score = null					Anonymous
+   input = null					0
+   value = null					No input provided
+   text = null					42
+   number = null				Empty string
+   data = null					99
+   points = null				No data available
+						0						  
+  
+51.						output
+value1 = null              			Default Value
+value3 = null               			Default Value
+value4 = Value A            			Value A
+value5 = null               			Final Default Value
+value6 = null               			Default Value
+value8 = Hello              			Hello
+						-----
+str1 = null                   
+str2 = Hello                  			5
+str3 = null                  			String was null
+str4 = C#                    			c#
+str5 = null                 			No String Found
+str6 = Null-Conditional       			Null
+  
+  
+   
+   
+  
+
+ 						
+
+
+
+
+
+
+
+				
+
+
+
