@@ -11,7 +11,7 @@ Value Types:
 
 Reference Types:
 =====================
-=> Examples: class, interface, delegate, string, array, object
+=> Examples: class, interface, delegate, string,array, object
 => Stored on the heap memory.
 => Variables hold a reference (memory address) to the data, not the data itself
 => When you assign a reference type to another variable, both variables refer to the same object because it stores reference address of the actual value.
@@ -63,7 +63,7 @@ Implicit conversion, also known as widening conversion, occurs automatically whe
 The compiler performs these conversions without requiring explicit syntax.
 
 Allowed Conversions
-============================
+===============================
 byte byteValue = 255;
 short shortValue = byteValue;  // Implicit conversion from byte to short
 int intValue = shortValue;     // Implicit conversion from short to int
