@@ -63,7 +63,7 @@ Implicit conversion, also known as widening conversion, occurs automatically whe
 The compiler performs these conversions without requiring explicit syntax.
 
 Allowed Conversions
-============================
+===============================
 byte byteValue = 255;
 short shortValue = byteValue;  // Implicit conversion from byte to short
 int intValue = shortValue;     // Implicit conversion from short to int
