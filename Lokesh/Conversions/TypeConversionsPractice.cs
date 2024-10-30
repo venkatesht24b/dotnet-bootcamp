@@ -283,6 +283,8 @@ namespace TypeConversionComplexExample2
             // Final Inventory Status
             Console.WriteLine(stockCount > 0 ? "Inventory available." : "Out of stock.");
         }
+        //o/p:Error: Invalid unboxing from double to int.
+        //Inventory available.
     }
 }
 
