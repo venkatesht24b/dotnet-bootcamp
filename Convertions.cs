@@ -76,9 +76,9 @@ double doubleValue = intValue; // Implicit conversion from int to double
 char charValue = 'A';
 //char is essentially a 16-bit unsigned integer.
 int intValue = charValue;  // Implicit conversion from char to int
-//Enums are internally represented as integers.
+//Enums are not internally represented as integers.
 enum Days { Sunday, Monday, Tuesday }
-int dayValue = Days.Monday;  // Implicit conversion from enum to int
+int dayValue = (int)Days.Monday;  // explicit conversion from enum to int is required
 
 
 Not Allowed Conversions
