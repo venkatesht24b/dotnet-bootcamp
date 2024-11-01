@@ -326,29 +326,6 @@ class Program4
 ```c#
 using System;
 
-/*
-class Program5
-{
-    static void Main()
-    {
-        for (int i = 0; i < 16; i++)
-        {
-            if ((i & 1) == 0)
-                Console.Write("E");
-            if ((i & 2) == 2)
-                Console.Write("V");
-            if ((i & 4) == 4)
-                Console.Write("E");
-            if ((i & 8) == 8)
-                Console.Write("N");
-            Console.Write(" ");
-        }
-    }
-}
-*/
-```c#
-using System;
-
 class Program6
 {
     static void Main()
