@@ -222,7 +222,7 @@ class Program
         }
     }
 }
-```c#
+11```c#
 
 using System;
 
@@ -230,12 +230,12 @@ class Program1
 {
     static void Main()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 5; j++)
+            for (int j = 0; j < 3; j++)
             {
                 if (i == j) continue;
-                for (int k = 0; k < 5; k++)
+                for (int k = 0; k < 3; k++)
                 {
                     if (k == i + j) break;
                     Console.Write($"{i}{j}{k} ");
@@ -245,7 +245,7 @@ class Program1
         }
     }
 }
-```c#
+12```c#
 using System;
 
 class Program2
@@ -274,7 +274,7 @@ class Program2
         }
     }
 }
-```c#
+13```c#
 using System;
 
 class Program3
@@ -296,7 +296,7 @@ class Program3
         }
     }
 }
-```c#
+14```c#
 using System;
 
 class Program4
@@ -323,28 +323,7 @@ class Program4
         } while (++i < 10);
     }
 }
-```c#
-using System;
-
-class Program5
-{
-    static void Main()
-    {
-        for (int i = 0; i < 16; i++)
-        {
-            if ((i & 1) == 0)
-                Console.Write("E");
-            if ((i & 2) == 2)
-                Console.Write("V");
-            if ((i & 4) == 4)
-                Console.Write("E");
-            if ((i & 8) == 8)
-                Console.Write("N");
-            Console.Write(" ");
-        }
-    }
-}
-```c#
+15```c#
 using System;
 
 class Program6
@@ -357,28 +336,28 @@ class Program6
             switch (i % 3)
             {
                 case 0:
-                    Console.Write("X");
+                    Console.WriteLine("X");
                     break;
                 case 1:
                     switch (i % 2)
                     {
                         case 0:
-                            Console.Write("Y");
+                            Console.WriteLine("Y");
                             break;
                         case 1:
-                            Console.Write("Z");
+                            Console.WriteLine("Z");
                             break;
                     }
                     break;
                 case 2:
-                    Console.Write("W");
+                    Console.WriteLine("W");
                     break;
             }
             i++;
         }
     }
 }
-```c#
+16```c#
 using System;
 
 class Program7
@@ -387,36 +366,12 @@ class Program7
     {
         for (int i = 10; i > 0; i--)
         {
-            Console.Write(i % 2 == 0 ? (i > 5 ? "A" : "B") : (i > 5 ? "C" : "D"));
+            Console.WriteLine(i % 2 == 0 ? (i > 5 ? "A" : "B") : (i > 5 ? "C" : "D"));
         }
     }
 }
-```c#
-using System;
 
-class Program8
-{
-    static void Main()
-    {
-        for (int i = 0; i < 16; i++)
-        {
-            {
-                if ((i & 3) == 3)
-                    Console.Write("P");
-                else
-                    Console.Write("Q");
-            }
-            else
-            {
-                if ((i | 3) == i)
-                    Console.Write("R");
-                else
-                    Console.Write("S");
-            }
-        }
-    }
-}
-```c#
+17```c#
 using System;
 
 class Program9
@@ -434,11 +389,11 @@ class Program9
                 if (j % 2 == 0) Console.Write("O");
                 else Console.Write("E");
             }
-            Console.Write(" ");
+            Console.WriteLine();
         } while (true);
     }
 }
-```c#
+18```c#
 using System;
 
 class Program9
@@ -456,11 +411,11 @@ class Program9
                 if (j % 2 == 0) Console.Write("O");
                 else Console.Write("E");
             }
-            Console.Write(" ");
+            Console.WriteLine();
         } while (true);
     }
 }
-```c#
+19```c#
 using System;
 
 class Program10
@@ -482,7 +437,7 @@ class Program10
         }
     }
 }
-```c#
+20```c#
 using System;
 
 class Program11
@@ -500,13 +455,11 @@ class Program11
                 if (j % 2 == 0) Console.Write("O");
                 else Console.Write("E");
             }
-            Console.Write(" ");
+            Console.WriteLine();
         } while (true);
     }
 }
-```c#
-Generate c# program on loops with break and continue statements and goto make it complecate in the condition make use of different type of operators except bitwise operators
-so that it will be complecate to understand.
+21```c#
 using System;
 
 class ComplexLoopProgram
@@ -555,7 +508,7 @@ class ComplexLoopProgram
     }
 }
 
-
+22```c#
 using System;
 
 class IntricateLoopProgram
@@ -624,14 +577,3 @@ class IntricateLoopProgram
         Console.WriteLine($"x: {x}, y: {y}, result: {result:F2}");
     }
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,3 @@
-using System.Security.AccessControl;
-
 1. In the below program identify which conversions are correct and which are not.
 class TypeCastingExamples
 {
@@ -8,71 +6,98 @@ class TypeCastingExamples
         byte byteValue = 100;
         int intValue = byteValue;
         Console.WriteLine($"Implicit conversion from byte to int: {intValue}");
-        //O/P: Implicit conversion from byte to int:100
+
+        //Implicit conversion from byte to int:100
+
         double value = 99.99;
         int truncatedValue = value;
+
+        //it throws a compilation error because double do not covert to int type
         
         double doubleValue = 10.8;
         int truncatedValue = (int)doubleValue;
         Console.WriteLine($"Explicit conversion from double to int (truncated): {truncatedValue}");
 
-        // O/P: Explicit conversion from double to int (truncated):10
+        //Explicit conversion from double to int (truncated):10
+
         string strNumber = "250";
         int convertedValue = Convert.ToInt32(strNumber); 
         Console.WriteLine($"Using Convert class to convert string to int: {convertedValue}");
-        // O/P: Using Convert Class to convert string to int: 250
+
+        //Using Convert class to convert string to int:250
+
         string strToParse = "300";
         int parsedInt = int.Parse(strToParse); 
         Console.WriteLine($"Using Parse method to convert string to int: {parsedInt}");
-        //O/P: Using Parse method to convert string to int: 300
+
+        //Using Parse method to convert string to int:300
+
         string invalidString = "Hello";
         int result;
         bool isParsed = int.TryParse(invalidString, out result); 
         Console.WriteLine($"TryParse with invalid input (expected false): {isParsed}, Result: {result}");
-        //O/P: TryParse with invalid input:false,Result:0
+
+        //TryParse with invalid input (expected false):false, Result: 0
+
         string nullStr = null;
         int intValue = Convert.ToInt32(nullStr); 
         int intValue2 = int.Parse(nullStr); 
-       
+
+        //it throws arguement null expection because because we dont store  null to int in int.parse method
+
+
+
+
         string nonNumericStr = "abc123";
         int parsedValue = int.Parse(nonNumericStr);  
-        // it show expection error
+
+        //RunTimeError because input string was not in a correct format 
+
+        
 
         int num = 100;
         object boxedNum = num; // Boxing: int to object (reference type)
         int unboxedNum = (int)boxedNum; // Unboxing: object back to int
         Console.WriteLine($"Boxing and Unboxing an int: {unboxedNum}");
-        // o/p:Boxing and Unboxing an int: 100
+
+        //Boxing and Unboxing an int:100
 
         object obj = "Hello World!";
-        int incompatibleCast = (int)obj;  
-        // it rise a error
+        int incompatibleCast = (int)obj;
+
+        //  It throws run time error because speccified cast is not valid
+
 
         int? nullableInt = 500; // Nullable int using '?'
         int regularInt = nullableInt ?? 0; // If nullableInt has a value, use it; otherwise, use 0
         Console.WriteLine($"Nullable to int with null-coalescing: {regularInt}");
-        //O/p; Nullable to int with null-coalscing:500
+
+        //Nullable to int with null-coalescing:500
 
         object obj = "Hello World";
         string str = obj as string;
         Console.WriteLine($"Using 'as' for type conversion: {str}");
-        //O/P: Using 'as' for type conversion:Hello World
+
+        //Using 'as' for type conversion:Hello World
 
         object obj = 10;
         string invalidAsCast = obj as string;  
-        Console.WriteLine(invalidAsCast.Length);
-        //o/p: error: You attempt to cast obj to a string using obj as string. Since obj is not a string, this cast will fail, and invalidAsCast will be assigned null.
+        Console.WriteLine(invalidAsCast.Length);  
+
+        //RunTimeEror
 
         object patternObj = 123;
         if (patternObj is int patternInt) 
         {
             Console.WriteLine($"Pattern matching with 'is' keyword: {patternInt}");
         }
-        // o/p:Pattern matching with 'is' keyword: 123
+        //Pattern matching with 'is' keyword:123
 
         bool boolVal = true;
-        int invalidConversion = (int)boolVal;
-        //o/p:error CS0030: Cannot convert type 'bool' to 'int'
+        int invalidConversion = (int)boolVal;  
+
+        //RunTimeError because speccified cast is not valid
+
 
         int? nullableNum = 42;
         if (nullableNum.HasValue) // Check if nullable has a value
@@ -80,22 +105,26 @@ class TypeCastingExamples
             int regularNum = nullableNum.Value; 
             Console.WriteLine($"Nullable<int> to int: {regularNum}");
         }
-        //O/P:Nullable<int> to int :42
+
+
+        //"Nullable<int> to int:42
 
         string validString = "42";
         int result;
-        bool success = int.TryParse(validString,out result);  
-        //this conversion is right
+        bool success = int.TryParse(validString, result);  
+
+        // It Throws Compilation Error 
+
         int? nullableValue = null;
-        int nonNullableValue = nullableValue;  
-        // it raises an error 
+        int nonNullableValue = nullableValue; 
+        //Compilation Error Because Cannot Convert  implicitly converts int? to int
+
+
         object boxedValue = "100";//Boxing
-        int unboxedInt = (int)boxedValue; //Un-Boxing 
-        //it raises an error because in  object it stored as string. so, it cann't convert
+        int unboxedInt = (int.parse)boxedValue; //Un-Boxing 
 
         object boxedValue = int.Parse("100");//Boxing
         int unboxedInt = (int)boxedValue;//Un-Boxing
-        //It will work it doesn't show error.
     }
 }
 
@@ -114,14 +143,14 @@ namespace TypeConversionComplexExample1
             double accountBalance = 1520.75;
             int roundedBalance = (int)accountBalance;  // Explicit cast
             Console.WriteLine($"Rounded Account Balance: {roundedBalance}");
-
-            //rounded accont Balance:1520
+            //Rounded Account Balance:1520
 
             // Part 2: Deposit
             string depositStr = "200";
             int depositAmount = int.Parse(depositStr);  // Parsing string to int
             double newBalance = accountBalance + depositAmount;
             Console.WriteLine($"New Balance after Deposit: {newBalance}");
+
             //New Balance after Deposit:1720.75
 
             // Part 3: Withdrawal
@@ -143,7 +172,8 @@ namespace TypeConversionComplexExample1
             {
                 Console.WriteLine("Invalid withdrawal amount.");
             }
-            //Balance after withdrawal:1670.75
+
+            //Balance after Withdrawal:1570.75
 
             // Part 4: Calculate Annual Interest with Nullable
             double interestRate = 0.03;
@@ -157,7 +187,7 @@ namespace TypeConversionComplexExample1
             {
                 Console.WriteLine("Balance too low for interest calculation.");
             }
-            //o/p: Calculated interset :10
+            //Calculated Interest:471.225
 
             // Part 5: Simulate Monthly Transactions in a Loop
             Console.WriteLine("Simulating Monthly Transactions:");
@@ -167,10 +197,23 @@ namespace TypeConversionComplexExample1
                 newBalance += transaction;
                 Console.WriteLine($"Month {i}: Balance = {newBalance:F2}");
             }
-            //o/p:Month 1:Balance=1620.50
-            //  Month 2:Balance= 1721
-            //  Month 3:Balance= 1670.75
-            //  Month 4: Balance=1771.25
+
+            //Simulating Monthly Transactions:
+            //Month1:Balance=1520.50
+            //Month2:Balance=1621.0
+            //Month3:Balance=1570.75
+            //Month4:Balance=1671.25
+            //Month5:Balance=1621.0
+            //Month6:Balance=1721.50
+           // Month7:Balance=1671.25
+            //Month8:Balance=1771.75 
+            //Month9:Balance=1721.5
+            //Month10:Balance=1821.55
+            //Month11:Balance=1771.3
+            //Month12:Balance=1871.53
+
+
+            
 
             // Part 6: Error-prone casting attempt
             //Note: try catch blocks are used when an runtime exception occures instead of raising the error 
@@ -185,16 +228,18 @@ namespace TypeConversionComplexExample1
             {
                 Console.WriteLine("Error: Attempted invalid cast from int to string.");
             }
+            //It Throws Runtime Error
 
             // Final balance and message
             Console.WriteLine($"Final Account Balance after Transactions: {newBalance:F2}");
+            //Final Account Balance after Transactions:1871.53
             Console.WriteLine(newBalance >= 0 ? "Account is in good standing." : "Account is overdrawn.");
+
+            //Account is good standing
         }
     }
 }
-//Error: Attempted invalid cast from int to string.
-//Final Account Balance after Transactions:2033.95
-//Account is in good standing.
+
 3. E-Commerce Inventory System with Type Conversions and Parsing
 using System;
 
@@ -224,16 +269,15 @@ namespace TypeConversionComplexExample2
             decimal totalInventoryValue = (decimal)(pricePerItem * stockCount);  // Explicit cast
             Console.WriteLine($"Total Inventory Value: {totalInventoryValue:C}");
 
-            //Total Inventory Value: ?9,995.00
-
+            //Total Inventory Value:9995.0
 
             // Part 3: Sales and Nullable Handling
             int? soldItems = null;
             soldItems = 50;
             double? revenue = soldItems * pricePerItem;  // Nullable type calculation
             Console.WriteLine($"Revenue from Sold Items: {revenue:C}");
-            //Revenue from Sold Items:?999.5
 
+            //Revenue from Sold Items:999.5
 
             // Part 4: Discount Calculation with Casting
             string discountStr = "10";  // 10% discount
@@ -247,8 +291,7 @@ namespace TypeConversionComplexExample2
             {
                 Console.WriteLine("Invalid discount value.");
             }
-
-            //o/p:Discount Amount per Item:?2
+            //Discount Amount per Item:1.999
 
             // Part 5: Profit Calculation and Loop
             Console.WriteLine("Calculating Monthly Profits:");
@@ -259,14 +302,17 @@ namespace TypeConversionComplexExample2
                 double monthlyRevenue = sales * (pricePerItem - (double)discountPercent / 100);
                 monthlyProfit += monthlyRevenue;
                 Console.WriteLine($"Month {month}: Profit = {monthlyProfit:C}");
-            }
 
-            //Month 1: Profit = ?1,591.20
-            //Month 2: Profit = ? 3,580.20
-            //Month 3: Profit = ? 5,171.40
-            //Month 4: Profit = ? 7,160.40
-            //Month 5: Profit = ? 8,751.60
-            //Month 6: Profit = ? 10,740.60
+
+            }
+            //Month1: Profit =1591.2
+            //Month2:Profit=3580.2
+            //Month3:Profit=5171.4
+            //Month4:Profit=7160.4
+            //Month5:Profit=8751.6
+            //Month6:Profit=10740.6
+
+        
 
 
             // Part 6: Error-prone Nullable Unboxing
@@ -279,12 +325,13 @@ namespace TypeConversionComplexExample2
             {
                 Console.WriteLine("Error: Invalid unboxing from double to int.");
             }
+            //Invalid unboxing from double to int.
 
             // Final Inventory Status
             Console.WriteLine(stockCount > 0 ? "Inventory available." : "Out of stock.");
+
+            //Inventory Available.9995.0
         }
-        //o/p:Error: Invalid unboxing from double to int.
-        //Inventory available.
     }
 }
 
