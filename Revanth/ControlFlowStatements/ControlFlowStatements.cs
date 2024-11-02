@@ -417,15 +417,20 @@ class Program7
             //i=9 - (9%2 ==0 FALSE)( 9>5 TRUE) C
             //i=8 - (8%2 ==0 true)(8>5 true) A
             //i=7 - (7%2 ==0 false)(7>5 true) c
-            //i=6 - (6%2 ==0 true)(^>)
+            //i=6 - (6%2 ==0 true)(6>5 true) A
+            //i=5 - (5%2 ==0 false)(5>5 false)D
+            //i=4 - (4%2 ==0 true)(4>5 false )B
+            //i=3 - (3%2 ==0 false)(3>5 false)D
+            //i=2 -(2%2==0 true)(2>5 false)B
+            //i=1 - (1%2 ==0 false)(1>5 false)D
         }
-        /*A*/
+        
+        /*ACACADBDBD*/
     }
 }
 
 17```c#
 using System;
-
 class Program9
 {
     static void Main()
@@ -433,21 +438,26 @@ class Program9
         int i = 0;
         do
         {
-            i++;
-            if (i % 3 == 0) continue;
-            if (i > 10) break;
-            for (int j = 0; j < i; j++)
+            i++; //i=1,2,3,4
+            if (i % 3 == 0) continue;//(1%3==0 false),(2%3==0 false)(3%3==0 TRUE)(4%3 ==0 FALSE)
+            if (i > 5) break;//(1>5 false) (2>5 false)(4>5 TRUE)
+            for (int j = 0; j < i; j++)//j=(0,1),(0,1,2),(0)
             {
-                if (j % 2 == 0) Console.Write("O");
+                if (j % 2 == 0)//(0%2 ==0 true)(0%2==0 true)(1%2==0 FALSE)(0%2 ==0 true)(1%2==0 FALSE)(2%2==0 TRUE)(3%2 ==0 FALSE)
+                 Console.Write("O");
                 else Console.Write("E");
             }
+            /*
+            OE
+            OEOE
+            OEOEO
+            */
             Console.WriteLine();
         } while (true);
     }
 }
 18```c#
 using System;
-
 class Program9
 {
     static void Main()
@@ -456,16 +466,28 @@ class Program9
         do
         {
             i++;
-            if (i % 3 == 0) continue;
+            if (i % 3 == 0) continue; 
             if (i > 10) break;
             for (int j = 0; j < i; j++)
             {
-                if (j % 2 == 0) Console.Write("O");
-                else Console.Write("E");
+                if (j % 2 == 0)
+                Console.Write("O");
+                
+                else 
+                Console.Write("E");
             }
             Console.WriteLine();
         } while (true);
     }
+    /*
+    O
+    OE
+    OEOE
+    OEOEO
+    OEOEOEO
+    OEOEOEOE
+    OEOEOEOEOE
+    */
 }
 19```c#
 using System;
@@ -474,19 +496,21 @@ class Program10
 {
     static void Main()
     {
-        int a = 0, b = 10;
-        while (a < 10 && b > 0)
+        int a = 0, b = 10; //(a=2,b=9),(a=3,b=7),(a=5,b=6),(a=6,b=4),(a=8,b=3),(9,1)
+        while (a < 10 && b > 0)//(0<10 && 10>0 TRUE)(2<10 && 9>0 true)(3<10 && 7>0 true)(true),(true),(true),(false)
         {
-            if (a % 2 == 0 && b % 2 == 0)
+            if (a % 2 == 0 && b % 2 == 0)//(0%2==0 && 10%2==0 TRUE),(2%2=0 && 9%2==0 false)(false)(false)(true)
                 Console.Write("A");
-            else if (a % 2 == 1 && b % 2 == 1)
+            else if (a % 2 == 1 && b % 2 == 1)//(2%2==0 false)(true)(false)
                 Console.Write("B");
             else
                 Console.Write("C");
 
-            a += a % 3 == 0 ? 2 : 1;
-            b -= b % 3 == 0 ? 2 : 1;
+            a += a % 3 == 0 ? 2 : 1;//(0%3=0 TRUE a=0+2=2),(2%3=0 false a=2+1=3),(a=3+2=5),(a=5+1 =6),(a=6+2=8),(a=8+1=9),(a=9+2=11)
+            b -= b % 3 == 0 ? 2 : 1;//(10%3=0 false b=10-1=9),(9%3 =0 true b=9-2=7),(b=7-1 =6),(b=6-2=4),(b=4-1=3),(b=3-2=1),(b=1-1=0)
         }
+        //ACBCACB
+        //ACBCACB
     }
 }
 20```c#
@@ -510,6 +534,15 @@ class Program11
             Console.WriteLine();
         } while (true);
     }
+    /*
+    O
+    OE
+    OEOE
+    OEOEO
+    OEOEOEO
+    OEOEOEOE
+    OEOEOEOEOE
+    */
 }
 21```c#
 using System;
@@ -522,28 +555,28 @@ class ComplexLoopProgram
         string result = "";
 
     start:
-        while (i < 20)
+        while (i < 20)//(0<20 true)
         {
-            i++;
-            if (i % 3 == 0 && i % 5 != 0)
+            i++;//i=1
+            if (i % 3 == 0 && i % 5 != 0)//(1%3==0 flase && 1%5 true)
             {
                 result += "Fizz";
                 continue;
             }
             
-            for (int k = 0; k < 5; k++)
+            for (int k = 0; k < 5; k++)//(k=0)
             {
-                if ((i + k) % 7 == 0)
+                if ((i + k) % 7 == 0)//(fasle),(fasle),(fasle)
                 {
                     goto skipLoop;
                 }
                 
-                if (j-- <= 0)
+                if (j-- <= 0)//(false)
                 {
                     break;
                 }
                 
-                result += (i * k).ToString();
+                result += (i * k).ToString();//(0)
             }
             
             if (i >= 15 && j <= 5)
@@ -558,6 +591,10 @@ class ComplexLoopProgram
         Console.WriteLine($"Final result: {result}");
         Console.WriteLine($"i: {i}, j: {j}");
     }
+    //Final result: 01234-02468-Fizz--Fizz--Fizz--Fizz--
+    //i: 15, j: -7
+
+
 }
 
 22```c#
@@ -572,16 +609,16 @@ class IntricateLoopProgram
         string output = "";
 
     outerLoop:
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 15; i++) //i=0,1
         {
-            if (i % 2 == 0 && x < y)
+            if (i % 2 == 0 && x < y)//(0%2=0 TRUE && 1<20 TRUE)
             {
-                x *= 2;
+                x *= 2; //X=2
                 continue;
             }
 
-            int j = 0;
-            while (j < 10)
+            int j = 0;//0
+            while (j < 10)//TRUE
             {
                 {
                     result += Math.Pow(x, 0.5) / (y + 0.1);
