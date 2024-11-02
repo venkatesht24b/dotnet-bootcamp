@@ -182,9 +182,9 @@ namespace TypeConversionComplexExample2
             // Part 1: Product Information
             string productId = "1001";
             int parsedProductId;
-            if (int.TryParse(productId, out parsedProductId))
+            if (int.TryParse(productId, out parsedProductId))//1001
             {
-                Console.WriteLine($"Parsed Product ID: {parsedProductId}");
+                Console.WriteLine($"Parsed Product ID: {parsedProductId}");//1001
             }
             else
             {
