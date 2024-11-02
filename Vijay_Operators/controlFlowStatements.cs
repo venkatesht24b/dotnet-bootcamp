@@ -399,7 +399,7 @@ class Program6
         }
     }
 }
-//output:- XZ
+//output:- XZWXYWXZWX
 ```c#
 using System;
 
@@ -413,6 +413,7 @@ class Program7
         }
     }
 }
+//output:- ACACADBDBD
 ```c#
 using System;
 
@@ -438,6 +439,7 @@ class Program8
         }
     }
 }
+//output:- 
 ```c#
 using System;
 
@@ -460,6 +462,7 @@ class Program9
         } while (true);
     }
 }
+//output:- OOEOEOEOEOEOOEOEOEO
 ```c#
 using System;
 
@@ -482,6 +485,7 @@ class Program9
         } while (true);
     }
 }
+//output:- OOEOEOEOEOEOOEOEOEO
 ```c#
 using System;
 
@@ -504,6 +508,7 @@ class Program10
         }
     }
 }
+//output:-ACBCACB
 ```c#
 using System;
 
@@ -526,6 +531,7 @@ class Program11
         } while (true);
     }
 }
+//output:- O OE OEOE OEOEO OEOEOEO OEOEOEOE OEOEOEOEOE 
 ```c#
 Generate c# program on loops with break and continue statements and goto make it complecate in the condition make use of different type of operators except bitwise operators
 so that it will be complecate to understand.
@@ -576,6 +582,7 @@ class ComplexLoopProgram
         Console.WriteLine($"i: {i}, j: {j}");
     }
 }
+//output:- 
 
 
 using System;
