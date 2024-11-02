@@ -1,4 +1,4 @@
-Types:
+  Types:
 ====================
 Understanding value types and reference types, as well as stack and heap memory, is fundamental to working effectively with C#
 
