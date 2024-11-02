@@ -1,4 +1,4 @@
-Types:
+  Types:
 ====================
 Understanding value types and reference types, as well as stack and heap memory, is fundamental to working effectively with C#
 
@@ -105,12 +105,17 @@ string str = obj;  // Error: Cannot implicitly convert object to string
 
 Summary:
 ================
-Implicit conversions are designed to be safe and lossless. They're typically used when converting from a smaller range to a larger range, or when all values of the source type can be represented in the target type. When these conditions are not met, you'll need to use explicit conversion (casting) or other conversion methods, being aware of potential data loss or runtime errors.
+Implicit conversions are designed to be safe and lossless. They're typically used when 
+converting from a smaller range to a larger range, or when all values of the source type can be represented
+in the target type. When these conditions are not met, you'll need to use explicit conversion (casting) or 
+other conversion methods, being aware of potential data loss or runtime errors.
 
 
 Explicit Conversions
 ============================
-Explicit conversion, also known as explicit casting, is a way to manually convert a value from one data type to another when the conversion is not implicitly allowed by the compiler. This is typically necessary when there's a risk of data loss or when the conversion isn't considered safe by default. 
+Explicit conversion, also known as explicit casting, is a way to manually convert a value 
+from one data type to another when the conversion is not implicitly allowed by the compiler. 
+This is typically necessary when there's a risk of data loss or when the conversion isn't considered safe by default. 
 => Converting from a larger data type to a smaller one
 => Converting between types where data loss might occur
 => Converting between types that are not implicitly convertible
