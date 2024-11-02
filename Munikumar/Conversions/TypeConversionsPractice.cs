@@ -182,9 +182,9 @@ namespace TypeConversionComplexExample2
             // Part 1: Product Information
             string productId = "1001";
             int parsedProductId;
-            if (int.TryParse(productId, out parsedProductId))//1001
+            if (int.TryParse(productId, out parsedProductId))
             {
-                Console.WriteLine($"Parsed Product ID: {parsedProductId}");//1001
+                Console.WriteLine($"Parsed Product ID: {parsedProductId}");
             }
             else
             {
@@ -192,18 +192,7 @@ namespace TypeConversionComplexExample2
             }
 
             // Part 2: Inventory and Sales Conversion
-            object nullableBoxed = (object)revenue;  // Boxing nullable double
-            try
-            {
-                int invalidUnbox = (int)nullableBoxed;  // Error: Unboxing double as int
-            }
-            catch (InvalidCastException)
-            {
-                Console.WriteLine("Error: Invalid unboxing from double to int.");
-            }
-
-            // Final Inventory Status
-            Console.WriteLine(stockCount > 0 ? "Inventory available." : "Out of stock."); object stockCountObj = 500;
+            object stockCountObj = 500;
             int stockCount = (int)stockCountObj;  // Unboxing from object
             double pricePerItem = 19.99;
             decimal totalInventoryValue = (decimal)(pricePerItem * stockCount);  // Explicit cast
@@ -211,7 +200,7 @@ namespace TypeConversionComplexExample2
 
             // Part 3: Sales and Nullable Handling
             int? soldItems = null;
-                 soldItems = 50;
+            soldItems = 50;
             double? revenue = soldItems * pricePerItem;  // Nullable type calculation
             Console.WriteLine($"Revenue from Sold Items: {revenue:C}");
 
@@ -237,7 +226,7 @@ namespace TypeConversionComplexExample2
                 double monthlyRevenue = sales * (pricePerItem - (double)discountPercent / 100);
                 monthlyProfit += monthlyRevenue;
                 Console.WriteLine($"Month {month}: Profit = {monthlyProfit:C}");
-            } 
+            }
 
             // Part 6: Error-prone Nullable Unboxing
             object nullableBoxed = (object)revenue;  // Boxing nullable double

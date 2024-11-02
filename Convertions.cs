@@ -11,7 +11,7 @@ Value Types:
 
 Reference Types:
 =====================
-=> Examples: class, interface, delegate, string, array, object
+=> Examples: class, interface, delegate, string,array, object
 => Stored on the heap memory.
 => Variables hold a reference (memory address) to the data, not the data itself
 => When you assign a reference type to another variable, both variables refer to the same object because it stores reference address of the actual value.
@@ -63,7 +63,7 @@ Implicit conversion, also known as widening conversion, occurs automatically whe
 The compiler performs these conversions without requiring explicit syntax.
 
 Allowed Conversions
-============================
+===============================
 byte byteValue = 255;
 short shortValue = byteValue;  // Implicit conversion from byte to short
 int intValue = shortValue;     // Implicit conversion from short to int
@@ -76,9 +76,9 @@ double doubleValue = intValue; // Implicit conversion from int to double
 char charValue = 'A';
 //char is essentially a 16-bit unsigned integer.
 int intValue = charValue;  // Implicit conversion from char to int
-//Enums are internally represented as integers.
+//Enums are not internally represented as integers.
 enum Days { Sunday, Monday, Tuesday }
-int dayValue = Days.Monday;  // Implicit conversion from enum to int
+int dayValue = (int)Days.Monday;  // explicit conversion from enum to int is required
 
 
 Not Allowed Conversions
@@ -105,12 +105,17 @@ string str = obj;  // Error: Cannot implicitly convert object to string
 
 Summary:
 ================
-Implicit conversions are designed to be safe and lossless. They're typically used when converting from a smaller range to a larger range, or when all values of the source type can be represented in the target type. When these conditions are not met, you'll need to use explicit conversion (casting) or other conversion methods, being aware of potential data loss or runtime errors.
+Implicit conversions are designed to be safe and lossless. They're typically used when 
+converting from a smaller range to a larger range, or when all values of the source type can be represented
+in the target type. When these conditions are not met, you'll need to use explicit conversion (casting) or 
+other conversion methods, being aware of potential data loss or runtime errors.
 
 
 Explicit Conversions
 ============================
-Explicit conversion, also known as explicit casting, is a way to manually convert a value from one data type to another when the conversion is not implicitly allowed by the compiler. This is typically necessary when there's a risk of data loss or when the conversion isn't considered safe by default. 
+Explicit conversion, also known as explicit casting, is a way to manually convert a value 
+from one data type to another when the conversion is not implicitly allowed by the compiler. 
+This is typically necessary when there's a risk of data loss or when the conversion isn't considered safe by default. 
 => Converting from a larger data type to a smaller one
 => Converting between types where data loss might occur
 => Converting between types that are not implicitly convertible
