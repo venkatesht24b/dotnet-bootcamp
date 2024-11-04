@@ -16,8 +16,7 @@ class Program
     }
 }
 ``` 
-//O/P: x is greater than 5
-
+//output:x is greater than 5
 2. If-else statement:
 
 ```c#
@@ -39,8 +38,7 @@ class Program
     }
 }
 ```
-//O/P: x is even
-
+//output:x is even
 3. If-else-if statement:
 
 ```c#
@@ -66,9 +64,7 @@ class Program
     }
 }
 ```
-//O/p:x is positive
-
-
+//output:x is positive
 4. Switch-case statement:
 
 ```c#
@@ -94,8 +90,7 @@ class Program
     }
 }
 ```
-//O/P:x is 10
-
+//output:x is 10
 5. For loop:
 
 ```c#
@@ -112,14 +107,7 @@ class Program
     }
 }
 ```
-    //O/P:
-    //0
-    //1
-    //2
-    //3
-    //4
-       
-
+//output:0 1 2 3 4
 6. While loop:
 
 ```c#
@@ -137,13 +125,8 @@ class Program
         }
     }
 }
-  //O/P:
-    //0
-    //1
-    //2
-    //3
-    //4
 ```
+//output:0 1 2 3 4
 7. Do-while loop:
 
 ```c#
@@ -161,14 +144,8 @@ class Program
         } while (i < 5);
     }
 }
-    //O/P:
-    //0
-    //1
-    //2
-    //3
-    //4 
-
 ```
+//output:0 1 2 3 4
 8. Nested if statement:
 
 ```c#
@@ -189,9 +166,8 @@ class Program
         }
     }
 }
-//O/P: x is greater than 5 and y is greater than 15
-
 ```
+//output:x is greater than 5 and y is greater than 15
 9. Nested if-else statement:
 
 ```c#
@@ -220,9 +196,8 @@ class Program
         }
     }
 }
-
-//O/p: x is greater than 5 and y is greater than 15
 ```
+//output:x is greater than 5 and y is greater than 15
 10. Nested if-else-if statement:
 
 ```c#
@@ -255,8 +230,7 @@ class Program
         }
     }
 }
-//O/P:x is greater than 5 and y is greater than 15
-
+//output:x is greater than 5 and y is greater than 15
 ```c#
 
 using System;
@@ -280,17 +254,12 @@ class Program1
         }
     }
 }
-//O/P:
-//010 020 021 030 031 032 040 041 042 043
+//output:010 020 021 030 031 032 040 041 042 043 
 //100 120 121 122 130 131 132 133 140 141 142 143 144
 //200 201 210 211 212 230 231 232 233 234 240 241 242 243 244
 //300 301 302 310 311 312 313 320 321 322 323 324 340 341 342 343 344
-//400 401 402 403 410 411 412 413 414 420 421 422 423 424 430 431 432 433 434
-
-
-     
-
-
+//400 401 402 403 410 411 412 413 414 420 421 422 423 424 430 431 432 433
+//    434
 ```c#
 using System;
 
@@ -320,8 +289,7 @@ class Program2
         }
     }
 }
-
-//O/P: DE
+//output:DE
 ```c#
 using System;
 
@@ -344,8 +312,7 @@ class Program3
         }
     }
 }
-//O/P:A:6 B:5 E:7 F:5
-
+//output:A:6 B:5 E:7 F:5
 ```c#
 using System;
 
@@ -373,8 +340,7 @@ class Program4
         } while (++i < 10);
     }
 }
-
-//O/P:ADBCBDADBC 
+//output:ADBCBDADBC
 ```c#
 using System;
 
@@ -396,8 +362,7 @@ class Program5
         }
     }
 }
-
-//O/P:E  EV V EE E EVE VE EN N EVN VN EEN EN EVEN VEN
+//output:E  EV V EE E EVE VE EN N EVN VN EEN EN EVEN VEN
 ```c#
 using System;
 
@@ -432,9 +397,7 @@ class Program6
         }
     }
 }
-
-//o/p:XZWXYWXZWX
-
+//output:XZWXYWXZWX
 ```c#
 using System;
 
@@ -448,8 +411,7 @@ class Program7
         }
     }
 }
-
-//O/P:ACACADBDBD
+//output:
 ```c#
 using System;
 
@@ -475,7 +437,7 @@ class Program8
         }
     }
 }
-//O/P: ERROR
+//output:syntax error
 ```c#
 using System;
 
@@ -498,8 +460,7 @@ class Program9
         } while (true);
     }
 }
- 
-//O/P:O OE OE OEOEO OEOEOEO OEOEOEOEO OEOEOEOEOEOE
+//outputO OE OEOE OEOEO OEOEOEO OEOEOEOE OEOEOEOEOE 
 ```c#
 using System;
 
@@ -522,9 +483,7 @@ class Program9
         } while (true);
     }
 }
-
-//O/P:O OE OE OEOEO OEOEOEO OEOEOEOEO OEOEOEOEOEOE
-
+//output:O OE OEOE OEOEO OEOEOEO OEOEOEOE OEOEOEOEOE 
 ```c#
 using System;
 
@@ -547,8 +506,7 @@ class Program10
         }
     }
 }
-
-//O/P:ACBCACB 
+//output:ACBCACB
 ```c#
 using System;
 
@@ -571,9 +529,7 @@ class Program11
         } while (true);
     }
 }
-
-//O/P:O OE OE OEOEO OEOEOEO OEOEOEOEO OEOEOEOEOEOE
- 
+//output:O OE OEOE OEOEO OEOEOEO OEOEOEOE OEOEOEOEOE 
 ```c#
 Generate c# program on loops with break and continue statements and goto make it complecate in the condition make use of different type of operators except bitwise operators
 so that it will be complecate to understand.
@@ -595,8 +551,7 @@ class ComplexLoopProgram
                 result += "Fizz";
                 continue;
             }
-
-             
+            
             for (int k = 0; k < 5; k++)
             {
                 if ((i + k) % 7 == 0)
@@ -625,9 +580,10 @@ class ComplexLoopProgram
         Console.WriteLine($"i: {i}, j: {j}");
     }
 }
+//output:Final result: 01234-02468-Fizz--Fizz--Fizz--Fizz--
+//       i: 15, j: -7
 
-//O/P: Final result: 01234-02468-Fizz--Fizz--Fizz--Fizz--
-//i: 15, j: -7
+
 using System;
 
 class IntricateLoopProgram
@@ -695,9 +651,9 @@ class IntricateLoopProgram
         Console.WriteLine($"Final output: {output}");
         Console.WriteLine($"x: {x}, y: {y}, result: {result:F2}");
     }
+    //output:Final output: CCACACAGGGGGGGGGGJJJJJ
+    //       x: 9, y: 0, result: 9.75
 }
-//Final output: CCACACAGGGGGGGGGGJJJJJ
-//x: 9, y: 0, result: 9.75
 
 
 
