@@ -166,7 +166,7 @@ class Program
     //1
     //2
     //3
-    //4
+    //4 
 
 ```
 8. Nested if statement:
@@ -433,7 +433,7 @@ class Program6
     }
 }
 
-//o/p:
+//o/p:XZWXYWXZWX
 
 ```c#
 using System;
@@ -448,6 +448,8 @@ class Program7
         }
     }
 }
+
+//O/P:ACACADBDBD
 ```c#
 using System;
 
@@ -473,6 +475,7 @@ class Program8
         }
     }
 }
+//O/P: ERROR
 ```c#
 using System;
 
@@ -495,6 +498,8 @@ class Program9
         } while (true);
     }
 }
+ 
+//O/P:O OE OE OEOEO OEOEOEO OEOEOEOEO OEOEOEOEOEOE
 ```c#
 using System;
 
@@ -517,6 +522,9 @@ class Program9
         } while (true);
     }
 }
+
+//O/P:O OE OE OEOEO OEOEOEO OEOEOEOEO OEOEOEOEOEOE
+
 ```c#
 using System;
 
@@ -539,6 +547,8 @@ class Program10
         }
     }
 }
+
+//O/P:ACBCACB 
 ```c#
 using System;
 
@@ -561,6 +571,9 @@ class Program11
         } while (true);
     }
 }
+
+//O/P:O OE OE OEOEO OEOEOEO OEOEOEOEO OEOEOEOEOEOE
+ 
 ```c#
 Generate c# program on loops with break and continue statements and goto make it complecate in the condition make use of different type of operators except bitwise operators
 so that it will be complecate to understand.
@@ -582,7 +595,8 @@ class ComplexLoopProgram
                 result += "Fizz";
                 continue;
             }
-            
+
+             
             for (int k = 0; k < 5; k++)
             {
                 if ((i + k) % 7 == 0)
@@ -612,7 +626,8 @@ class ComplexLoopProgram
     }
 }
 
-
+//O/P: Final result: 01234-02468-Fizz--Fizz--Fizz--Fizz--
+//i: 15, j: -7
 using System;
 
 class IntricateLoopProgram
@@ -681,6 +696,8 @@ class IntricateLoopProgram
         Console.WriteLine($"x: {x}, y: {y}, result: {result:F2}");
     }
 }
+//Final output: CCACACAGGGGGGGGGGJJJJJ
+//x: 9, y: 0, result: 9.75
 
 
 
