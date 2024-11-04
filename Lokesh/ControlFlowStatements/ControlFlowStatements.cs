@@ -548,7 +548,7 @@ class Program10
     }
 }
 
-//O/P:ACBCACB 
+//O/P:AABCACB 
 ```c#
 using System;
 
