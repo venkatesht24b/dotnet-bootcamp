@@ -24,7 +24,7 @@ public void Method1() { }    // Accessible everywhere
 private void Method2() { }   // Only within same class
 protected void Method3() { } // Within same class and any derived classes
 internal void Method4() { }  // Within same assembly
-protected interanl void Method5() { } // Within same assembly and any derived classes of same or other assemblies
+protected internal void Method5() { } // Within same assembly and any derived classes of same or other assemblies
 
 2. Return Type:
 =======================================================================================
