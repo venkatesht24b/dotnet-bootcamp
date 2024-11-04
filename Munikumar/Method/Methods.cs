@@ -24,7 +24,7 @@ public void Method1() { }    // Accessible everywhere
 private void Method2() { }   // Only within same class
 protected void Method3() { } // Within same class and any derived classes
 internal void Method4() { }  // Within same assembly
-protected interanl void Method5() { } // Within same assembly and any derived classes of same or other assemblies
+protected internal void Method5() { } // Within same assembly and any derived classes of same or other assemblies
 
 2. Return Type:
 =======================================================================================
@@ -69,6 +69,7 @@ public void ShowMenu() { }
     Calling Use case 2=> SetCoordinates("name");
 
 // Reference parameters
+
     public void Swap(ref int a, ref int b) { }
 
 // Output parameters
@@ -88,7 +89,7 @@ public class Calculator
         return amount * rate;
     }
 
-    // Method with out parameter
+    
     //without using return type also we can able to get quotient and remainder by using out parameters.
     public void DivideWithRemainder(int dividend, int divisor, out int quotient, out int remainder) 
     {
@@ -400,35 +401,3 @@ Non-static members:
 => Memory allocated when object/instance is created
 => Can access both static and non-static members
 => If you create 100 objects for the class. 100 copies of non-static members are created and static members will be same for all of them.
-
-extension methods:
-=====================================
-
-Extension methods are a special kind of static methods that can be called as if they were instance methods on the extended type. 
-They are defined in a static class and the first parameter of the method specifies the type that the method operates on, preceded by the this keyword.
-
-Here's a simple example of an extension method:
-
-static class StringExtensions
-{
-    //You can use this method to reverse a string  wherever needed in the application.
-    public static string ReverseStringToString(this string str)
-    {
-        char[] charArray = str.ToCharArray();
-        Array.Reverse(charArray);
-        return new string(charArray);
-    }
-}
-
-In this example, the Reverse method is an extension method for the string type. 
-It reverses the string by converting it to a character array, reversing the array, 
-and then converting it back to a string.
-
-To use the extension method, you simply call it on an instance of the string type:
-
-string original = "Hello, World!";
-string reversed = original.ReverseStringToString(); 
-Console.WriteLine(reversed); // Outputs "!dlroW ,olleH"
-
-In this way, extension methods provide a way to add functionality to existing types without modifying their source code. They are a powerful feature of C# that allows for a more expressive and flexible programming paradigm.
-

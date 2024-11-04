@@ -577,3 +577,32 @@ class IntricateLoopProgram
         Console.WriteLine($"x: {x}, y: {y}, result: {result:F2}");
     }
 }
+
+23```c#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int i = 0;
+        do
+        {
+            i++;
+            if (i % 3 == 0) continue;
+            if (i > 10) break;
+            for (int j = 0; j < i; j++)
+            {
+                if (j % 2 == 0) Console.Write("O");
+                else Console.Write("E");
+            }
+            Console.WriteLine();
+        } while (true);
+    }
+}
+24```c#
+What are Extension Methods?
+Extension methods enable you to "add" methods to existing types without creating a new derived type, 
+recompiling, or otherwise modifying the original type. Extension methods are static methods, 
+but they're called as if they were instance methods on the extended type. 
+For client code written in C#, there's no need to actually modify the type to add the method;
