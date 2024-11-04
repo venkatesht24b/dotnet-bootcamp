@@ -582,7 +582,11 @@ class ComplexLoopProgram
         Console.WriteLine($"i: {i}, j: {j}");
     }
 }
-//output:- 
+//output:- 0-
+           i:1,j:9 
+           0-
+           i:2,j:8 
+
 
 
 using System;
