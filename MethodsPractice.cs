@@ -767,6 +767,164 @@ class Program30
     }
 }
 
+31.
+using System;
+
+namespace Program31
+{
+    static class StringExtensions
+    {
+        public static string Reverse(this string str)
+        {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            string message = "Hello World";
+            string reversed = message.Reverse();
+            Console.WriteLine("Reversed String: " + reversed);
+        }
+    }
+}
+
+32.
+using System;
+
+namespace Program32
+{
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    static class PersonExtensions
+    {
+        public static void DisplayInfo(Person person)
+        {
+            Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Person p = new Person { Name = "Alice", Age = 25 };
+            
+            p.DisplayInfo();
+
+            PersonExtensions.DisplayInfo(p);
+        }
+    }
+}
+
+33.
+
+using System;
+
+namespace Program33
+{
+    static class IntExtensions
+    {
+        public static void DoubleValue(this ref int number)
+        {
+            number *= 2;
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            int value = 5;
+
+            value.DoubleValue();
+
+            Console.WriteLine("Value: " + value);
+        }
+    }
+}
+
+34.
+using System;
+
+namespace Program34
+{
+    class Calculator
+    {
+        public int Value { get; set; }
+    }
+
+    static class CalculatorExtensions
+    {
+        public static Calculator Add(this Calculator calc, int amount)
+        {
+            calc.Value += amount;
+            return calc;
+        }
+
+        public static Calculator Multiply(this Calculator calc, int factor)
+        {
+            calc.Value *= factor;
+            return calc;
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Calculator calc = new Calculator { Value = 10 };
+            
+            calc.Add(5).Multiply(3);
+            Console.WriteLine("Final Value: " + calc.Value);
+        }
+    }
+}
+
+35.
+
+using System;
+
+namespace Program35
+{
+    static class StringExtensions
+    {
+        public static bool IsValidEmail(this string str)
+        {
+            return str.Contains("@") && str.Contains(".") && str.IndexOf("@") < str.LastIndexOf(".");
+        }
+
+        public static string MaskEmail(this string str)
+        {
+            if (!str.IsValidEmail()) 
+                return "Invalid email";
+
+            int atIndex = str.IndexOf("@");
+            return new string('*', atIndex) + str.Substring(atIndex);
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            string email = "example@domain.com";
+            Console.WriteLine("Is valid email: " + email.IsValidEmail());
+            Console.WriteLine("Masked email: " + email.MaskEmail());
+
+            string invalidEmail = "invalid-email";
+            Console.WriteLine("Masked invalid email: " + invalidEmail.MaskEmail());
+        }
+    }
+}
 
 
 
