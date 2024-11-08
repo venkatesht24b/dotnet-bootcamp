@@ -333,7 +333,7 @@ class Program16
 
 17.
 using System;
-
+    C  
 class Program17
 {
     static int DoubleValue(ref int x)
@@ -354,7 +354,7 @@ class Program17
         IncrementValue(out a);
         int result = DoubleValue(ref a);
 
-        Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
+       =]] Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
 }
 
@@ -381,7 +381,7 @@ class Program18
     static void Main()
     {
         Program18 obj = new Program18();
-        obj.Display("Hello");
+        obj.Dis play("Hello");
         obj.Display(10);
         obj.Display(5, "Custom Text");
     }
@@ -393,7 +393,7 @@ using System;
 class Program19
 {
     private void PrivateMethod()
-    {
+    { 
         Console.WriteLine("Private method called");
     }
 
@@ -432,7 +432,7 @@ class Program20
     }
 }
 
-21.
+21. 
 using System;
 
 class OuterClass

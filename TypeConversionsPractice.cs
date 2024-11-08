@@ -6,59 +6,64 @@ class TypeCastingExamples
         byte byteValue = 100;
         int intValue = byteValue;
         Console.WriteLine($"Implicit conversion from byte to int: {intValue}");
-
+        no convert the byte Value = intValue;   
         double value = 99.99;
         int truncatedValue = value;
-        
+        //99
         double doubleValue = 10.8;
         int truncatedValue = (int)doubleValue;
         Console.WriteLine($"Explicit conversion from double to int (truncated): {truncatedValue}");
+        //truncatedValue=10
 
         string strNumber = "250";
-        int convertedValue = Convert.ToInt32(strNumber); 
+        int convertedValue = Convert.ToInt32(strNumber); /*converted Value the string value*/
         Console.WriteLine($"Using Convert class to convert string to int: {convertedValue}");
-
+        
         string strToParse = "300";
         int parsedInt = int.Parse(strToParse); 
         Console.WriteLine($"Using Parse method to convert string to int: {parsedInt}");
-
+        //300,converted the string value
         string invalidString = "Hello";
         int result;
         bool isParsed = int.TryParse(invalidString, out result); 
         Console.WriteLine($"TryParse with invalid input (expected false): {isParsed}, Result: {result}");
 
         string nullStr = null;
-        int intValue = Convert.ToInt32(nullStr); 
-        int intValue2 = int.Parse(nullStr); 
+        int intValue = Convert.ToInt32(nullStr); /*convert the string null*/
+        int intValue2 = int.Parse(nullStr);/*not convert string null 
+*/
 
         string nonNumericStr = "abc123";
-        int parsedValue = int.Parse(nonNumericStr);  
+        int parsedValue = int.Parse(nonNumericStr);  /*not convert string value*/
 
         int num = 100;
         object boxedNum = num; // Boxing: int to object (reference type)
         int unboxedNum = (int)boxedNum; // Unboxing: object back to int
         Console.WriteLine($"Boxing and Unboxing an int: {unboxedNum}");
-
+        //100, the boxing value converted unboxing
         object obj = "Hello World!";
         int incompatibleCast = (int)obj;  
 
         int? nullableInt = 500; // Nullable int using '?'
         int regularInt = nullableInt ?? 0; // If nullableInt has a value, use it; otherwise, use 0
         Console.WriteLine($"Nullable to int with null-coalescing: {regularInt}");
-
+        //500,
         object obj = "Hello World";
         string str = obj as string;
         Console.WriteLine($"Using 'as' for type conversion: {str}");
+        // Returns null if conversion is not possible
 
         object obj = 10;
         string invalidAsCast = obj as string;  
-        Console.WriteLine(invalidAsCast.Length);  
+        Console.WriteLine(invalidAsCast.Length);
+        // Returns null if conversion is not possible
 
         object patternObj = 123;
         if (patternObj is int patternInt) 
         {
             Console.WriteLine($"Pattern matching with 'is' keyword: {patternInt}");
         }
+        // Returns null if conversion is not possible
 
         bool boolVal = true;
         int invalidConversion = (int)boolVal;  
@@ -69,7 +74,7 @@ class TypeCastingExamples
             int regularNum = nullableNum.Value; 
             Console.WriteLine($"Nullable<int> to int: {regularNum}");
         }
-
+        //42 Converts Nullable<int> to int
         string validString = "42";
         int result;
         bool success = int.TryParse(validString, result);  
@@ -79,7 +84,7 @@ class TypeCastingExamples
 
         object boxedValue = "100";//Boxing
         int unboxedInt = (int)boxedValue; //Un-Boxing 
-
+        //refrence type
         object boxedValue = int.Parse("100");//Boxing
         int unboxedInt = (int)boxedValue;//Un-Boxing
     }
@@ -100,13 +105,13 @@ namespace TypeConversionComplexExample1
             double accountBalance = 1520.75;
             int roundedBalance = (int)accountBalance;  // Explicit cast
             Console.WriteLine($"Rounded Account Balance: {roundedBalance}");
-
+            //1520.75 // Explicit conversion from double to int
             // Part 2: Deposit
             string depositStr = "200";
             int depositAmount = int.Parse(depositStr);  // Parsing string to int
             double newBalance = accountBalance + depositAmount;
             Console.WriteLine($"New Balance after Deposit: {newBalance}");
-
+            // 1720.75 Explicit conversion from double to int
             // Part 3: Withdrawal
             object withdrawalObj = "150";
             int withdrawalAmount;
@@ -126,6 +131,7 @@ namespace TypeConversionComplexExample1
             {
                 Console.WriteLine("Invalid withdrawal amount.");
             }
+            //1570.75 Explicit conversion from double to int
 
             // Part 4: Calculate Annual Interest with Nullable
             double interestRate = 0.03;
@@ -139,6 +145,7 @@ namespace TypeConversionComplexExample1
             {
                 Console.WriteLine("Balance too low for interest calculation.");
             }
+            // 47.1225 Explicit conversion from double to int 
 
             // Part 5: Simulate Monthly Transactions in a Loop
             Console.WriteLine("Simulating Monthly Transactions:");
@@ -190,6 +197,7 @@ namespace TypeConversionComplexExample2
             {
                 Console.WriteLine("Invalid Product ID.");
             }
+            //1001
 
             // Part 2: Inventory and Sales Conversion
             object nullableBoxed = (object)revenue;  // Boxing nullable double

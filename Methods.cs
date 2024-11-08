@@ -1,3 +1,4 @@
+
 What is a method in c#?
 =======================================================================================
 A method is a block of code that performs a specific task. It is a collection of statements that are executed when the method is called. 
@@ -432,3 +433,4 @@ Console.WriteLine(reversed); // Outputs "!dlroW ,olleH"
 
 In this way, extension methods provide a way to add functionality to existing types without modifying their source code. They are a powerful feature of C# that allows for a more expressive and flexible programming paradigm.
 
+    
