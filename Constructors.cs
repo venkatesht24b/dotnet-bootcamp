@@ -77,9 +77,6 @@ When to Use: Use a private constructor in singleton design patterns or when a cl
 A static constructor initializes static members of the class. It is automatically called once when the class is first accessed. Static constructors cannot take parameters and are marked by the static keyword.
 
 Example:
-
-csharp
-Copy code
 class Utility
 {
     public static int GlobalCounter;
