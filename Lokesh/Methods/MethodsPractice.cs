@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 1.
 using System;
 
@@ -24,6 +26,8 @@ class Program1
         NonStaticMethod();  
     }
 }
+//O/P:error will come.because we can't call non-static method without using it's instance.
+
 
 2. 
 using System;
@@ -44,6 +48,10 @@ class Program2
         Console.WriteLine("After: " + number);
     }
 }
+//O/P:  Before:5
+   // After:15
+
+
 
 3.
 using System;
@@ -63,7 +71,7 @@ class Program3
         Console.WriteLine($"Doubled: {a}, Tripled: {b}");
     }
 }
-
+//O/P: Doubled:6, Tripled:9
 4. 
 using System;
 
@@ -83,6 +91,7 @@ class Program4
         Console.WriteLine("After modification: " + number);
     }
 }
+//O/P:  The name 'value' does not exist in the current context
 
 5. 
 using System;
@@ -101,6 +110,11 @@ class Program5
         PrintDetails("Charlie", 30, "Canada");
     }
 }
+
+//O/P: Name:Alice,Age:18,Country:Usa
+//O/P: Name:Bob,Age:25,Country:Usa
+//O/P: Name:Charlie,Age:30,Country:Canada
+
 6.
 using System;
 
@@ -122,6 +136,9 @@ class Program6
         Console.WriteLine("After custom increment: " + number);
     }
 }
+
+//O/P:  After default increment:15
+       //After custom increment:30
 7.
 using System;
 
@@ -140,6 +157,7 @@ class Program7
         Console.WriteLine($"Generated numbers: {a} and {b}");
     }
 }
+//O/P: Generated number:10 and 20
 
 8.
 using System;
@@ -160,6 +178,9 @@ class Program8
         Calculate(out int result);
     }
 }
+
+//O/P: error will come because result varible is already declared.
+
 9.
 using System;
 
@@ -177,6 +198,8 @@ class Program9
         DisplayInfo("Bob", country: "Canada");
     }
 }
+//O/P:  error will come because in first line of main method we cann't convert string to int.
+
 
 10.
 using System;
@@ -199,6 +222,8 @@ class Program10
         ModifyNumbers(ref a, out b);
     }
 }
+
+//O/P; modified a:10, calculated b: 20
 
 11.
 using System;
@@ -223,10 +248,12 @@ class Program11
     }
 }
 
+//o/p: After ModifyValues - a: 15 b:30
+//o/p: After ModifyValueswith increment 10 - a: 25, b:50
 12.
 using System;
 
-class Program12
+class Program12: Program11
 {
     public int instanceValue = 100;
 
@@ -242,11 +269,14 @@ class Program12
 
     static void Main()
     {
-        Program12 obj = new Program12();
+        Program12 obj = new Program11();
         obj.InstanceMethod();
         StaticMethod();
     }
 }
+
+//o/p:error
+
 13.
 using System;
 
@@ -269,6 +299,12 @@ class Program13
         Calculate(1, 2, 3);
     }
 }
+
+//o/p: Product: 10
+//o/p: Product: 15
+//o/p: sum: 6
+
+
 14.
 using System;
 
@@ -290,6 +326,9 @@ class Program14
     }
 }
 
+//o/p: 1,2,3
+//     9,8,7
+
 15.
 using System;
 
@@ -310,6 +349,16 @@ class Program15
     }
 }
 
+//O/P:    1
+        //2
+        //3
+        //4
+        //5
+        //6
+        //7
+        //8
+        //9
+        //10
 16.
 using System;
 
@@ -331,9 +380,16 @@ class Program16
     }
 }
 
+//O/P: Hello
+// Custom Message
+// Custom Message
+//CUSTOM UPPER
+//CUSTOM UPPER
+//CUSTOM UPPER
+
 17.
 using System;
-    C  
+
 class Program17
 {
     static int DoubleValue(ref int x)
@@ -351,13 +407,14 @@ class Program17
     static void Main()
     {
         int a = 10;
-        IncrementValue(out a);
+        IncrementValue(out a);//A=6
         int result = DoubleValue(ref a);
 
-       =]] Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
+        Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
 }
 
+//O/P: Final Result: 12, Modified Value:12
 18.
 using System;
 
@@ -381,19 +438,22 @@ class Program18
     static void Main()
     {
         Program18 obj = new Program18();
-        obj.Dis play("Hello");
+        obj.Display("Hello");
         obj.Display(10);
         obj.Display(5, "Custom Text");
     }
 }
 
+//O/P: String message: Hello
+    //interger message:10
+    //Number:5,Text:Custom Text
 19.
 using System;
 
 class Program19
 {
     private void PrivateMethod()
-    { 
+    {
         Console.WriteLine("Private method called");
     }
 
@@ -411,6 +471,10 @@ class Program19
         obj.PrivateMethod();
     }
 }
+
+//O/P: Public method calling private method
+    //Private method called
+    //Private method called   
 
 20.
 using System;
@@ -431,8 +495,10 @@ class Program20
         Console.WriteLine($"Square: {a}, Cube: {b}");
     }
 }
+//O/P: Square:9, Cube:81
 
-21. 
+
+21. //doubt 
 using System;
 
 class OuterClass
@@ -459,10 +525,18 @@ class OuterClass
     public void TestAccess()
     {
         InnerPrivateClass inner = new InnerPrivateClass();
-        inner.AccessOuterInstance(this);
+        OuterClass obj = this;
+        inner.AccessOuterInstance(obj);
+
+        inner.AccessOuterInstance(new OuterClass());
+
+        new InnerPrivateClass().AccessOuterInstance(this);
 
         InnerProtectedClass.AccessProtectedStatic();
+        
     }
+   
+
 }
 
 class Program21
@@ -475,6 +549,8 @@ class Program21
         OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();
     }
 }
+//O/P:
+
 
 22.
 using System;
@@ -520,6 +596,11 @@ class Program22
         baseRef.Display("Called from BaseClass reference");
     }
 }
+//o/p:Protected Var from BaseClass: 100
+//Protected Internal Method in BaseClass
+//Overridden Message:DerivedClass
+//Overridden Message:Called from BaseClass Reference.
+
 
 23.
 using System;
@@ -559,10 +640,14 @@ class Program23
     }
 }
 
+
+//O/P: Counter incremented to:1
+        //Counter:1
+//O/P: Counter incremented to:2
 24.
 using System;
 
-class BasePrivateProtected
+class BasePrivateProtected : String
 {
     private protected int baseVar = 50;
 
@@ -588,7 +673,9 @@ class DerivedPrivateProtected : BasePrivateProtected
             derived.BaseMethod();
         }
     }
+
 }
+
 
 class Program24
 {
@@ -599,6 +686,9 @@ class Program24
     }
 }
 
+
+//O/P: Accessing baseVar in Derived:50
+//BaseMethod called in BasePrivateProtected
 
 25.
 using System;
@@ -624,6 +714,8 @@ class AdvancedCalculator : BaseCalculator
     }
 }
 
+
+
 class Program25
 {
     static void Main()
@@ -639,6 +731,8 @@ class Program25
     }
 }
 
+//O/P: Value after calculation:10,Result:15
+        //Square of Result:225
 26.
 using System;
 
@@ -657,7 +751,9 @@ class Program26
     }
 }
 
-27.
+//O/P: Original Value:5,After Multipication:10
+
+27.//doubt
 using System;
 
 class Rectangle
@@ -675,10 +771,15 @@ class Program27
 
     static void Main()
     {
+        //int a =CreateRectangle(5, 10);
         Rectangle rect = CreateRectangle(5, 10);
+        Rectangle rect = new Rectangle { Length = 5, Width = 10 };
         Console.WriteLine($"Rectangle - Length: {rect.Length}, Width: {rect.Width}");
     }
 }
+
+//O/P: Rectangle-Lenght:5,width:10
+
 28.
 using System;
 
@@ -705,7 +806,16 @@ class Program28
     }
 }
 
-29.
+
+//o/p:Generated Even Numbers:
+//  0
+// 2
+//4
+//6
+//8
+//10
+
+29.//doubt
 using System;
 
 class Person
@@ -731,7 +841,12 @@ class Program29
     }
 }
 
-30.
+
+//O/P: Person-Name:Alice, Age:30
+    //Name in Uppercase:ALICE
+
+
+30.//doubt
 using System;
 
 class Calculator
@@ -754,7 +869,7 @@ class Program30
 {
     static void Main()
     {
-        Calculator calc = new Calculator { Number = 10 };
+        Calculator calc = new Calculator() { Number = 10 };
 
         int doubled = calc.DoubleValue(5);
         Console.WriteLine("Doubled Value: " + doubled);
@@ -766,6 +881,12 @@ class Program30
         Console.WriteLine("Are both references the same? " + (calc == updatedCalc));
     }
 }
+
+//O/P:Doubled Value: 10
+// Original Calculator Number: 25
+// Returned Calculator Number: 25
+// Are both references the same? True
+
 
 31.
 using System;
@@ -792,6 +913,8 @@ namespace Program31
         }
     }
 }
+//O/P:Reversed String: dlrow olleH
+
 
 32.
 using System;
@@ -816,7 +939,7 @@ namespace Program32
     {
         static void Main()
         {
-            Person p = new Person { Name = "Alice", Age = 25 };
+            Person p = new Person() { Name = "Alice", Age = 25 };
             
             p.DisplayInfo();
 
@@ -824,6 +947,8 @@ namespace Program32
         }
     }
 }
+
+//O/P: Name:Alice, Age=25
 
 33.
 
@@ -852,6 +977,7 @@ namespace Program33
     }
 }
 
+//Value:10
 34.
 using System;
 
@@ -888,6 +1014,8 @@ namespace Program34
         }
     }
 }
+//o/p:Final Value:45
+
 
 35.
 
@@ -926,5 +1054,6 @@ namespace Program35
     }
 }
 
-
-
+//O/P: is Valid email: true
+    //Masked email:*******@domain.com
+    //Masked invalid email: Invalid email
