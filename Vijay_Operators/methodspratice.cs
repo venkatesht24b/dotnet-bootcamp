@@ -674,7 +674,7 @@ class AdvancedCalculator : BaseCalculator
     public static void Square(ref int x)
     {
         x *= x;
-    }
+    } 
 }
 
 class Program25
@@ -691,7 +691,8 @@ class Program25
         Console.WriteLine($"Square of Result: {result}");
     }
 }
-
+// output:- Value after calculations:10 , Result:15
+//          Square of Result:225
 26.
 using System;
 
@@ -709,6 +710,7 @@ class Program26
         Console.WriteLine($"Original Value: {value}, After Multiplication: {result}");
     }
 }
+// output: Original Value:5 , After Multiplication:10
 
 27.
 using System;
