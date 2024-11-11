@@ -17,15 +17,18 @@ class Program1
     static void Main()
     {
         Program1.StaticMethod();
+        //Static method called.
 
-        Program1 obj = new Program1();
+        Program1 obj = new Program1(); //Created Instance for Program1 Class
         obj.NonStaticMethod();
-
-        NonStaticMethod();  
+        //Inside NonStaticMethod There is A StaticMethod.
+        //Non-static method called.
+        //Static method called
+        NonStaticMethod();
+        //We cant invoke the NonStaticMethod Without Creating Instance to it.  
     }
 }
-//output:- Static method called.
-        ///Non-static method called.
+
 2. 
 using System;
 
@@ -40,13 +43,14 @@ class Program2
     {
         int number = 5;
         Console.WriteLine("Before: " + number);
+        //Before: 
 
-        ModifyValue(ref number);
+        ModifyValue(ref number); // 5
         Console.WriteLine("After: " + number);
+        //After: 15
     }
 }
-//output:- Before:5
-        ///after:10
+
 3.
 using System;
 
@@ -54,8 +58,8 @@ class Program3
 {
     static void CalculateValues(int input, out int doubled, out int tripled)
     {
-        doubled = input * 2;
-        tripled = input * 3;
+        doubled = input * 2; //3*2 = 6
+        tripled = input * 3; //3*3 = 9
     }
 
     static void Main()
@@ -63,9 +67,9 @@ class Program3
         int a, b;
         CalculateValues(3, out a, out b);
         Console.WriteLine($"Doubled: {a}, Tripled: {b}");
+        //Doubled: 6, Tripled: 9
     }
 }
-//output:-  Doubled: 6 , Tripled: 9
 
 4. 
 using System;
@@ -79,15 +83,13 @@ class Program4
 
     static void Main()
     {
-        ModifyValue(ref value);
-
+        ModifyValue(ref value); //Error
         int number = 5;
         ModifyValue(ref number);
         Console.WriteLine("After modification: " + number);
     }
 }
-//output:-The name 'value' does not exist in the current context
- 
+
 5. 
 using System;
 
@@ -101,13 +103,13 @@ class Program5
     static void Main()
     {
         PrintDetails("Alice");
+        //Name: Alice, Age: 18, Country: USA
         PrintDetails("Bob", 25);
+        //Name: Bob, Age: 25, Country: USA
         PrintDetails("Charlie", 30, "Canada");
+        //Name: Charlie, Age: 30, Country: Canada
     }
 }
-// output:- Name:Alice , Age: 18 , Country: USA
-//          Name:Bob , Age: 25 , Country: USA
-//          Name:Charile , Age: 30 , Country: Canada
 6.
 using System;
 
@@ -124,14 +126,13 @@ class Program6
 
         UpdateValue(ref number);
         Console.WriteLine("After default increment: " + number);
+        //After default increment: 15 //10+5=15
 
         UpdateValue(ref number, 15);
         Console.WriteLine("After custom increment: " + number);
+        //After custom increment: 30
     }
 }
-// output:- After default increment: 15
-//          After custom increment: 25
-
 7.
 using System;
 
@@ -148,9 +149,10 @@ class Program7
         int a, b;
         GenerateNumbers(out a, out b);
         Console.WriteLine($"Generated numbers: {a} and {b}");
+        //Generated numbers: 10 and 20
     }
 }
-//output:- Generated numbers: 10 and 20 
+
 8.
 using System;
 
@@ -166,8 +168,10 @@ class Program8
         int result;
         Calculate(out result, 5);
         Console.WriteLine(result);
+        //10
 
-        Calculate(out int result);//error
+        Calculate(out int result);
+        //Error
     }
 }
 9.
@@ -183,13 +187,14 @@ class Program9
     static void Main()
     {
         DisplayInfo("Alice", "Canada");
+        //Error
 
-        DisplayInfo("Bob", country: "Canada");//error
+        DisplayInfo("Bob", country: "Canada");
+        //Name: Bob, Age: 18, Country: Canada
     }
 }
-//output:- Name: Alice , Age: 18 ,Country:canada
 
-
+10.
 using System;
 
 class Program10
@@ -203,15 +208,15 @@ class Program10
     static void Main()
     {
         int a = 5, b;
-        ModifyNumbers(ref a, out b);
+        ModifyNumbers(ref a, out b);// 5*2=10, y = 10+10 = 20
 
         Console.WriteLine($"Modified a: {a}, Calculated b: {b}");
+        //Modified a: 10, Calculated b: 20
 
         ModifyNumbers(ref a, out b);
-        .
+        // 10*2=20 //30
     }
 }
-//output:- Modified a: 10 ,  Calculated b:20
 
 11.
 using System;
@@ -223,18 +228,19 @@ class Program11
         x += increment;
         y = x * 2;
     }
-.0
+
     static void Main()
     {
         int a = 10, b;
         
         ModifyValues(ref a, out b);
         Console.WriteLine($"After ModifyValues - a: {a}, b: {b}");
-        //After ModifyValues - a:15 , b: 30
+
         ModifyValues(ref a, out b, 10); // Custom increment
         Console.WriteLine($"After ModifyValues with increment 10 - a: {a}, b: {b}");
-        //After ModifyValues with increment 10 - a:25 , b: 50
     }
+    //After ModifyValues - a: 15, b: 30
+    //After ModifyValues with increment 10 - a: 25, b: 50
 }
 
 12.
@@ -246,7 +252,7 @@ class Program12
 
     public static void StaticMethod()
     {
-        Console.WriteLine("Instance Value: " + instanceValue);
+        Console.WriteLine("Instance Value: " + instanceValue); //Error
     }
 
     public void InstanceMethod()
@@ -258,11 +264,10 @@ class Program12
     {
         Program12 obj = new Program12();
         obj.InstanceMethod();
+        //Instance Value: 100
         StaticMethod();
     }
 }
-// output:- Instance Value:100
-//         Instance Value:100
 13.
 using System;
 
@@ -281,13 +286,13 @@ class Program13
     static void Main()
     {
         Calculate(5);
+        //Product: " + 10
         Calculate(5, 3);
+        //Product: " 15
         Calculate(1, 2, 3);
+        //Sum: 6
     }
 }
-// output:- product: 10
-//          product: 15
-//          sum:10
 14.
 using System;
 
@@ -303,13 +308,14 @@ class Program14
     {
         int[] numbers = { 1, 2, 3 };
         Console.WriteLine("Before: " + string.Join(", ", numbers));
+        //Before: 1,2,3
         
         ModifyArray(ref numbers);
         Console.WriteLine("After: " + string.Join(", ", numbers));
     }
+    //Before: 1, 2, 3
+    //After: 9, 8, 7
 }
-//output:-  Before: 1,2,3
-           //After: 9,8,7
 
 15.
 using System;
@@ -328,17 +334,9 @@ class Program15
     static void Main()
     {
         PrintNumbers(1);
+        //12345678910
     }
 }
-// output:- 1
-//          2
-//          3
-//          4
-//          5
-//          6
-//          7
-//          8
-//          9
 
 16.
 using System;
@@ -356,16 +354,16 @@ class Program16
     static void Main()
     {
         DisplayMessage();
+        //Hello
         DisplayMessage("Custom Message", 2);
+        //Custom Message
+        //Custom Message
         DisplayMessage("Custom Upper", 3, true);
+        //CUSTOM UPPER
+        //CUSTOM UPPER
+        //CUSTOM UPPER
     }
 }
-// output:-Hello
-//         custom Message
-//         custom Message
-//         CUSTOM UPPER
-//         CUSTOM UPPER
-//         CUSTOM UPPER
 
 17.
 using System;
@@ -387,13 +385,13 @@ class Program17
     static void Main()
     {
         int a = 10;
-        IncrementValue(out a);
-        int result = DoubleValue(ref a);
+        IncrementValue(out a); //6
+        int result = DoubleValue(ref a); //12
 
         Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
+    //Final Result: 12, Modified Value: 12
 }
-//output:- Final Result: 22 ,Modified Value:22
 
 18.
 using System;
@@ -419,13 +417,14 @@ class Program18
     {
         Program18 obj = new Program18();
         obj.Display("Hello");
+        //String message: Hello
         obj.Display(10);
+        //Integer message: 10
+       
         obj.Display(5, "Custom Text");
+        //Number: 5, Text: Custom Text
     }
-// }
-// output:- String message: Hello
-//         Integer message: 10
-//         Number:5 , Text:Custom Text
+}
 
 19.
 using System;
@@ -447,13 +446,13 @@ class Program19
     {
         Program19 obj = new Program19();
         obj.CallPrivateMethod();
+        //Public method calling private method:
+        //Private method called
         
         obj.PrivateMethod();
+        //Private method called
     }
 }
-// output:- Public method calling private method:
-//          Private method called
-
 
 20.
 using System;
@@ -472,9 +471,9 @@ class Program20
         CalculateValues(3, out a, out b);
 
         Console.WriteLine($"Square: {a}, Cube: {b}");
+        //Square: 9, Cube: 27
     }
 }
-// output:-Square:9 , Cube: 27
 
 21.
 using System;
@@ -516,11 +515,10 @@ class Program21
         OuterClass outer = new OuterClass();
         outer.TestAccess();
         
-        OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();///error
+        OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();
+        //In inaccessible due to its protection level
     }
 }
-// output:- Accessing private instanceVar:10
-//          Accessing protected static variable:20
 
 22.
 using System;
@@ -560,16 +558,17 @@ class Program22
     {
         DerivedClass derived = new DerivedClass();
         derived.ShowProtectedVar();
+        //Protected Var from BaseClass: 100
+        //Protected Internal Method in BaseClass
+
         derived.Display();
+        //Overridden Message: Derived Class
         
         BaseClass baseRef = derived;
         baseRef.Display("Called from BaseClass reference");
+        //Overridden Message: Called from BaseClass reference
     }
 }
-// output:- Protected Var from BaseClass:100
-//          Protected Internal Method in BaseClass
-//          Overridden Message:Derived Class
-//          Message:Called from BaseClass reference
 
 23.
 using System;
@@ -604,13 +603,14 @@ class Program23
     {
         Program23 program = new Program23();
         program.AccessInternalMembers();
+        // Counter incremented to: 1
+        //Counter: 
 
         InternalClass.IncrementCounter();
+        //Counter incremented to: 2
     }
 }
-// output:- Counter incremented to:0
-//          Counter:1
-//          Counter incremented to:1
+
 24.
 using System;
 
@@ -637,7 +637,9 @@ class DerivedPrivateProtected : BasePrivateProtected
         public void AttemptAccess(DerivedPrivateProtected derived)
         {
             Console.WriteLine("baseVar: " + derived.baseVar);
+            
             derived.BaseMethod();
+            
         }
     }
 }
@@ -648,10 +650,12 @@ class Program24
     {
         DerivedPrivateProtected derived = new DerivedPrivateProtected();
         derived.AccessBaseMembers();
+        //Accessing baseVar in Derived: " 50
+        //BaseMethod called in BasePrivateProtected
+        
     }
 }
-// output:- Accessing baseVar in Derived:50
-//          BaseMethod called in BasePrivateProtected
+
 
 25.
 using System;
@@ -667,14 +671,14 @@ class AdvancedCalculator : BaseCalculator
 {
     public void CalculateValues(ref int x, out int y)
     {
-        y = Add(x, 10); // Using inherited public static method
-        x = Subtract(y, 5); // Using inherited private protected method
+        y = Add(x, 10); // Using inherited public static method // 15
+        x = Subtract(y, 5); // Using inherited private protected method //10
     }
 
     public static void Square(ref int x)
     {
         x *= x;
-    } 
+    }
 }
 
 class Program25
@@ -686,13 +690,14 @@ class Program25
 
         calculator.CalculateValues(ref value, out result);
         Console.WriteLine($"Value after calculations: {value}, Result: {result}");
+        //Value after calculations: 10, Result: 15
 
         AdvancedCalculator.Square(ref result);
         Console.WriteLine($"Square of Result: {result}");
+        //Square of Result: 225
     }
 }
-// output:- Value after calculations:10 , Result:15
-//          Square of Result:225
+
 26.
 using System;
 
@@ -708,9 +713,9 @@ class Program26
         int value = 5;
         int result = MultiplyByTwo(value);
         Console.WriteLine($"Original Value: {value}, After Multiplication: {result}");
+        //Original Value: 5, After Multiplication: 10
     }
 }
-// output: Original Value:5 , After Multiplication:10
 
 27.
 using System;
@@ -732,6 +737,7 @@ class Program27
     {
         Rectangle rect = CreateRectangle(5, 10);
         Console.WriteLine($"Rectangle - Length: {rect.Length}, Width: {rect.Width}");
+        //Rectangle - Length: 5, Width: 10
     }
 }
 28.
@@ -756,6 +762,7 @@ class Program28
         foreach (int num in evens)
         {
             Console.WriteLine(num);
+            //0,2,4,6,8
         }
     }
 }
@@ -781,8 +788,10 @@ class Program29
     {
         Person person = CreatePerson("Alice", 30);
         Console.WriteLine($"Person - Name: {person.Name}, Age: {person.Age}");
+        //Person - Name: Alice, Age: 30
 
         Console.WriteLine($"Name in uppercase: {person.Name.ToUpper()}");
+        //Name in uppercase: ALICE
     }
 }
 
@@ -813,12 +822,13 @@ class Program30
 
         int doubled = calc.DoubleValue(5);
         Console.WriteLine("Doubled Value: " + doubled);
+        //Doubled Value: 10
 
         Calculator updatedCalc = calc.IncreaseNumber(15);
-        Console.WriteLine($"Original Calculator Number: {calc.Number}");
-        Console.WriteLine($"Returned Calculator Number: {updatedCalc.Number}");
+        Console.WriteLine($"Original Calculator Number: {calc.Number}"); //25
+        Console.WriteLine($"Returned Calculator Number: {updatedCalc.Number}"); //25
 
-        Console.WriteLine("Are both references the same? " + (calc == updatedCalc));
+        Console.WriteLine("Are both references the same? " + (calc == updatedCalc)); //True
     }
 }
 
@@ -827,7 +837,7 @@ using System;
 
 namespace Program31
 {
-    static class StringExtensions
+    static class StringExtensions //ExtensionsClass
     {
         public static string Reverse(this string str)
         {
@@ -844,6 +854,7 @@ namespace Program31
             string message = "Hello World";
             string reversed = message.Reverse();
             Console.WriteLine("Reversed String: " + reversed);
+            //Reversed String: dlroW olleH
         }
     }
 }
@@ -861,7 +872,7 @@ namespace Program32
 
     static class PersonExtensions
     {
-        public static void DisplayInfo(Person person)
+        public static void DisplayInfo(this Person person)
         {
             Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
         }
@@ -873,12 +884,15 @@ namespace Program32
         {
             Person p = new Person { Name = "Alice", Age = 25 };
             
-            p.DisplayInfo();
+            p.DisplayInfo(); //Error
 
             PersonExtensions.DisplayInfo(p);
+            //Name: Alice , Age: 25
+ 
         }
     }
 }
+
 
 33.
 
@@ -903,8 +917,10 @@ namespace Program33
             value.DoubleValue();
 
             Console.WriteLine("Value: " + value);
+            
         }
     }
+    //Value: 10
 }
 
 34.
@@ -938,8 +954,9 @@ namespace Program34
         {
             Calculator calc = new Calculator { Value = 10 };
             
-            calc.Add(5).Multiply(3);
+            calc.Add(5).Multiply(3); //10+5=15 //15*3=45
             Console.WriteLine("Final Value: " + calc.Value);
+            //Final Value: 45
         }
     }
 }
@@ -973,10 +990,14 @@ namespace Program35
         {
             string email = "example@domain.com";
             Console.WriteLine("Is valid email: " + email.IsValidEmail());
+            //Is valid email: True
+
             Console.WriteLine("Masked email: " + email.MaskEmail());
+            //Masked email: *******@domain.com
 
             string invalidEmail = "invalid-email";
             Console.WriteLine("Masked invalid email: " + invalidEmail.MaskEmail());
+            //Masked invalid email: Invalid email
         }
     }
 }
