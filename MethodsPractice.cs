@@ -428,7 +428,7 @@ class Program20
         int a, b;
         CalculateValues(3, out a, out b);
 
-        Console.WriteLine($"Square: {a}, Cube: {b}");
+        Console.WriteLine($"Square: {a}, Cube: {b}");.
     }
 }
 
