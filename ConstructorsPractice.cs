@@ -1,13 +1,26 @@
-Please generate 20 practice constructors programs with multiple classes with static and non-static constructors also static and non-static methods and static and non-static variables and their accessibility their execution order how it will call and execute. please dont add any comments please generate 20 programs with complex and tricker approach.use base and this keywords as well for better understanding
+// Please generate 20 practice constructors programs with multiple classes with static and non-static constructors also static and non-static methods and static and non-static variables and their accessibility their execution order how it will call and execute. please dont add any comments please generate 20 programs with complex and tricker approach.use base and this keywords as well for better understanding
 1.
 class Program
 {
     static void Main()
     {
         Example ex1 = new Example();
+        /*
+        Example class is loaded.So Static Constructor will call first.
+        when new Example() -- Non Static Constructor will call
+        */
         Example ex2 = new Example();
+        /*
+        Here Example class is already loaded.(Static Constructor doesn't call).
+        when new Example() -- Non Static Constructor will call
+        */
     }
 }
+        /*
+        Static constructor called
+        Instance constructor called
+        Instance constructor called
+        */
 
 class Example
 {
@@ -43,12 +56,21 @@ class Derived : Base
         Console.WriteLine("Derived()");
     }
 }
-
 class Program
 {
     static void Main()
     {
         Derived d = new Derived();
+        /*
+        Derived Class will loaded first.Static constructor will(If there is no static Members default Static constructor will not call)
+        Derived() constructor will call
+
+        o/p:-
+        Base 0
+        Base()
+        Derived()
+
+        */
     }
 }
 
@@ -60,8 +82,8 @@ class Counter
 
     public Counter()
     {
-        staticCount++;
-        instanceCount++;
+        staticCount++;//1 2
+        instanceCount++;//1  1
     }
 
     public static void DisplayStaticCount()
@@ -83,8 +105,12 @@ class Program
         Counter c2 = new Counter();
 
         Counter.DisplayStaticCount();
+        //Static count: 2
         c1.DisplayInstanceCount();
+        //Instance count:1
         c2.DisplayInstanceCount();
+        //Instance count:1
+
     }
 }
 
@@ -112,6 +138,7 @@ class Program
         Singleton s1 = Singleton.GetInstance();
         Singleton s2 = Singleton.GetInstance();
         Console.WriteLine(s1 == s2);
+        //true
     }
 }
 5.---------------------------------------------------
@@ -145,8 +172,11 @@ class Program
         Person p3 = new Person("Bob", 30);
 
         p1.Display();
+        //Name: Unknown, Age: 0
         p2.Display();
+        //Name: Alice, Age: 0
         p3.Display();
+        //Name: Bob, Age: 30
     }
 }
 
@@ -338,6 +368,12 @@ class Program
     {
         Console.WriteLine("Example 6:");
         Derived6 d6 = new Derived6();
+        /*
+        Example 6:
+        Derived static constructor.
+        Base static constructorBase instance constructor
+        Derived instance constructor
+        */
 
         Console.WriteLine("\nExample 7:");
         Derived7 d7 = new Derived7();
