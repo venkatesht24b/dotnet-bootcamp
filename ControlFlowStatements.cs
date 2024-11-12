@@ -1,4 +1,5 @@
 
+
 1. If statement:
 
 ```c#
@@ -15,6 +16,7 @@ class Program
         }
     }
 }
+//X is greater than 5
 ``` 
 
 2. If-else statement:
@@ -37,6 +39,7 @@ class Program
         }
     }
 }
+//x is even
 ```
 3. If-else-if statement:
 
@@ -62,6 +65,7 @@ class Program
         }
     }
 }
+//x is postive
 ```
 4. Switch-case statement:
 
@@ -87,6 +91,7 @@ class Program
         }
     }
 }
+//x is 10
 ```
 5. For loop:
 
@@ -103,6 +108,11 @@ class Program
         }
     }
 }
+//0
+//    1
+//    2
+//    3
+//    4
 ```
 6. While loop:
 
@@ -121,6 +131,11 @@ class Program
         }
     }
 }
+//0
+//    1
+//    2
+//    3
+//    4
 ```
 7. Do-while loop:
 
@@ -139,6 +154,11 @@ class Program
         } while (i < 5);
     }
 }
+//0
+//    1
+//    2
+//    3
+//    4
 ```
 8. Nested if statement:
 
@@ -160,6 +180,7 @@ class Program
         }
     }
 }
+//x is greater than 5 and y is greater than 15
 ```
 9. Nested if-else statement:
 
@@ -189,6 +210,7 @@ class Program
         }
     }
 }
+//x is greater than 5 and y is greater than 15
 ```
 10. Nested if-else-if statement:
 
@@ -211,7 +233,7 @@ class Program
             {
                 Console.WriteLine("x is greater than 5 but y is not greater than 15");
             }
-           e lse
+           else
             {
                 Console.WriteLine("x is greater than 5 but y is not greater than 10");
             }
@@ -222,6 +244,7 @@ class Program
         }
     }
 }
+//x is greater than 5 and y is greater than 15
 11```c#
 
 using System;
@@ -245,6 +268,19 @@ class Program1
         }
     }
 }
+//0 1 0
+//    0 2 0
+//    0 2 1
+//1 0 0
+//    1 2 0
+//    1 2 1
+//    1 2 2
+//    2 0 0
+//    2 0 1
+//   2 1 0 
+//    2 1 1
+//    2 1 2
+
 12```c#
 using System;
 
@@ -296,6 +332,9 @@ class Program3
         }
     }
 }
+//a =6,b =5
+//    a=6,b =7
+
 14```c#
 using System;
 
@@ -323,6 +362,8 @@ class Program4
         } while (++i < 10);
     }
 }
+//ADBCBDADBC
+
 15```c#
 using System;
 
@@ -357,6 +398,17 @@ class Program6
         }
     }
 }
+//X
+//    Z
+//    Y
+//    X
+//    Y
+//    W
+//    X
+//    Z
+//    W
+//    X
+
 16```c#
 using System;
 
@@ -370,6 +422,16 @@ class Program7
         }
     }
 }
+//A 
+//    C
+//    A
+//    C
+//    A
+//    D
+//    B
+//    D
+//    B
+//    D
 
 17```c#
 using System;
@@ -393,6 +455,13 @@ class Program9
         } while (true);
     }
 }
+//O
+//   OE
+//   OEOE
+//   OEOEO
+//   OEOEOEO
+//   OEOEOEOE
+
 18```c#
 using System;
 
@@ -415,6 +484,14 @@ class Program9
         } while (true);
     }
 }
+//O
+//   OE
+//   OEOE
+//   OEOEO
+//   OEOEOEO
+//   OEOEOEOE
+
+
 19```c#
 using System;
 
@@ -459,6 +536,16 @@ class Program11
         } while (true);
     }
 }
+//O
+//   OE
+//   OEOE
+//   OEOEO
+//   OEOEOEO
+//   OEOEOEOE
+
+
+
+
 21```c#
 using System;
 
@@ -600,6 +687,14 @@ class Program
         } while (true);
     }
 }
+//O
+//   OE
+//   OEOE
+//   OEOEO
+//   OEOEOEO
+//   OEOEOEOE
+
+
 24```c#
 What are Extension Methods?
 Extension methods enable you to "add" methods to existing types without creating a new derived type, 

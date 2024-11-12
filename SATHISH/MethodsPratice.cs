@@ -21,10 +21,10 @@ class Program1
         Program1 obj = new Program1();
         obj.NonStaticMethod();
 
-        NonStaticMethod();  
+        NonStaticMethod(); //the non-static method should be called by using the obj(object). 
     }
 }
-
+//Non-static method called
 2. 
 using System;
 
@@ -333,7 +333,7 @@ class Program16
 
 17.
 using System;
-    C  
+
 class Program17
 {
     static int DoubleValue(ref int x)
@@ -354,7 +354,7 @@ class Program17
         IncrementValue(out a);
         int result = DoubleValue(ref a);
 
-       =]] Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
+        Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
 }
 
@@ -381,7 +381,7 @@ class Program18
     static void Main()
     {
         Program18 obj = new Program18();
-        obj.Dis play("Hello");
+        obj.Display("Hello");
         obj.Display(10);
         obj.Display(5, "Custom Text");
     }
@@ -393,7 +393,7 @@ using System;
 class Program19
 {
     private void PrivateMethod()
-    { 
+    {
         Console.WriteLine("Private method called");
     }
 
@@ -428,11 +428,11 @@ class Program20
         int a, b;
         CalculateValues(3, out a, out b);
 
-        Console.WriteLine($"Square: {a}, Cube: {b}");.
+        Console.WriteLine($"Square: {a}, Cube: {b}");
     }
 }
 
-21. 
+21.
 using System;
 
 class OuterClass
