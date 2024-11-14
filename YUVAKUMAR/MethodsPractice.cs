@@ -847,7 +847,7 @@ namespace Program31
 {
     static class StringExtensions
     {
-        public static string Reverse(this string str)
+        public static string Reverse(this string str)//
         {
             char[] charArray = str.ToCharArray();
             Array.Reverse(charArray);
@@ -865,6 +865,7 @@ namespace Program31
         }
     }
 }
+// olleh dlrow
 
 32.
 using System;
@@ -897,6 +898,7 @@ namespace Program32
         }
     }
 }
+//its a compile time error because above class is static class in class there is no instance thats why we call directly eith class member
 
 33.
 
@@ -924,6 +926,8 @@ namespace Program33
         }
     }
 }
+//10
+
 
 34.
 using System;
@@ -961,6 +965,7 @@ namespace Program34
         }
     }
 }
+//45
 
 35.
 
@@ -998,6 +1003,10 @@ namespace Program35
         }
     }
 }
+//Is valid email: True
+//Masked email: *******@domain.com
+//Masked invalid email: Invalid email
+
 
 
 
