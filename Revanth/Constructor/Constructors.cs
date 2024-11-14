@@ -90,6 +90,7 @@ class Utility
 
     public Utility()
     {
+
         GlobalCounter++;
     }
 }
@@ -123,6 +124,7 @@ When to Use: Use a copy constructor when you want to create a new object with th
 2. Constructor Calling Mechanism
 Order of Execution: Constructors are called when an object is created, starting with the base class constructor, followed by derived class constructors.
 Constructor Overloading: C# allows multiple constructors with different signatures in the same class (overloading). The appropriate constructor is selected based on the arguments passed during object creation.
+
 Example of Constructor Overloading:
 class Example
 {
@@ -188,4 +190,3 @@ Explanation:
 
 The static constructor is called only once, the first time the class Sample is used.
 Each time an object is created, the instance constructor is called.
-
