@@ -368,13 +368,7 @@ class Program
     {
         Console.WriteLine("Example 6:");
         Derived6 d6 = new Derived6();
-        /*
-        Example 6:
-        Derived static constructor.
-        Base static constructorBase instance constructor
-        Derived instance constructor
-        */
-
+        
         Console.WriteLine("\nExample 7:");
         Derived7 d7 = new Derived7();
 
