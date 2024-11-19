@@ -38,7 +38,7 @@ class Program2
             Console.WriteLine($"Key: {key}, Value: {table[key]}");
         }
 
-        Console.WriteLine(table["2"]); // Will this throw an error?
+        Console.WriteLine(table["2"]); 
     }
 }
 
@@ -60,7 +60,7 @@ class Program3
             Console.WriteLine($"{entry.Key} : {entry.Value}");
         }
 
-        // sortedList.Add("Four", 4); // Uncommenting this will throw an error at runtime
+        sortedList.Add("Four", 4); 
     }
 }
 
@@ -164,7 +164,7 @@ class Program8
         table[new Person("Alice")] = "Engineer";
         table[new Person("Bob")] = "Doctor";
 
-        Console.WriteLine(table[new Person("Alice")]); // Will this work?
+        Console.WriteLine(table[new Person("Alice")]);
     }
 }
 
