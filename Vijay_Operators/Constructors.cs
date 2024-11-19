@@ -1,26 +1,13 @@
-// Please generate 20 practice constructors programs with multiple classes with static and non-static constructors also static and non-static methods and static and non-static variables and their accessibility their execution order how it will call and execute. please dont add any comments please generate 20 programs with complex and tricker approach.use base and this keywords as well for better understanding
+Please generate 20 practice constructors programs with multiple classes with static and non-static constructors also static and non-static methods and static and non-static variables and their accessibility their execution order how it will call and execute. please dont add any comments please generate 20 programs with complex and tricker approach.use base and this keywords as well for better understanding
 1.
 class Program
 {
     static void Main()
     {
         Example ex1 = new Example();
-        /*
-        Example class is loaded.So Static Constructor will call first.
-        when new Example() -- Non Static Constructor will call
-        */
         Example ex2 = new Example();
-        /*
-        Here Example class is already loaded.(Static Constructor doesn't call).
-        when new Example() -- Non Static Constructor will call
-        */
     }
 }
-        /*
-        Static constructor called
-        Instance constructor called
-        Instance constructor called
-        */
 
 class Example
 {
@@ -34,7 +21,9 @@ class Example
         Console.WriteLine("Instance constructor called");
     }
 }
-
+// output:- Static constructor called
+//          Instance constructor called
+//          Instance constructor called
 2.-------------------------------------------------------------
 class Base
 {
@@ -56,24 +45,17 @@ class Derived : Base
         Console.WriteLine("Derived()");
     }
 }
+
 class Program
 {
     static void Main()
     {
         Derived d = new Derived();
-        /*
-        Derived Class will loaded first.Static constructor will(If there is no static Members default Static constructor will not call)
-        Derived() constructor will call
-
-        o/p:-
-        Base 0
-        Base()
-        Derived()
-
-        */
     }
 }
-
+// output:- Base(0)
+//     `    base()
+//          Derived()
 3.-------------------------------------------------------
 class Counter
 {
@@ -82,8 +64,8 @@ class Counter
 
     public Counter()
     {
-        staticCount++;//1 2
-        instanceCount++;//1  1
+        staticCount++;
+        instanceCount++;
     }
 
     public static void DisplayStaticCount()
@@ -96,7 +78,7 @@ class Counter
         Console.WriteLine($"Instance count: {instanceCount}");
     }
 }
-
+// 
 class Program
 {
     static void Main()
@@ -105,14 +87,13 @@ class Program
         Counter c2 = new Counter();
 
         Counter.DisplayStaticCount();
-        //Static count: 2
         c1.DisplayInstanceCount();
-        //Instance count:1
         c2.DisplayInstanceCount();
-        //Instance count:1
-
     }
 }
+//output:-Static count:2
+//         Instance count:1
+//         Instance count:1
 
 4.----------------------------------------------------------
 class Singleton
@@ -138,9 +119,9 @@ class Program
         Singleton s1 = Singleton.GetInstance();
         Singleton s2 = Singleton.GetInstance();
         Console.WriteLine(s1 == s2);
-        //true
     }
 }
+//output:- true
 5.---------------------------------------------------
 class Person
 {
@@ -172,14 +153,14 @@ class Program
         Person p3 = new Person("Bob", 30);
 
         p1.Display();
-        //Name: Unknown, Age: 0
         p2.Display();
-        //Name: Alice, Age: 0
         p3.Display();
-        //Name: Bob, Age: 30
     }
 }
-
+// output:-
+// Name: Unknown, Age: 0
+// Name: Alice, Age: 0
+// Name: Bob, Age: 30
 6.----------------------------------------------
 class Base6
 {
@@ -368,9 +349,9 @@ class Program
     {
         Console.WriteLine("Example 6:");
         Derived6 d6 = new Derived6();
-        
+
         Console.WriteLine("\nExample 7:");
-        Derived7 d7 = new Derived7();
+        Der`ived7 d7 = new Derived7();
 
         Console.WriteLine("\nExample 8:");
         MainClass mc = new MainClass();
@@ -414,7 +395,7 @@ class Mammal : Animal
 {
     protected string habitat;
     
-    public Mammal(string species, string habitat) : base("yuva")
+    public Mammal(string species, string habitat) : base(species)
     {
         this.habitat = habitat;
         Console.WriteLine($"Mammal constructor: {habitat}");
@@ -437,24 +418,6 @@ class Dog : Mammal
         Console.WriteLine($"Dog constructor: {breed}");
     }
 }
-class Program
-{
-    static void Main()
-    {
-        // Test each example here
-        Console.WriteLine("Example 1:");
-        var dog = new Dog("Labrador");
-        dog.MakeSound();
-
-        // Console.WriteLine("\nExample 2:");
-
-        // Console.WriteLine("\nExample 3:");
-        // var child = new Child();
-
-        // Add more test cases for other examples
-    }
-}
-
 
 // Example 2: Constructor chaining between sibling classes
 class Vehicle
@@ -483,7 +446,7 @@ class Car : Vehicle
 
 class SportsCar : Car
 {
-    private int horsePower;a 
+    private int horsePower;
     
     public SportsCar(string model, int horsePower) : base(model, "Sports")
     {

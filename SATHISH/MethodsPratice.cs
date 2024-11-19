@@ -24,8 +24,8 @@ class Program1
         NonStaticMethod(); //the non-static method should be called by using the obj(object). 
     }
 }
-//Non-static method called
-2. 
+//ERROR     ``
+2.
 using System;
 
 class Program2
@@ -44,7 +44,8 @@ class Program2
         Console.WriteLine("After: " + number);
     }
 }
-
+// Before: 5
+// After: 15
 3.
 using System;
 
@@ -63,7 +64,7 @@ class Program3
         Console.WriteLine($"Doubled: {a}, Tripled: {b}");
     }
 }
-
+//Doubled:6, Tripled: 9
 4. 
 using System;
 
@@ -83,7 +84,7 @@ class Program4
         Console.WriteLine("After modification: " + number);
     }
 }
-
+// After modification: 15
 5. 
 using System;
 
@@ -101,10 +102,13 @@ class Program5
         PrintDetails("Charlie", 30, "Canada");
     }
 }
+/*Name: ALice, Age 18, Country USA
+  Name: Bob, Age 25, Country USA
+  Name: Charlie, Age 30, Country: Canada*/
 6.
 using System;
 
-class Program6
+class Program6a
 {
     static void UpdateValue(ref int value, int increment = 5)
     {
@@ -122,6 +126,7 @@ class Program6
         Console.WriteLine("After custom increment: " + number);
     }
 }
+//After default increment:15, After custom increment:30
 7.
 using System;
 
@@ -140,7 +145,7 @@ class Program7
         Console.WriteLine($"Generated numbers: {a} and {b}");
     }
 }
-
+//Generated numbers: 10 and 20
 8.
 using System;
 
@@ -160,6 +165,7 @@ class Program8
         Calculate(out int result);
     }
 }
+//ERROR, because there no value for Y in the parameter and the variable is already declared 
 9.
 using System;
 
@@ -177,7 +183,7 @@ class Program9
         DisplayInfo("Bob", country: "Canada");
     }
 }
-
+//we can't  convert string to int 
 10.
 using System;
 
@@ -199,7 +205,7 @@ class Program10
         ModifyNumbers(ref a, out b);
     }
 }
-
+//Modified a: 10, Calculated b: 20
 11.
 using System;
 
@@ -222,7 +228,8 @@ class Program11
         Console.WriteLine($"After ModifyValues with increment 10 - a: {a}, b: {b}");
     }
 }
-
+//After ModifyValues - a: 15, b: 30
+//After ModifyValues with increment 10 - a: 25, b: 50
 12.
 using System;
 
@@ -247,6 +254,7 @@ class Program12
         StaticMethod();
     }
 }
+//ERROR
 13.
 using System;
 
@@ -269,6 +277,9 @@ class Program13
         Calculate(1, 2, 3);
     }
 }
+//10
+//15
+//6
 14.
 using System;
 
@@ -289,7 +300,8 @@ class Program14
         Console.WriteLine("After: " + string.Join(", ", numbers));
     }
 }
-
+//Before: 1,2,3
+//After: 9,8,7
 15.
 using System;
 
@@ -309,7 +321,16 @@ class Program15
         PrintNumbers(1);
     }
 }
-
+/*count:1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10*/
 16.
 using System;
 
@@ -330,7 +351,12 @@ class Program16
         DisplayMessage("Custom Upper", 3, true);
     }
 }
-
+/*Hello
+  Custom Message
+  CUstom Message
+  Custom Upper
+  Custom Upper
+  Custom Upper*/
 17.
 using System;
 
@@ -357,7 +383,8 @@ class Program17
         Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
 }
-
+//Final Result: 12
+//Modified  Value: 12
 18.
 using System;
 
@@ -386,7 +413,9 @@ class Program18
         obj.Display(5, "Custom Text");
     }
 }
-
+//String: Hello
+//Integer message: 10
+//Number: 5, Text: Default Text
 19.
 using System;
 
@@ -411,7 +440,8 @@ class Program19
         obj.PrivateMethod();
     }
 }
-
+//Public method calling private method:
+//Private method called
 20.
 using System;
 
@@ -431,7 +461,7 @@ class Program20
         Console.WriteLine($"Square: {a}, Cube: {b}");
     }
 }
-
+//Square: 9, Cube: 27
 21.
 using System;
 
@@ -475,7 +505,7 @@ class Program21
         OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();
     }
 }
-
+//throwing error due to its protection level
 22.
 using System;
 
@@ -520,7 +550,10 @@ class Program22
         baseRef.Display("Called from BaseClass reference");
     }
 }
-
+//Protected Var from BaseClass: 100
+//Protected Internal Method in BaseClass
+//Overridden Message: DerivedClass
+//Overridden Message: Called from BaseClass reference
 23.
 using System;
 
@@ -558,7 +591,7 @@ class Program23
         InternalClass.IncrementCounter();
     }
 }
-
+//Counter incremented to: 1
 24.
 using System;
 
@@ -598,8 +631,8 @@ class Program24
         derived.AccessBaseMembers();
     }
 }
-
-
+//Accessing baseVar in Derived: 50
+//BaseMethod called in BasePrivateProtected
 25.
 using System;
 
@@ -638,7 +671,8 @@ class Program25
         Console.WriteLine($"Square of Result: {result}");
     }
 }
-
+//Value after calculations: 15-5=10, Result: 10+5=15
+//Square of Result: 15*15=225
 26.
 using System;
 
@@ -656,7 +690,7 @@ class Program26
         Console.WriteLine($"Original Value: {value}, After Multiplication: {result}");
     }
 }
-
+//"Original Value: 5, After Multiplication: 10
 27.
 using System;
 
@@ -679,6 +713,7 @@ class Program27
         Console.WriteLine($"Rectangle - Length: {rect.Length}, Width: {rect.Width}");
     }
 }
+//Rectangle - Length: 5, Width: 10
 28.
 using System;
 
@@ -704,7 +739,7 @@ class Program28
         }
     }
 }
-
+//Generated Even Numbers: 0,2,4,6,8
 29.
 using System;
 
@@ -730,7 +765,8 @@ class Program29
         Console.WriteLine($"Name in uppercase: {person.Name.ToUpper()}");
     }
 }
-
+//Person - Name: Alice, Age: 30
+//Name in uppercase: ALICE
 30.
 using System;
 
@@ -766,7 +802,10 @@ class Program30
         Console.WriteLine("Are both references the same? " + (calc == updatedCalc));
     }
 }
-
+//Doubled Value: 10
+//Original Calculator Number: 25
+//Returned Calculator Number: 25
+//Are both references the same?- True
 31.
 using System;
 
@@ -792,7 +831,7 @@ namespace Program31
         }
     }
 }
-
+//Reversed String: dlroW olleH
 32.
 using System;
 
@@ -824,7 +863,7 @@ namespace Program32
         }
     }
 }
-
+//ERROR, because the person doesnot contain any DisplayInfo
 33.
 
 using System;
@@ -851,6 +890,7 @@ namespace Program33
         }
     }
 }
+//Value: 10
 
 34.
 using System;
@@ -888,7 +928,7 @@ namespace Program34
         }
     }
 }
-
+//Final Value: 45
 35.
 
 using System;
@@ -925,6 +965,10 @@ namespace Program35
         }
     }
 }
+//Is valid email: True
+//Is valid email: *******@domain@com
+//Masked invalid email: Invalid email
+
 
 
 
