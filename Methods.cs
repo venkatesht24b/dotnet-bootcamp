@@ -1,7 +1,9 @@
+
 What is a method in c#?
 =======================================================================================
 A method is a block of code that performs a specific task. It is a collection of statements that are executed when the method is called. 
-Methods are used to break down a program into smaller, manageable pieces, making it easier to read and maintain. Methods can be called multiple times, allowing for code reuse. 
+Methods are used to break down a program into smaller, manageable pieces, making it easier to read and maintain. Methods can be called multiple times, 
+allowing for code reuse. 
 They can also take parameters, which allow for more flexibility in their behavior.
 Syntax:
 =======================================================================================
@@ -432,3 +434,4 @@ Console.WriteLine(reversed); // Outputs "!dlroW ,olleH"
 
 In this way, extension methods provide a way to add functionality to existing types without modifying their source code. They are a powerful feature of C# that allows for a more expressive and flexible programming paradigm.
 
+    

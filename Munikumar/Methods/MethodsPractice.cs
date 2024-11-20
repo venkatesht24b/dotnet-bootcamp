@@ -1,17 +1,13 @@
 1.
 using System;
-
 class Program1
 {
-    public static void StaticMethod()
-    {
-        Console.WriteLine("Static method called.");
-    }
+    public static void StaticMethod() => Console.WriteLine("Static method called.");
 
     public void NonStaticMethod()
     {
         Console.WriteLine("Non-static method called.");
-        StaticMethod(); 
+        StaticMethod();
     }
 
     static void Main()
@@ -21,19 +17,18 @@ class Program1
         Program1 obj = new Program1();
         obj.NonStaticMethod();
 
-        NonStaticMethod();  
+        NonStaticMethod();  // Error: Cannot call non-static method in a static context
     }
 }
-
-2. 
-using System;
-
+Output:
+Static method called.
+Non -static method called.
+Static method called.
+Error:Program1.Main() error: NonStaticMethod cannot be called in a static context.
+2.
 class Program2
 {
-    static void ModifyValue(ref int value)
-    {
-        value += 10;
-    }
+    static void ModifyValue(ref int value) => value += 10;
 
     static void Main()
     {
@@ -44,10 +39,10 @@ class Program2
         Console.WriteLine("After: " + number);
     }
 }
-
+Output:
+Before: 5
+After: 15
 3.
-using System;
-
 class Program3
 {
     static void CalculateValues(int input, out int doubled, out int tripled)
@@ -63,30 +58,24 @@ class Program3
         Console.WriteLine($"Doubled: {a}, Tripled: {b}");
     }
 }
-
-4. 
-using System;
-
+Output:
+Doubled: 6, Tripled: 9
+4.
 class Program4
 {
-    static void ModifyValue(ref int value)
-    {
-        value += 10;
-    }
+    static void ModifyValue(ref int value) => value += 10;
 
     static void Main()
     {
-        ModifyValue(ref value);
+        ModifyValue(ref value);  // Error: 'value' is not defined here
 
         int number = 5;
         ModifyValue(ref number);
         Console.WriteLine("After modification: " + number);
     }
 }
-
+Error: 'value' must be declared before it can be used as a ref parameter.
 5. 
-using System;
-
 class Program5
 {
     static void PrintDetails(string name, int age = 18, string country = "USA")
@@ -101,15 +90,14 @@ class Program5
         PrintDetails("Charlie", 30, "Canada");
     }
 }
+Output:
+Name: Alice, Age: 18, Country: USA
+Name: Bob, Age: 25, Country: USA
+Name: Charlie, Age: 30, Country: Canada
 6.
-using System;
-
 class Program6
 {
-    static void UpdateValue(ref int value, int increment = 5)
-    {
-        value += increment;
-    }
+    static void UpdateValue(ref int value, int increment = 5) => value += increment;
 
     static void Main()
     {
@@ -122,9 +110,10 @@ class Program6
         Console.WriteLine("After custom increment: " + number);
     }
 }
+Output:
+After default increment: 15
+After custom increment: 30
 7.
-using System;
-
 class Program7
 {
     static void GenerateNumbers(out int x, out int y)
@@ -140,16 +129,12 @@ class Program7
         Console.WriteLine($"Generated numbers: {a} and {b}");
     }
 }
-
-8.
-using System;
-
+Output:
+Generated numbers: 10 and 20
+8. 
 class Program8
 {
-    static void Calculate(out int x, int y)
-    {
-        x = y * 2;
-    }
+    static void Calculate(out int x, int y) => x = y * 2;
 
     static void Main()
     {
@@ -157,12 +142,11 @@ class Program8
         Calculate(out result, 5);
         Console.WriteLine(result);
 
-        Calculate(out int result);
+        Calculate(out int result);  // Error: Missing argument for parameter 'y' in 'Calculate'.
     }
 }
+Error: No overload for method 'Calculate' takes 1 argument.
 9.
-using System;
-
 class Program9
 {
     static void DisplayInfo(string name, int age = 18, string country = "USA")
@@ -172,15 +156,13 @@ class Program9
 
     static void Main()
     {
-        DisplayInfo("Alice", "Canada");
+        DisplayInfo("Alice", "Canada");  // Error: Incorrect argument types for age and country
 
         DisplayInfo("Bob", country: "Canada");
     }
 }
-
+Error: Argument 2: cannot convert from 'string' to 'int'.
 10.
-using System;
-
 class Program10
 {
     static void ModifyNumbers(ref int x, out int y)
@@ -199,9 +181,10 @@ class Program10
         ModifyNumbers(ref a, out b);
     }
 }
-
+Output:
+Modified a: 10, Calculated b: 20
+Modified a: 20, Calculated b: 30
 11.
-using System;
 
 class Program11
 {
@@ -214,31 +197,25 @@ class Program11
     static void Main()
     {
         int a = 10, b;
-        
+
         ModifyValues(ref a, out b);
         Console.WriteLine($"After ModifyValues - a: {a}, b: {b}");
 
-        ModifyValues(ref a, out b, 10); // Custom increment
+        ModifyValues(ref a, out b, 10);
         Console.WriteLine($"After ModifyValues with increment 10 - a: {a}, b: {b}");
     }
 }
-
+Output:
+After ModifyValues -a: 15, b: 30
+After ModifyValues with increment 10 - a: 25, b: 50
 12.
-using System;
-
 class Program12
 {
     public int instanceValue = 100;
 
-    public static void StaticMethod()
-    {
-        Console.WriteLine("Instance Value: " + instanceValue);
-    }
+    public static void StaticMethod() => Console.WriteLine("Instance Value: " + instanceValue); // Error: Static method cannot access instance members
 
-    public void InstanceMethod()
-    {
-        Console.WriteLine("Instance Value: " + instanceValue);
-    }
+    public void InstanceMethod() => Console.WriteLine("Instance Value: " + instanceValue);
 
     static void Main()
     {
@@ -247,6 +224,7 @@ class Program12
         StaticMethod();
     }
 }
+Error: Cannot access non -static field 'instanceValue' in a static context.
 13.
 using System;
 
@@ -269,6 +247,11 @@ class Program13
         Calculate(1, 2, 3);
     }
 }
+output:
+Product: 10
+Product: 15
+Sum: 6
+
 14.
 using System;
 
@@ -285,11 +268,13 @@ class Program14
         int[] numbers = { 1, 2, 3 };
         Console.WriteLine("Before: " + string.Join(", ", numbers));
         
-        ModifyArray(ref numbers); 
+        ModifyArray(ref numbers);
         Console.WriteLine("After: " + string.Join(", ", numbers));
     }
 }
-
+output:
+Before:1,2,3
+After: 9, 8, 7
 15.
 using System;
 
@@ -309,6 +294,16 @@ class Program15
         PrintNumbers(1);
     }
 }
+output:1
+       2
+       3
+       4
+       5
+       6
+       7
+       8
+       9
+      10
 
 16.
 using System;
@@ -330,10 +325,15 @@ class Program16
         DisplayMessage("Custom Upper", 3, true);
     }
 }
-
+output:Hello
+       Custom Message
+       Custom Message
+       CUSTOM UPPER
+       CUSTOM UPPER
+       CUSTOM UPPER
 17.
 using System;
-    C  
+
 class Program17
 {
     static int DoubleValue(ref int x)
@@ -354,9 +354,10 @@ class Program17
         IncrementValue(out a);
         int result = DoubleValue(ref a);
 
-       =]] Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
+        Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
 }
+output: Final Result: 12, Modified Value: 12
 
 18.
 using System;
@@ -381,11 +382,15 @@ class Program18
     static void Main()
     {
         Program18 obj = new Program18();
-        obj.Dis play("Hello");
+        obj.Display("Hello");
         obj.Display(10);
         obj.Display(5, "Custom Text");
     }
 }
+output:
+String message: Hello
+Integer message: 10
+Number: 5, Text: Custom Text
 
 19.
 using System;
@@ -393,7 +398,7 @@ using System;
 class Program19
 {
     private void PrivateMethod()
-    { 
+    {
         Console.WriteLine("Private method called");
     }
 
@@ -411,7 +416,10 @@ class Program19
         obj.PrivateMethod();
     }
 }
-
+output:
+Public method calling private method:
+Private method called
+Private method called
 20.
 using System;
 
@@ -428,11 +436,13 @@ class Program20
         int a, b;
         CalculateValues(3, out a, out b);
 
-        Console.WriteLine($"Square: {a}, Cube: {b}");.
+        Console.WriteLine($"Square: {a}, Cube: {b}");
     }
 }
+output:
+Square: 9, Cube: 27
 
-21. 
+21.
 using System;
 
 class OuterClass
@@ -463,6 +473,7 @@ class OuterClass
 
         InnerProtectedClass.AccessProtectedStatic();
     }
+    
 }
 
 class Program21
@@ -472,9 +483,13 @@ class Program21
         OuterClass outer = new OuterClass();
         outer.TestAccess();
         
-        OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();
+        OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();//OuterClass.InnerPrivateClass' is inaccessible due to its protection level
     }
 }
+output:
+Accessing private instanceVar: 10
+Accessing protected static variable: 20
+Error: OuterClass.InnerPrivateClass' is inaccessible due to its protection level
 
 22.
 using System;
@@ -520,6 +535,12 @@ class Program22
         baseRef.Display("Called from BaseClass reference");
     }
 }
+output:
+Protected Var from BaseClass: 100
+Protected Internal Method in BaseClass
+Overridden Message: Derived Class
+Overridden Message: Called from BaseClass reference
+
 
 23.
 using System;
@@ -558,7 +579,10 @@ class Program23
         InternalClass.IncrementCounter();
     }
 }
-
+output:
+Counter incremented to:1
+Counter:1
+Counter incremented to:2
 24.
 using System;
 
@@ -598,7 +622,9 @@ class Program24
         derived.AccessBaseMembers();
     }
 }
-
+output:
+Accessing baseVar in Derived: 50
+BaseMethod called in BasePrivateProtected
 
 25.
 using System;
@@ -638,7 +664,9 @@ class Program25
         Console.WriteLine($"Square of Result: {result}");
     }
 }
-
+output:
+Value after calculations: 10, Result: 15
+Square of Result: 225
 26.
 using System;
 
@@ -656,7 +684,8 @@ class Program26
         Console.WriteLine($"Original Value: {value}, After Multiplication: {result}");
     }
 }
-
+output:
+Original Value:5 , After Multiplication: 10
 27.
 using System;
 
@@ -679,6 +708,8 @@ class Program27
         Console.WriteLine($"Rectangle - Length: {rect.Length}, Width: {rect.Width}");
     }
 }
+output:
+Rectangle - Length: 5, Width: 10
 28.
 using System;
 
@@ -697,14 +728,12 @@ class Program28
     static void Main()
     {
         int[] evens = GenerateEvenNumbers(5);
-        Console.WriteLine("Generated Even Numbers:");
-        foreach (int num in evens)
-        {
-            Console.WriteLine(num);
-        }
+        Console.WriteLine("Generated Even Numbers:"+string.Join(",",evens));
+        
     }
 }
-
+output:
+Generated Even Numbers: 0,2,4,6,8
 29.
 using System;
 
@@ -730,7 +759,9 @@ class Program29
         Console.WriteLine($"Name in uppercase: {person.Name.ToUpper()}");
     }
 }
-
+output:
+Person - Name: Alice, Age: 30
+Name in uppercase: ALICE
 30.
 using System;
 
@@ -749,12 +780,11 @@ class Calculator
         return this;
     }
 }
-
 class Program30
 {
     static void Main()
     {
-        Calculator calc = new Calculator { Number = 10 };
+        Calculator calc = new Calculator() { Number = 10 };
 
         int doubled = calc.DoubleValue(5);
         Console.WriteLine("Doubled Value: " + doubled);
@@ -766,7 +796,11 @@ class Program30
         Console.WriteLine("Are both references the same? " + (calc == updatedCalc));
     }
 }
-
+output:
+Doubled Value: 10
+Original Calculator Number: 25
+Returned Calculator Number: 25
+Are both references the same? True
 31.
 using System;
 
@@ -792,7 +826,8 @@ namespace Program31
         }
     }
 }
-
+output:
+Reversed String: dlroW olleH
 32.
 using System;
 
@@ -824,6 +859,8 @@ namespace Program32
         }
     }
 }
+output:
+Name: Alice, Age: 25
 
 33.
 
@@ -851,6 +888,8 @@ namespace Program33
         }
     }
 }
+output:
+Value: 10
 
 34.
 using System;
@@ -888,7 +927,8 @@ namespace Program34
         }
     }
 }
-
+output:
+Final Value: 45
 35.
 
 using System;
@@ -925,6 +965,10 @@ namespace Program35
         }
     }
 }
+output:
+Is valid email: true
+Masked email: *******@domain.com
+Masked invalid email: Invalid email
 
 
 

@@ -24,7 +24,8 @@ class Program1
         NonStaticMethod();  
     }
 }
-
+//output:- Static method called.
+        ///Non-static method called.
 2. 
 using System;
 
@@ -44,7 +45,8 @@ class Program2
         Console.WriteLine("After: " + number);
     }
 }
-
+//output:- Before:5
+        ///after:10
 3.
 using System;
 
@@ -63,6 +65,7 @@ class Program3
         Console.WriteLine($"Doubled: {a}, Tripled: {b}");
     }
 }
+//output:-  Doubled: 6 , Tripled: 9
 
 4. 
 using System;
@@ -83,7 +86,8 @@ class Program4
         Console.WriteLine("After modification: " + number);
     }
 }
-
+//output:-The name 'value' does not exist in the current context
+ 
 5. 
 using System;
 
@@ -101,6 +105,9 @@ class Program5
         PrintDetails("Charlie", 30, "Canada");
     }
 }
+// output:- Name:Alice , Age: 18 , Country: USA
+//          Name:Bob , Age: 25 , Country: USA
+//          Name:Charile , Age: 30 , Country: Canada
 6.
 using System;
 
@@ -122,6 +129,9 @@ class Program6
         Console.WriteLine("After custom increment: " + number);
     }
 }
+// output:- After default increment: 15
+//          After custom increment: 25
+
 7.
 using System;
 
@@ -140,7 +150,7 @@ class Program7
         Console.WriteLine($"Generated numbers: {a} and {b}");
     }
 }
-
+//output:- Generated numbers: 10 and 20 
 8.
 using System;
 
@@ -157,7 +167,7 @@ class Program8
         Calculate(out result, 5);
         Console.WriteLine(result);
 
-        Calculate(out int result);
+        Calculate(out int result);//error
     }
 }
 9.
@@ -174,11 +184,12 @@ class Program9
     {
         DisplayInfo("Alice", "Canada");
 
-        DisplayInfo("Bob", country: "Canada");
+        DisplayInfo("Bob", country: "Canada");//error
     }
 }
+//output:- Name: Alice , Age: 18 ,Country:canada
 
-10.
+
 using System;
 
 class Program10
@@ -197,8 +208,10 @@ class Program10
         Console.WriteLine($"Modified a: {a}, Calculated b: {b}");
 
         ModifyNumbers(ref a, out b);
+        .
     }
 }
+//output:- Modified a: 10 ,  Calculated b:20
 
 11.
 using System;
@@ -210,16 +223,17 @@ class Program11
         x += increment;
         y = x * 2;
     }
-
+.0
     static void Main()
     {
         int a = 10, b;
         
         ModifyValues(ref a, out b);
         Console.WriteLine($"After ModifyValues - a: {a}, b: {b}");
-
+        //After ModifyValues - a:15 , b: 30
         ModifyValues(ref a, out b, 10); // Custom increment
         Console.WriteLine($"After ModifyValues with increment 10 - a: {a}, b: {b}");
+        //After ModifyValues with increment 10 - a:25 , b: 50
     }
 }
 
@@ -247,6 +261,8 @@ class Program12
         StaticMethod();
     }
 }
+// output:- Instance Value:100
+//         Instance Value:100
 13.
 using System;
 
@@ -269,6 +285,9 @@ class Program13
         Calculate(1, 2, 3);
     }
 }
+// output:- product: 10
+//          product: 15
+//          sum:10
 14.
 using System;
 
@@ -285,10 +304,12 @@ class Program14
         int[] numbers = { 1, 2, 3 };
         Console.WriteLine("Before: " + string.Join(", ", numbers));
         
-        ModifyArray(ref numbers); 
+        ModifyArray(ref numbers);
         Console.WriteLine("After: " + string.Join(", ", numbers));
     }
 }
+//output:-  Before: 1,2,3
+           //After: 9,8,7
 
 15.
 using System;
@@ -309,6 +330,15 @@ class Program15
         PrintNumbers(1);
     }
 }
+// output:- 1
+//          2
+//          3
+//          4
+//          5
+//          6
+//          7
+//          8
+//          9
 
 16.
 using System;
@@ -330,10 +360,16 @@ class Program16
         DisplayMessage("Custom Upper", 3, true);
     }
 }
+// output:-Hello
+//         custom Message
+//         custom Message
+//         CUSTOM UPPER
+//         CUSTOM UPPER
+//         CUSTOM UPPER
 
 17.
 using System;
-    C  
+
 class Program17
 {
     static int DoubleValue(ref int x)
@@ -354,9 +390,10 @@ class Program17
         IncrementValue(out a);
         int result = DoubleValue(ref a);
 
-       =]] Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
+        Console.WriteLine($"Final Result: {result}, Modified Value: {a}");
     }
 }
+//output:- Final Result: 22 ,Modified Value:22
 
 18.
 using System;
@@ -381,11 +418,14 @@ class Program18
     static void Main()
     {
         Program18 obj = new Program18();
-        obj.Dis play("Hello");
+        obj.Display("Hello");
         obj.Display(10);
         obj.Display(5, "Custom Text");
     }
-}
+// }
+// output:- String message: Hello
+//         Integer message: 10
+//         Number:5 , Text:Custom Text
 
 19.
 using System;
@@ -393,7 +433,7 @@ using System;
 class Program19
 {
     private void PrivateMethod()
-    { 
+    {
         Console.WriteLine("Private method called");
     }
 
@@ -411,6 +451,9 @@ class Program19
         obj.PrivateMethod();
     }
 }
+// output:- Public method calling private method:
+//          Private method called
+
 
 20.
 using System;
@@ -428,11 +471,12 @@ class Program20
         int a, b;
         CalculateValues(3, out a, out b);
 
-        Console.WriteLine($"Square: {a}, Cube: {b}");.
+        Console.WriteLine($"Square: {a}, Cube: {b}");
     }
 }
+// output:-Square:9 , Cube: 27
 
-21. 
+21.
 using System;
 
 class OuterClass
@@ -472,9 +516,11 @@ class Program21
         OuterClass outer = new OuterClass();
         outer.TestAccess();
         
-        OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();
+        OuterClass.InnerPrivateClass privateInner = new OuterClass.InnerPrivateClass();///error
     }
 }
+// output:- Accessing private instanceVar:10
+//          Accessing protected static variable:20
 
 22.
 using System;
@@ -520,6 +566,10 @@ class Program22
         baseRef.Display("Called from BaseClass reference");
     }
 }
+// output:- Protected Var from BaseClass:100
+//          Protected Internal Method in BaseClass
+//          Overridden Message:Derived Class
+//          Message:Called from BaseClass reference
 
 23.
 using System;
@@ -558,7 +608,9 @@ class Program23
         InternalClass.IncrementCounter();
     }
 }
-
+// output:- Counter incremented to:0
+//          Counter:1
+//          Counter incremented to:1
 24.
 using System;
 
@@ -598,7 +650,8 @@ class Program24
         derived.AccessBaseMembers();
     }
 }
-
+// output:- Accessing baseVar in Derived:50
+//          BaseMethod called in BasePrivateProtected
 
 25.
 using System;
@@ -621,7 +674,7 @@ class AdvancedCalculator : BaseCalculator
     public static void Square(ref int x)
     {
         x *= x;
-    }
+    } 
 }
 
 class Program25
@@ -638,7 +691,8 @@ class Program25
         Console.WriteLine($"Square of Result: {result}");
     }
 }
-
+// output:- Value after calculations:10 , Result:15
+//          Square of Result:225
 26.
 using System;
 
@@ -656,6 +710,7 @@ class Program26
         Console.WriteLine($"Original Value: {value}, After Multiplication: {result}");
     }
 }
+// output: Original Value:5 , After Multiplication:10
 
 27.
 using System;
