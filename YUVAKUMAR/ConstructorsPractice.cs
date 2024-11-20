@@ -368,7 +368,13 @@ class Program
     {
         Console.WriteLine("Example 6:");
         Derived6 d6 = new Derived6();
-        
+        /*
+        Example 6:
+        Derived static constructor.
+        Base static constructorBase instance constructor
+        Derived instance constructor
+        */
+
         Console.WriteLine("\nExample 7:");
         Derived7 d7 = new Derived7();
 
@@ -414,7 +420,7 @@ class Mammal : Animal
 {
     protected string habitat;
     
-    public Mammal(string species, string habitat) : base("yuva")
+    public Mammal(string species, string habitat) : base(species)
     {
         this.habitat = habitat;
         Console.WriteLine($"Mammal constructor: {habitat}");
@@ -437,24 +443,6 @@ class Dog : Mammal
         Console.WriteLine($"Dog constructor: {breed}");
     }
 }
-class Program
-{
-    static void Main()
-    {
-        // Test each example here
-        Console.WriteLine("Example 1:");
-        var dog = new Dog("Labrador");
-        dog.MakeSound();
-
-        // Console.WriteLine("\nExample 2:");
-
-        // Console.WriteLine("\nExample 3:");
-        // var child = new Child();
-
-        // Add more test cases for other examples
-    }
-}
-
 
 // Example 2: Constructor chaining between sibling classes
 class Vehicle
@@ -483,7 +471,7 @@ class Car : Vehicle
 
 class SportsCar : Car
 {
-    private int horsePower;a 
+    private int horsePower;
     
     public SportsCar(string model, int horsePower) : base(model, "Sports")
     {
