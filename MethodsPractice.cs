@@ -285,7 +285,7 @@ class Program14
         int[] numbers = { 1, 2, 3 };
         Console.WriteLine("Before: " + string.Join(", ", numbers));
         
-        ModifyArray(ref numbers);
+        ModifyArray(ref numbers); 
         Console.WriteLine("After: " + string.Join(", ", numbers));
     }
 }
