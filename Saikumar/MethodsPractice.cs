@@ -21,9 +21,13 @@ class Program1
         Program1 obj = new Program1();
         obj.NonStaticMethod();
 
-        NonStaticMethod();  
+        NonStaticMethod(); //ERROR 
     }
 }
+// Static method called.
+//Non-static method called.
+// Static method called.
+
 
 2. 
 using System;
@@ -44,7 +48,8 @@ class Program2
         Console.WriteLine("After: " + number);
     }
 }
-
+// Before: 5
+//After: 15
 3.
 using System;
 
@@ -63,7 +68,8 @@ class Program3
         Console.WriteLine($"Doubled: {a}, Tripled: {b}");
     }
 }
-
+//Doubled: 6
+//Tripled: 9
 4. 
 using System;
 
@@ -83,6 +89,7 @@ class Program4
         Console.WriteLine("After modification: " + number);
     }
 }
+//After  modification: 5
 
 5. 
 using System;
@@ -101,6 +108,9 @@ class Program5
         PrintDetails("Charlie", 30, "Canada");
     }
 }
+//Alice,18,USA
+//Bob, 25,USA
+//Charlie , 30 , Canada
 6.
 using System;
 
@@ -122,6 +132,8 @@ class Program6
         Console.WriteLine("After custom increment: " + number);
     }
 }
+//After dafault increment: 15
+//After custom increment: 30
 7.
 using System;
 
@@ -140,6 +152,7 @@ class Program7
         Console.WriteLine($"Generated numbers: {a} and {b}");
     }
 }
+//Generated  numbers: 10 and 20
 
 8.
 using System;
@@ -157,9 +170,11 @@ class Program8
         Calculate(out result, 5);
         Console.WriteLine(result);
 
-        Calculate(out int result);
+        Calculate(out int result);//error
     }
 }
+//0 
+//10
 9.
 using System;
 
@@ -172,9 +187,9 @@ class Program9
 
     static void Main()
     {
-        DisplayInfo("Alice", "Canada");
+        DisplayInfo("Alice", "Canada");//error
 
-        DisplayInfo("Bob", country: "Canada");
+        DisplayInfo("Bob", country: "Canada");//Name:Bob,Age:18,Country:USA
     }
 }
 
@@ -185,8 +200,8 @@ class Program10
 {
     static void ModifyNumbers(ref int x, out int y)
     {
-        x *= 2;
-        y = x + 10;
+        x *= 2;//10
+        y = x + 10;//20
     }
 
     static void Main()
@@ -194,7 +209,7 @@ class Program10
         int a = 5, b;
         ModifyNumbers(ref a, out b);
 
-        Console.WriteLine($"Modified a: {a}, Calculated b: {b}");
+        Console.WriteLine($"Modified a: {a}, Calculated b: {b}");//Modified a: 10, Calculated b: 20
 
         ModifyNumbers(ref a, out b);
     }
@@ -207,8 +222,8 @@ class Program11
 {
     static void ModifyValues(ref int x, out int y, int increment = 5)
     {
-        x += increment;
-        y = x * 2;
+        x += increment;//15//20
+        y = x * 2;//30//40
     }
 
     static void Main()
@@ -216,10 +231,10 @@ class Program11
         int a = 10, b;
         
         ModifyValues(ref a, out b);
-        Console.WriteLine($"After ModifyValues - a: {a}, b: {b}");
+        Console.WriteLine($"After ModifyValues - a: {a}, b: {b}");//a=15, b=30
 
         ModifyValues(ref a, out b, 10); // Custom increment
-        Console.WriteLine($"After ModifyValues with increment 10 - a: {a}, b: {b}");
+        Console.WriteLine($"After ModifyValues with increment 10 - a: {a}, b: {b}");//a=25,b=50
     }
 }
 
@@ -285,7 +300,7 @@ class Program14
         int[] numbers = { 1, 2, 3 };
         Console.WriteLine("Before: " + string.Join(", ", numbers));
         
-        ModifyArray(ref numbers); 
+        ModifyArray(ref numbers);
         Console.WriteLine("After: " + string.Join(", ", numbers));
     }
 }
@@ -428,7 +443,7 @@ class Program20
         int a, b;
         CalculateValues(3, out a, out b);
 
-        Console.WriteLine($"Square: {a}, Cube: {b}");.
+        Console.WriteLine($"Square: {a}, Cube: {b}");
     }
 }
 
