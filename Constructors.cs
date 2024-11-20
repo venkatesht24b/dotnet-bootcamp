@@ -1,6 +1,7 @@
 constructors are special methods used to initialize objects of a class or in otherwords allocate memory for Instance members.
 It initializes fields to their default values (e.g., 0 for integers, null for objects...etc).
-We need to write a constructor only when if we want to initialize instance members with some values or to do some operation while object is initializing or memory is getting allocated.
+We need to write a constructor only when if we want to initialize instance members with some values or to 
+do some operation while object is initializing or memory is getting allocated.
 
 1. Types of Constructors in C#
 1.1 Default Constructor
@@ -74,7 +75,8 @@ class Singleton
 When to Use: Use a private constructor in singleton design patterns or when a class only contains static members and should not be instantiated.
 
 1.4 Static Constructor
-A static constructor initializes static members of the class. It is automatically called once when the class is first accessed. Static constructors cannot take parameters and are marked by the static keyword.
+A static constructor initializes static members of the class. It is automatically called once when the class is first accessed.
+ Static constructors cannot take parameters and are marked by the static keyword.
 
 Example:
 class Utility
@@ -122,7 +124,8 @@ When to Use: Use a copy constructor when you want to create a new object with th
 
 2. Constructor Calling Mechanism
 Order of Execution: Constructors are called when an object is created, starting with the base class constructor, followed by derived class constructors.
-Constructor Overloading: C# allows multiple constructors with different signatures in the same class (overloading). The appropriate constructor is selected based on the arguments passed during object creation.
+Constructor Overloading: C# allows multiple constructors with different signatures in the same class (overloading). 
+The appropriate constructor is selected based on the arguments passed during object creation.
 Example of Constructor Overloading:
 class Example
 {
@@ -151,7 +154,8 @@ class Program
 }
 3. Constructor Execution Mechanism
 Static Constructor Execution: Static constructors are executed only once when the class is first accessed, even if no instances are created.
-Instance Constructor Execution: When an object is created, instance constructors are called. If the class has multiple constructors, the one matching the arguments used during instantiation is selected.
+Instance Constructor Execution: When an object is created, instance constructors are called. 
+If the class has multiple constructors, the one matching the arguments used during instantiation is selected.
 Execution Order Example with Static and Instance Constructors:
 
 class Sample
