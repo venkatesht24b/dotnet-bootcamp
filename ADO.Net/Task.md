@@ -205,10 +205,8 @@ Total files processed, records inserted, and rows skipped for each store.
 # Folder Structure
 ## Root Folder: D:/DailyDataLoad
 ## Subfolders: D:/DailyDataLoad/STHYD001/
-1. New: Files to be processed.
-2. Processed: Successfully processed files.
-3. Error: Files with errors.
-4. Archive: Historical files for backup.
+1. Processed: Successfully processed files.
+2. Archive: Historical files for backup.
 
 # Expected Learning Outcomes
 Working with various file formats (CSV, TXT, Excel).
