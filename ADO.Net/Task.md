@@ -46,13 +46,13 @@ Check for new files in each store's folder every hour.
 ## File Types:
 
 ## Files are provided in specific formats:
-1. Store Information: Store.csv (Comma-delimited)
-2. Employee Information: Employee.txt (Pipe-delimited)
-3. Customer Information: Excel file with multiple sheets:
+1. Store Information: Store_yyyyMMdd.csv (Comma-delimited)
+2. Employee Information: Employee_yyyyMMdd.txt (Pipe-delimited)
+3. Customer Information: Excel file with multiple sheets: Customer_yyyyMMdd.xlsx 
     - Sheet1: Customer (Customer details)
     - Sheet2: CustomerOrders (Purchase orders)
     - Sheet3: CustomerBilling (Billing details)
-4. Stock Information: Stock.txt (Semicolon-delimited)
+4. Stock Information: Stock_yyyyMMdd.txt (Semicolon-delimited)
 
 ## Validation:
 
