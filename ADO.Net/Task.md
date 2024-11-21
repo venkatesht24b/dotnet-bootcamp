@@ -64,9 +64,8 @@ Log errors for invalid data and skip processing such rows.
 Populate corresponding central database tables with validated data. Maintain relationships (e.g., linking customers to their orders and billing details).
 
 ## Move Files:
-- After successful processing, move files to a Processed folder (D:/DailyDataLoad/<StoreCode>/Processed).
--  If any errors occur, move files to an Error folder (D:/DailyDataLoad/<StoreCode>/Error).
-- Archive processed files in an Archive folder (D:/DailyDataLoad/<StoreCode>/Archive).
+- After successful processing, move files to a Processed folder (D:/DailyDataLoad/{{StoreCode}}/Processed).
+- Archive processed files in an Archive folder (D:/DailyDataLoad/{{StoreCode}}/Archive).
 
 # Logging:
 Log processing details, including:
