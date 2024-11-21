@@ -112,9 +112,9 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 # 4. Stock Information (Stock.txt)
 ## Format: Semicolon-delimited.
 ### Sample Data:
-    ProductID;StoreID;ProductName;QuantityAvailable;PricePerUnit
-    101;1;Soap;50;10.00
-    102;1;Shampoo;30;50.00
+    ProductID;ProductCode;StoreID;ProductName;QuantityAvailable;PricePerUnit
+    101;PR-001;1;Soap;50;10.00
+    102;PR-002;1;Shampoo;30;50.00
 
 
 # Database Schema
