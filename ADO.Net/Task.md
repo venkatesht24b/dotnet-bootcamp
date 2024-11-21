@@ -86,28 +86,29 @@ Error details for debugging.
 ### Format: Pipe-delimited.
 #### Sample Data:
 
-    EmployeeID|StoreID|EmployeeName|Role|DateOfJoining|ContactNumber
-    101|1|Alice|Cashier|2022-01-10|9876543211
-    102|2|Bob|Manager|2020-03-15|9876543212
+    EmployeeCode|StoreCode|EmployeeName|Role|DateOfJoining|ContactNumber
+    Emp001|STHYD001|Alice|Cashier|2022-01-10|9876543211
+    Emp002|STHYD001|Bob|Manager|2020-03-15|9876543212
 
 # 3. Customer Information (Customer.xlsx)
 ### Sheet1: Customer
 
-| CustomerID | StoreID | Name     | Email            | ContactNumber | DateOfBirth |
-|------------|---------|----------|------------------|---------------|-------------|
-| 201        | 1       | Charlie  | charlie@mail.com | 9876543213    | 1990-01-01  |
-
+CustomerCode | StoreCode | Name     | Email            | ContactNumber | DateOfBirth |
+|---------|----------|------------------|---------------|-------------|
+| CUST001        | STHYD001       | Charlie  | charlie@mail.com | 9876543213    | 1990-01-01  |
 
 ### Sheet2: CustomerOrders
-| OrderID | CustomerID | OrderDate   | ProductID | Quantity |
-|---------|------------|-------------|-----------|----------|
-| 301     | 201        | 2023-03-10  | 101       | 2        |
+OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
+|---------|---------|------------|-------------|-----------|----------|
+ | OR-001  | CUST001        | 2023-03-10  | PR-001       | 2        |
+ | OR-001  | CUST001        | 2023-03-10  | PR-002       | 1       |
 
 ### Sheet3: CustomerBilling
 
-| BillID | OrderID | BillingDate  | Amount  |
-|--------|---------|--------------|---------|
-| 401    | 301     | 2023-03-10   | 500.00  |
+| BillingNumber | ModeOfPayment | OrderCode | BillingDate  | Amount  |
+|--------|-----------|---------|--------------|---------|
+| OR-001-01    | Cash     | OR-001     | 2023-03-10   | 500.00  |
+| OR-001-02    | PhonePay  | OR-001     | 2023-03-10   | 1000.00  |
 
 # 4. Stock Information (Stock.txt)
 ## Format: Semicolon-delimited.
@@ -153,29 +154,35 @@ Error details for debugging.
 | Column Name   | Data Type      | Constraints             |
 |---------------|----------------|-------------------------|
 | OrderID       | INT            | Primary Key             |
+| InvoiceNumber | VARCHAR(512)   |  NOT NULL               |
 | CustomerID    | INT            | Foreign Key (Customers) |
-| OrderDate     | DATE           |                         |
-| ProductID     | INT            |                         |
-| Quantity      | INT            |                         |
+| OrderDate     | DATE           |  NOT NULL               |
+| ProductID     | INT            |  NOT NULL               |
+| Quantity      | INT            |  NOT NULL               |
 
 ### 5. Billing Table
 | Column Name   | Data Type      | Constraints         |
 |---------------|----------------|---------------------|
 | BillID        | INT            | Primary Key         |
+| BillNumber    | VARCHAR(512)   | NOT NULL            |
 | OrderID       | INT            | Foreign Key (Orders)|
-| BillingDate   | DATE           |                     |
-| Amount        | DECIMAL(10, 2) |                     |
+| PaymentMode   | VARCHAR(50)    |  NOT NULL           |
+| BillingDate   | DATE           |  NOT NULL           |
+| Amount        | DECIMAL(10, 2) |  NOT NULL           |
 
 ### 6. Stock Table
 | Column Name        | Data Type      | Constraints          |
 |---------------------|----------------|----------------------|
 | ProductID          | INT            | Primary Key          |
+| ProductCode        | VARCHAR(500)   |                      |
 | StoreID            | INT            | Foreign Key (Stores) |
 | ProductName        | NVARCHAR(100)  | NOT NULL             |
 | QuantityAvailable  | INT            |                      |
 | PricePerUnit       | DECIMAL(10, 2) |                      |
 
 # Business Rules
+1. The Order of files processing would be Store-> Stock -> Customers->Orders-> Billing
+2. 
 ## Validation:
 1. StoreID in each file must exist in the Stores table.
 2. Email addresses must be in a valid format.
