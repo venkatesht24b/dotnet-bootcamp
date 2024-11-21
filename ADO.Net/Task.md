@@ -79,9 +79,9 @@ Error details for debugging.
 ### Format: Comma-delimited.
 #### Sample Data:
 
-`StoreID,StoreName,City,ManagerName,ContactNumber
-1,Hyderabad Main,Hyderabad,John Doe,9876543210
-2,Vijayawada Main,Vijayawada,Jane Smith,8765432109`
+    StoreID,StoreName,City,ManagerName,ContactNumber
+    1,Hyderabad Main,Hyderabad,John Doe,9876543210
+    2,Vijayawada Main,Vijayawada,Jane Smith,8765432109
 
 ## 2. Employee Information (Employee.txt)
 ### Format: Pipe-delimited.
@@ -113,9 +113,9 @@ Error details for debugging.
 # 4. Stock Information (Stock.txt)
 ## Format: Semicolon-delimited.
 ### Sample Data:
-`ProductID;StoreID;ProductName;QuantityAvailable;PricePerUnit
-101;1;Soap;50;10.00
-102;1;Shampoo;30;50.00`
+    ProductID;StoreID;ProductName;QuantityAvailable;PricePerUnit
+    101;1;Soap;50;10.00
+    102;1;Shampoo;30;50.00
 
 
 # Database Schema
