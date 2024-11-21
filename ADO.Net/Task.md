@@ -77,14 +77,16 @@ Error details for debugging.
 # File Details
 ## 1. Store Information (Store.csv)
 ### Format: Comma-delimited.
-Sample Data:
+#### Sample Data:
+
 `StoreID,StoreName,City,ManagerName,ContactNumber
 1,Hyderabad Main,Hyderabad,John Doe,9876543210
 2,Vijayawada Main,Vijayawada,Jane Smith,8765432109`
 
 ## 2. Employee Information (Employee.txt)
 ### Format: Pipe-delimited.
-Sample Data:
+#### Sample Data:
+
 `EmployeeID|StoreID|EmployeeName|Role|DateOfJoining|ContactNumber
 101|1|Alice|Cashier|2022-01-10|9876543211
 102|2|Bob|Manager|2020-03-15|9876543212`
@@ -111,85 +113,93 @@ Sample Data:
 102;1;Shampoo;30;50.00`
 
 
-#Database Schema
-Central Database Tables
-1. Stores Table
-Column Name	Data Type	Constraints
-StoreID	INT	Primary Key
-StoreName	NVARCHAR(100)	NOT NULL
-City	NVARCHAR(50)	NOT NULL
-ManagerName	NVARCHAR(100)	
-ContactNumber	NVARCHAR(15)	
-2. Employees Table
-Column Name	Data Type	Constraints
-EmployeeID	INT	Primary Key
-StoreID	INT	Foreign Key (Stores)
-EmployeeName	NVARCHAR(100)	NOT NULL
-Role	NVARCHAR(50)	
-DateOfJoining	DATE	
-ContactNumber	NVARCHAR(15)	
-3. Customers Table
-Column Name	Data Type	Constraints
-CustomerID	INT	Primary Key
-StoreID	INT	Foreign Key (Stores)
-Name	NVARCHAR(100)	NOT NULL
-Email	NVARCHAR(100)	UNIQUE
-ContactNumber	NVARCHAR(15)	
-DateOfBirth	DATE	
-4. Orders Table
-Column Name	Data Type	Constraints
-OrderID	INT	Primary Key
-CustomerID	INT	Foreign Key (Customers)
-OrderDate	DATE	
-ProductID	INT	
-Quantity	INT	
-5. Billing Table
-Column Name	Data Type	Constraints
-BillID	INT	Primary Key
-OrderID	INT	Foreign Key (Orders)
-BillingDate	DATE	
-Amount	DECIMAL(10, 2)	
-6. Stock Table
-Column Name	Data Type	Constraints
-ProductID	INT	Primary Key
-StoreID	INT	Foreign Key (Stores)
-ProductName	NVARCHAR(100)	NOT NULL
-QuantityAvailable	INT	
-PricePerUnit	DECIMAL(10, 2)	
-Business Rules
-Validation:
+# Database Schema
+## Central Database Tables
+### 1. Stores Table
+| Column Name   | Data Type      | Constraints       |
+|---------------|----------------|-------------------|
+| StoreID       | INT            | Primary Key       |
+| StoreName     | NVARCHAR(100)  | NOT NULL          |
+| City          | NVARCHAR(50)   | NOT NULL          |
+| ManagerName   | NVARCHAR(100)  |                   |
+| ContactNumber | NVARCHAR(15)   |                   |
 
-StoreID in each file must exist in the Stores table.
-Email addresses must be in a valid format.
-Dates (e.g., OrderDate, BillingDate, DateOfBirth) must not be in the future.
-Relationships:
+### 2. Employees Table
+| Column Name     | Data Type      | Constraints             |
+|------------------|----------------|-------------------------|
+| EmployeeID       | INT            | Primary Key             |
+| StoreID          | INT            | Foreign Key (Stores)    |
+| EmployeeName     | NVARCHAR(100)  | NOT NULL                |
+| Role             | NVARCHAR(50)   |                         |
+| DateOfJoining    | DATE           |                         |
+| ContactNumber    | NVARCHAR(15)   |                         |
+	
+### 3. Customers Table
+| Column Name     | Data Type      | Constraints          |
+|------------------|----------------|----------------------|
+| CustomerID       | INT            | Primary Key          |
+| StoreID          | INT            | Foreign Key (Stores) |
+| Name             | NVARCHAR(100)  | NOT NULL             |
+| Email            | NVARCHAR(100)  | UNIQUE               |
+| ContactNumber    | NVARCHAR(15)   |                      |
+| DateOfBirth      | DATE           |                      |
 
+### 4. Orders Table
+| Column Name   | Data Type      | Constraints             |
+|---------------|----------------|-------------------------|
+| OrderID       | INT            | Primary Key             |
+| CustomerID    | INT            | Foreign Key (Customers) |
+| OrderDate     | DATE           |                         |
+| ProductID     | INT            |                         |
+| Quantity      | INT            |                         |
+
+### 5. Billing Table
+| Column Name   | Data Type      | Constraints         |
+|---------------|----------------|---------------------|
+| BillID        | INT            | Primary Key         |
+| OrderID       | INT            | Foreign Key (Orders)|
+| BillingDate   | DATE           |                     |
+| Amount        | DECIMAL(10, 2) |                     |
+
+### 6. Stock Table
+| Column Name        | Data Type      | Constraints          |
+|---------------------|----------------|----------------------|
+| ProductID          | INT            | Primary Key          |
+| StoreID            | INT            | Foreign Key (Stores) |
+| ProductName        | NVARCHAR(100)  | NOT NULL             |
+| QuantityAvailable  | INT            |                      |
+| PricePerUnit       | DECIMAL(10, 2) |                      |
+
+# Business Rules
+## Validation:
+1. StoreID in each file must exist in the Stores table.
+2. Email addresses must be in a valid format.
+3. Dates (e.g., OrderDate, BillingDate, DateOfBirth) must not be in the future.
+
+## Relationships:
 Ensure proper linking between Customers, Orders, and Billing tables.
 Maintain foreign key constraints between tables.
-Error Handling:
 
+# Error Handling:
 Skip invalid rows and log the errors with file name, row number, and issue description.
 Logging Requirements
-Log File Format:
-
+## Log File Format:
 Store logs in D:/Logs/DailyDataLoadLog.txt.
-Log file entries should include:
-plaintext
-Copy code
+#### Log file entries should include:
 [Timestamp] INFO: Successfully processed StoreID: STHYD001. Files: 5, Records: 125
 [Timestamp] ERROR: Invalid email in StoreID: STHYD001, File: Customer.xlsx, Row: 10
-Log Success and Failure Counts:
-
+#### Log Success and Failure Counts:
 Total files processed, records inserted, and rows skipped for each store.
-Folder Structure
-Root Folder: D:/DailyDataLoad
-Subfolders:
-D:/DailyDataLoad/STHYD001/
-New: Files to be processed.
-Processed: Successfully processed files.
-Error: Files with errors.
-Archive: Historical files for backup.
-Expected Learning Outcomes
+
+# Folder Structure
+## Root Folder: D:/DailyDataLoad
+## Subfolders: D:/DailyDataLoad/STHYD001/
+1. New: Files to be processed.
+2. Processed: Successfully processed files.
+3. Error: Files with errors.
+4. Archive: Historical files for backup.
+
+# Expected Learning Outcomes
 Working with various file formats (CSV, TXT, Excel).
 Implementing folder monitoring with file operations.
 Understanding relational database operations with ADO.NET.
