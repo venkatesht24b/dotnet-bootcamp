@@ -87,9 +87,9 @@ Error details for debugging.
 ### Format: Pipe-delimited.
 #### Sample Data:
 
-EmployeeID|StoreID|EmployeeName|Role|DateOfJoining|ContactNumber
-101|1|Alice|Cashier|2022-01-10|9876543211
-102|2|Bob|Manager|2020-03-15|9876543212
+    EmployeeID|StoreID|EmployeeName|Role|DateOfJoining|ContactNumber
+    101|1|Alice|Cashier|2022-01-10|9876543211
+    102|2|Bob|Manager|2020-03-15|9876543212
 
 # 3. Customer Information (Customer.xlsx)
 ### Sheet1: Customer
