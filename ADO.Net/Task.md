@@ -24,9 +24,7 @@ below are Files Info
 - Customer Billing Information=> Sheet3(CustomerBilling) => Customer_yyyyMMdd.xlsx 
 - Stock Information => Stock_yyyyMMdd.txt (; delimeted)
 
-The store will send all these files into a shared path location in server. which is (D:/DailyDataLoad)
-
-for every store there is a dedicated folder with store code for example( STHYD001, STHYD002, STTPT003, ...ETC) in code we are also representing the city name.
+The store will send all these files into a shared path location in server. which is (D:/DailyDataLoad/<StoreCode> Ex:D:/DailyDataLoad/STHYD001 )
 
 Now The below task is the complete information about the task to push this data into Central database tables.
 Todo that we need to implement a logic to see D:/DailyDataLoad folder every one hour recursively read all stores related files and validate them and store them into the DB.
