@@ -13,6 +13,26 @@ by using this we have gained performance improvement in our system as we no need
 but we have to compromise data realtime delayed by 1 day. 
 
 We finally agreed to this approach by having store level database in LAN. by end of the day their database will run the Job and generate different files with all the operations performed on that day.
-Files Info:
+below is the Files Info:
+=============================
+Store Information  => Store.csv (Comma delimeted)
+Employees Information => Employee.txt (Pipe delimeted)
+Customer Information => Sheet1(Customer) => Customer.xlsx 
+Cusomer Purchase Order Items Information=> Sheet2(CustomerOrders) => Customer.xlsx 
+Customer Billing Information=> Sheet3(CustomerBilling) => Customer.xlsx 
+Stock Information => Stock.txt (; delimeted)
+
+The store will send all these files into a shared path location in server. which is (D:/DailyDataLoad)
+
+for every store there is a dedicated folder with store code for example( STHYD001, STHYD002, STTPT003, ...ETC) in code we are also representing the city name.
+
+
+
+
+
+
+
+
+
 
 
