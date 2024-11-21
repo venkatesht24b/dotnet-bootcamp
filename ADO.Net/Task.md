@@ -77,11 +77,10 @@ Error details for debugging.
 # File Details
 ## 1. Store Information (Store.csv)
 ### Format: Comma-delimited.
-#### Sample Data:
+#### Sample Data: Always ONLY 1 record will exists in this file.
 
-    StoreID,StoreName,City,ManagerName,ContactNumber
-    1,Hyderabad Main,Hyderabad,John Doe,9876543210
-    2,Vijayawada Main,Vijayawada,Jane Smith,8765432109
+    StoreID,StoreCode,StoreName,City,ManagerName,ContactNumber
+    1,STHYD001,Hyderabad Main,Hyderabad,John Doe,9876543210
 
 ## 2. Employee Information (Employee.txt)
 ### Format: Pipe-delimited.
@@ -124,29 +123,30 @@ Error details for debugging.
 | Column Name   | Data Type      | Constraints       |
 |---------------|----------------|-------------------|
 | StoreID       | INT            | Primary Key       |
-| StoreName     | NVARCHAR(100)  | NOT NULL          |
-| City          | NVARCHAR(50)   | NOT NULL          |
-| ManagerName   | NVARCHAR(100)  |                   |
-| ContactNumber | NVARCHAR(15)   |                   |
+| StoreCode     | VARCHAR(50)    | NOT NULL	     |
+| StoreName     | VARCHAR(100)   | NOT NULL          |
+| City          | VARCHAR(50)    | NOT NULL          |
+| ManagerName   | VARCHAR(100)   |                   |
+| ContactNumber | VARCHAR(15)    |                   |
 
 ### 2. Employees Table
 | Column Name     | Data Type      | Constraints             |
 |------------------|----------------|-------------------------|
 | EmployeeID       | INT            | Primary Key             |
 | StoreID          | INT            | Foreign Key (Stores)    |
-| EmployeeName     | NVARCHAR(100)  | NOT NULL                |
-| Role             | NVARCHAR(50)   |                         |
+| EmployeeName     | VARCHAR(100)   | NOT NULL                |
+| Role             | VARCHAR(50)    |                         |
 | DateOfJoining    | DATE           |                         |
-| ContactNumber    | NVARCHAR(15)   |                         |
+| ContactNumber    | VARCHAR(15)    |                         |
 	
 ### 3. Customers Table
 | Column Name     | Data Type      | Constraints          |
 |------------------|----------------|----------------------|
 | CustomerID       | INT            | Primary Key          |
 | StoreID          | INT            | Foreign Key (Stores) |
-| Name             | NVARCHAR(100)  | NOT NULL             |
-| Email            | NVARCHAR(100)  | UNIQUE               |
-| ContactNumber    | NVARCHAR(15)   |                      |
+| Name             | VARCHAR(100)   | NOT NULL             |
+| Email            | VARCHAR(100)   | 		           |
+| ContactNumber    | VARCHAR(15)    |   NOT NULL           |
 | DateOfBirth      | DATE           |                      |
 
 ### 4. Orders Table
