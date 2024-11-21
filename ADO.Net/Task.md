@@ -17,12 +17,12 @@ but we have to compromise data realtime delayed by 1 day.
 We finally agreed to this approach by having store level database in LAN. by end of the day their database will run the Job and generate different files with all the operations performed on that day.
 below are Files Info
 
-- Store Information  => Store.csv (Comma delimeted)
-- Employees Information => Employee.txt (Pipe delimeted)
-- Customer Information => Sheet1(Customer) => Customer.xlsx 
-- Cusomer Purchase Order Items Information=> Sheet2(CustomerOrders) => Customer.xlsx 
-- Customer Billing Information=> Sheet3(CustomerBilling) => Customer.xlsx 
-- Stock Information => Stock.txt (; delimeted)
+- Store Information  => Store_yyyyMMdd.csv (Comma delimeted) Ex: Store_20241121.csv
+- Employees Information => Employee_yyyyMMdd.txt (Pipe delimeted)
+- Customer Information => Sheet1(Customer) => Customer_yyyyMMdd.xlsx 
+- Cusomer Purchase Order Items Information=> Sheet2(CustomerOrders) => Customer_yyyyMMdd.xlsx 
+- Customer Billing Information=> Sheet3(CustomerBilling) => Customer_yyyyMMdd.xlsx 
+- Stock Information => Stock_yyyyMMdd.txt (; delimeted)
 
 The store will send all these files into a shared path location in server. which is (D:/DailyDataLoad)
 
