@@ -87,23 +87,28 @@ Error details for debugging.
 ### Format: Pipe-delimited.
 #### Sample Data:
 
-`EmployeeID|StoreID|EmployeeName|Role|DateOfJoining|ContactNumber
+EmployeeID|StoreID|EmployeeName|Role|DateOfJoining|ContactNumber
 101|1|Alice|Cashier|2022-01-10|9876543211
-102|2|Bob|Manager|2020-03-15|9876543212`
+102|2|Bob|Manager|2020-03-15|9876543212
 
 # 3. Customer Information (Customer.xlsx)
 ### Sheet1: Customer
 
-`CustomerID	StoreID	Name	Email	ContactNumber	DateOfBirth
-201	1	Charlie	charlie@mail.com	9876543213	1990-01-01`
+| CustomerID | StoreID | Name     | Email            | ContactNumber | DateOfBirth |
+|------------|---------|----------|------------------|---------------|-------------|
+| 201        | 1       | Charlie  | charlie@mail.com | 9876543213    | 1990-01-01  |
+
 
 ### Sheet2: CustomerOrders
-`OrderID	CustomerID	OrderDate	ProductID	Quantity
-301	201	2023-03-10	101	2`
+| OrderID | CustomerID | OrderDate   | ProductID | Quantity |
+|---------|------------|-------------|-----------|----------|
+| 301     | 201        | 2023-03-10  | 101       | 2        |
+
 ### Sheet3: CustomerBilling
 
-`BillID	OrderID	BillingDate	Amount
-401	301	2023-03-10	500.00`
+| BillID | OrderID | BillingDate  | Amount  |
+|--------|---------|--------------|---------|
+| 401    | 301     | 2023-03-10   | 500.00  |
 
 # 4. Stock Information (Stock.txt)
 ## Format: Semicolon-delimited.
