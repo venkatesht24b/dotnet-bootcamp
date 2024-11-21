@@ -28,5 +28,156 @@ Setting up ADO.NET requires downloading and installing the required components.
 - Choose the appropriate version of the management studio based on your operating system (64-bit or 32-bit).
 - Proceed with the downloading and installation process for accessing the database.
 
-Video-3:
+Video-3: ADO.NET - Disconnected Architecture
 ==============
+Disconnected architecture allows storing and working with data offline.
+Using system.data namespace for disconnected architecture
+Storing data in disconnected architecture using Data Table
+Initializing and adding columns in ADO.NET disconnected architecture
+Using ADO.NET - Disconnected Architecture to add columns and rows to a data table.
+How to add a new row to a table in ADO.NET Disconnected Architecture
+Accessing and adding records to a table in ADO.NET
+Using disconnected architecture for data retrieval and manipulation
+
+Video-4:
+=============
+Short Summary for [ADO.NET - Understanding]
+
+ Video Title: Understanding DataSet in ADO.NET - Tutorialspoint
+
+- Data sets allow storing and accessing multiple data tables
+
+- Populate data set from data adapters
+
+- Data set allows storing multiple tables with disconnected architecture.
+
+- Adding tables to a DataSet and sequence importance
+
+- Data tables can be accessed from DataSet by name or index
+
+- Accessing columns in a DataSet
+
+- Initializing a relationship in ADO.NET using DataSet constructor
+
+- Using DataSet in disconnected architecture
+
+---------------------------------
+
+Detailed Summary for [ADO.NET - Understanding DataSet](https://www.youtube.com/watch?v=MbFLyjg314s) by [Merlin](https://merlin.foyer.work/)
+
+ Video Title: Understanding DataSet in ADO.NET - Tutorialspoint
+
+Data sets allow storing and accessing multiple data tables
+- Data sets act as a database with disconnected architecture
+- Data tables can be created manually or from database communication using the data adapter class
+
+Populate data set from data adapters
+- Data adapter fills data in data set in the form of data table
+- Establish relationships between tables for referential integrity
+
+Data set allows storing multiple tables with disconnected architecture.
+- Data set manages relationships and can store multiple tables.
+- Methods like getEmployTable and data table creation are used in examples.
+
+Adding tables to a DataSet and sequence importance
+- Created a method to generate DataSet and added employ and department tables
+- Sequence of adding tables to DataSet is important
+
+Data tables can be accessed from DataSet by name or index
+- Tables in DataSet can be accessed by name or index, providing flexibility
+- Relationships can be established using primary key-foreign key relationship
+
+Accessing columns in a DataSet
+- Columns can be accessed either by name or index
+- DataRelation class can be used for column retrieval
+
+Initializing a relationship in ADO.NET using DataSet constructor
+- Pass three parameters: name of relationship, primary key column name, and foreign key column name
+- Maintain the relationship using DataRelation and return the DataSet
+
+Using DataSet in disconnected architecture
+- DataGridview used with different data sources
+- Ability to assign tables by name or index
+
+Video- 5: 
+
+Short Summary for [ADO.NET - Serializing DataSet]
+
+ Title: Serializing DataSet into JSON and XML in ADO.NET Tutorial
+
+- Serializing dataset objects helps retain data between application executions
+
+- Data retrieval process in web application
+
+- Serializing DataSet data in XML and JSON format
+
+- Serializing DataSet to XML format in ADO.NET
+
+- Serialize DataSet to get all data in JSON format
+
+- Serialize DataTable to JSON using Json.NET
+
+- Using Streamwriter for writing a JSON file
+
+- JSON format stores data in attribute-value pairs inside curly braces and square brackets.
+
+---------------------------------
+
+Detailed Summary for [ADO.NET - Serializing DataSet](https://www.youtube.com/watch?v=MolUlHt3I6Y) by [Merlin](https://merlin.foyer.work/)
+
+ Title: Serializing DataSet into JSON and XML in ADO.NET Tutorial
+
+Serializing dataset objects helps retain data between application executions
+- Serializing dataset objects allows data to be stored in the application server instead of the database server, reducing the need to establish connections with the database for data retrieval
+- This is beneficial when the data is not updated frequently and helps in avoiding the complete cycle of data retrieval from the database
+
+Data retrieval process in web application
+- Requests go to the web server and then to the database server
+- Data with low frequency of updation can be stored in the web server
+
+Serializing DataSet data in XML and JSON format
+- Data in DataSet can be written to XML or JSON format.
+- XML is the older way to write data and has methods for writing data in XML format.
+
+Serializing DataSet to XML format in ADO.NET
+- Describing how to serialize a DataSet to XML format using the data table
+- Illustrating the process of creating an XML file with the records from the data table
+
+Serialize DataSet to get all data in JSON format
+- Use ADO.NET to open and retrieve data from a data table
+- Configure Newtonsoft.Json to write the data table in JSON format
+
+Serialize DataTable to JSON using Json.NET
+- Newtonsoft.Json library needs to be installed to work with JSON serialization
+- Use JsonConvert.SerializeObject method to convert DataTable to JSON string
+
+Using Streamwriter for writing a JSON file
+- Streamwriter is used to create a text file with a different extension
+- The JSON string is written to the file and the file is then closed to save the data
+
+JSON format stores data in attribute-value pairs inside curly braces and square brackets.
+- Attributes and values are separated by a comma.
+- Data can be serialized in JSON format for easy transfer to application or web servers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
