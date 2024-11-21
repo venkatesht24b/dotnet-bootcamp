@@ -93,12 +93,12 @@ Error details for debugging.
 ### Sheet1: Customer
 
 CustomerCode | StoreCode | Name     | Email            | ContactNumber | DateOfBirth |
-|---------|----------|------------------|---------------|-------------|
+|---------|----------|------------------|---------------|-------------|-------------|
 | CUST001        | STHYD001       | Charlie  | charlie@mail.com | 9876543213    | 1990-01-01  |
 
 ### Sheet2: CustomerOrders
 OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
-|---------|---------|------------|-------------|-----------|----------|
+|---------|---------|------------|-------------|-----------|
  | OR-001  | CUST001        | 2023-03-10  | PR-001       | 2        |
  | OR-001  | CUST001        | 2023-03-10  | PR-002       | 1       |
 
