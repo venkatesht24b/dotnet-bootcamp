@@ -85,7 +85,7 @@ Execution of SQL Statements:
     You can execute SQL commands directly using the Command object.
 Stored Procedures: 
     It supports executing stored procedures with parameters.
-Parameterization: 4
+Parameterization: 
     Helps prevent SQL injection attacks by using parameterized queries.
 
 Properties of the Command Object
