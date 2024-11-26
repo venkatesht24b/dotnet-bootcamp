@@ -182,6 +182,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | PricePerUnit       | DECIMAL(10, 2) |                      |
 
 
+
 # Business Rules
 1. The Order of files processing would be Store-> Stock -> Customers->Orders-> Billing
 2. 
