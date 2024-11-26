@@ -138,6 +138,8 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | DateOfJoining    | DATE           |                         |
 | DatofLeaving     | DATE           |                         |
 | ContactNumber    | VARCHAR(15)    | Uniqe,Not Null          |
+| Gender           | VARCHAR(10)    |                         |
+| Salary           | Int            | Not Null                |
 | StoreID          | INT            | Foreign Key (Stores)    |
 
 	
