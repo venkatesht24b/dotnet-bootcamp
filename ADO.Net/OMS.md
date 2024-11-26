@@ -169,6 +169,13 @@ Sheet2: ProductCategories
 | customername      | varchar(100)          |                         |
 | Phoneno         | VARCHAR(100)   |  Not Null                       |
 
+## 6. Employee Table
+| Column Name      | Data Type      | Constraints             |
+|-------------------|----------------|-------------------------|
+| EmpID         | INT            | Primary Key             |
+| EmpName      | varchar(100)          |                         |
+| Phoneno         | VARCHAR(100)   |  Not Null                       |
+
 
 ## Business Rules
 ### Validation:
