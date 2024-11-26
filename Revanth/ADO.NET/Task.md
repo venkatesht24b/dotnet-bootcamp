@@ -127,7 +127,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | StoreName     | VARCHAR(100)   | NOT NULL          |
 | Location      | VARCHAR(50)    | NOT NULL          |
 | ManagerName   | VARCHAR(100)   |                   |
-| ContactNumber | VARCHAR(15)    |   NOT NULL        |
+| ContactNumber | VARCHAR(15)    | NOT NULL          |
      
 ### 2. Employees Table
 | Column Name      | Data Type       | Constraints            |
@@ -173,7 +173,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 6. Billing Table
 | Column Name   | Data Type      | Constraints         |
 |---------------|----------------|---------------------|
-| BillID        | INT            | Primary Key         |
+| BillID        | INT            | Primary Key,AutoIc  |
 | BillNumber    | VARCHAR(512)   | NOT NULL            |
 | OrderID       | INT            | Foreign Key (Orders)|
 | PaymentMode   | VARCHAR(50)    |  NOT NULL           |
@@ -184,7 +184,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 7. Stock Table
 | Column Name        | Data Type      | Constraints          |
 |--------------------|----------------|--------------------- |
-| StockId            | INT            |  Primary Key         |
+| StockID            | INT            |  Primary Key         |
 | ProductID          | INT            | Foreign Key (ProMast)|
 | StoreID            | INT            | Foreign Key (Stores) |
 | QuantityAvailable  | INT            | Not Null             |
@@ -196,7 +196,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | ProductID          | INT            | Primary Key          |
 | ProductCode        | VARCHAR(500)   |                      |
 | ProductName        | VARCHAR(100)   | NOT NULL             |
-| PricePerUnit       | DECIMAL(10, 2) |    Not Null          |
+| PricePerUnit       | DECIMAL(10, 2) | Not Null             |
 
 
 
