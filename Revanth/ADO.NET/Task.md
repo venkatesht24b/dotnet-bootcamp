@@ -160,6 +160,8 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | CustomerIdFk  | INT            | Foreign Key (Customers) |
 | EmployeeIdFk  | INT            | Foreign Key (Employee)  |
 | OrderDate     | DATE           |  NOT NULL               |
+| Amount        | DECIMAL(10, 2) | NOT Null                |
+
 
 
 ### 5. OrderProducts Table
@@ -169,6 +171,8 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | OrderIdFk     | INT            | Foreign Key(Orders)     	 |
 | ProductIdFk   | INT            |  Foreign Key (ProductMaster)  |
 | Quantity      | DECIMAL(10, 2) |  NOT NULL                     |
+| PricePerUnit  | DECIMAL(10, 2) |  NOT Null                     |
+
 
 
 
@@ -181,6 +185,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | PaymentMode   | VARCHAR(50)    |  NOT NULL           |
 | BillingDate   | DATE           |  NOT NULL           |
 | Amount        | DECIMAL(10, 2) |  NOT NULL           |
+
 
 
 ### 7. Stock Table
