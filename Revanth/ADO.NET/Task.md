@@ -122,13 +122,13 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 1. Stores Table
 | Column Name   | Data Type      | Constraints       |
 |---------------|----------------|-------------------|
-| StoreID       | INT            | Primary Key       |
-| StoreCode     | VARCHAR(50)    | NOT NULL	     |
+| StoreID       | INT            | PrimaryKey,AutoIc |
+| StoreCode     | VARCHAR(50)    | NOT NULL,Unique   |
 | StoreName     | VARCHAR(100)   | NOT NULL          |
 | City          | VARCHAR(50)    | NOT NULL          |
 | ManagerName   | VARCHAR(100)   |                   |
 | ContactNumber | VARCHAR(15)    |                   |
-
+     store
 ### 2. Employees Table
 | Column Name     | Data Type      | Constraints             |
 |------------------|----------------|-------------------------|
