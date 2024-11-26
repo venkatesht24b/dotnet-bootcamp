@@ -141,6 +141,7 @@ class Program
         //true
     }
 }
+//s1==s2
 5.---------------------------------------------------
 class Person
 {
@@ -153,7 +154,7 @@ class Person
 
     public Person(string name, int age)
     {
-        this.name = name;
+        this.name = name;+
         this.age = age;
     }
 
@@ -183,8 +184,8 @@ class Program
 6.----------------------------------------------
 class Base6
 {
-    private static int staticField = StaticMethod();
-    private int instanceField = InstanceMethod();
+    private static int staticField = StaticMethod();//first execute static variables and methods
+    //private int instanceField = InstanceMethod();
 
     static Base6()
     {
@@ -212,11 +213,12 @@ class Base6
 class Derived6 : Base6
 {
     private static int derivedStaticField = DerivedStaticMethod();
-    private int derivedInstanceField = DerivedInstanceMethod();
+   // private int derivedInstanceField = DerivedInstanceMethod();
 
     static Derived6()
     {
-        Console.WriteLine("Derived static constructor");
+        Console.WriteLine("Derived static constructor");.
+        .
     }
 
     public Derived6()
@@ -236,6 +238,16 @@ class Derived6 : Base6
         return 2;
     }
 }
+//to remove one line that is non static method calling assaign that into variable
+// it is not currect statement because non static methods calling with in the method only 
+//after removing that line output is below
+//Derived static field initialization
+//Derived static constructor
+//Base static field initialization
+//Base static constructor
+//Base instance constructor
+//Derived instance constructor
+
 
 class Base7
 {
@@ -269,6 +281,8 @@ class Derived7 : Base7
         Console.WriteLine($"Derived Initialize: {baseValue}");
     }
 }
+//Derived Initialize:Overridden
+//Derived constructor:Overridden,Derived
 
 class Helper
 {
@@ -286,6 +300,7 @@ class Helper
 class MainClass
 {
     private static readonly Helper helper;
+    //readonly it reads the value only one time
 
     static MainClass()
     {
@@ -299,6 +314,16 @@ class MainClass
         Console.WriteLine("MainClass instance constructor");
     }
 }
+//first execute mainclass method in that first statement executed after calling helperMethod means first load that class it means execute 
+
+//MainClass static constructor start
+//Helper static constructor
+//Helper method called
+//MainClass static constructor end
+//MainClass instance constructor
+
+
+
 
 abstract class Shape
 {
@@ -333,6 +358,7 @@ class Circle : Shape
     }
 }
 
+
 class Tricky
 {
     private static readonly string data;
@@ -360,6 +386,12 @@ class Tricky
         Console.WriteLine("Static method called");
     }
 }
+
+//Example 10:
+//Static constructor starting
+//Static constructor failed
+//Static method called
+//Instance constructor
 
 // Test code for each example
 class Program
@@ -456,6 +488,21 @@ class Program
 }
 
 
+class program{
+    static void Main(){
+        var dog = new Dog("Labrador");
+        dog.MakeSound();
+
+    }
+}
+
+//Animal constructor: Canine
+//Mammal constructor: Domestic
+//Dog constructor: Labrador
+//Generic animal sound
+//Mammal specific sound
+
+
 // Example 2: Constructor chaining between sibling classes
 class Vehicle
 {
@@ -490,6 +537,19 @@ class SportsCar : Car
         this.horsePower = horsePower;
     }
 }
+class program{
+    static void Main(){
+        Console.WriteLine("\nExample 2:");
+
+       
+        var obj = new SportsCar("model1",22);//this line  i am adding
+        //but above program print statements are not their
+        
+
+    }
+}
+//output::: example 2:
+
 
 // Example 3: Virtual method calls in constructors
 class Parent
@@ -512,6 +572,7 @@ class Child : Parent
     public Child()
     {
         data = "Initialized";
+        Initialize();
     }
     
     protected override void Initialize()
@@ -519,6 +580,28 @@ class Child : Parent
         Console.WriteLine($"Child Initialize: {data}");
     }
 }
+
+class program{
+    static void Main(){
+        
+
+       Console.WriteLine("\nExample 3:");
+        var child = new Child();
+    }
+}
+//first go to child non static constractor but it is not executed because base is their so go to parent class constructor 
+//in parent class constructor call method Initialize() this method is excuted but in parent class virtual is their
+//it is see any override method is their are not 
+//in child class override method is their so that one is executed
+//next it is go to child() non static constructor in that calling Initialize() method .
+//means change the data value because redeclare that value
+
+//output::
+//Child Initialize: Uninitialized
+//Child Initialize: Initialized
+
+
+
 
 // Example 4: Constructor delegation and method inheritance
 class Shape

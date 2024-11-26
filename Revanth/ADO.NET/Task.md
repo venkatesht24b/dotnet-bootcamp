@@ -26,7 +26,7 @@ below are Files Info
 
 The store will send all these files into a shared path location in server. which is (D:/DailyDataLoad/<StoreCode> Ex:D:/DailyDataLoad/STHYD001 )
 
-Now The below task is the complete information about the task to push this data into Central database tables. 
+Now The below task is the complete information about the task to push this data into Central database tables.
 Todo that we need to implement a logic to see D:/DailyDataLoad folder every one hour recursively read all stores related files and validate them and store them into the DB.
 while performing this job we wanted to logs and status information about how many files got processed.
 
@@ -122,66 +122,88 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 1. Stores Table
 | Column Name   | Data Type      | Constraints       |
 |---------------|----------------|-------------------|
-| StoreID       | INT            | Primary Key       |
-| StoreCode     | VARCHAR(50)    | NOT NULL	     |
+| StoreID       | INT            | PrimaryKey,AutoIc |
+| StoreCode     | VARCHAR(50)    | NOT NULL,Unique   |
 | StoreName     | VARCHAR(100)   | NOT NULL          |
-| City          | VARCHAR(50)    | NOT NULL          |
+| Location      | VARCHAR(50)    | NOT NULL          |
 | ManagerName   | VARCHAR(100)   |                   |
-| ContactNumber | VARCHAR(15)    |                   |
-
+| ContactNumber | VARCHAR(15)    | NOT NULL          |
+     
 ### 2. Employees Table
-| Column Name     | Data Type      | Constraints             |
+| Column Name      | Data Type       | Constraints            |
 |------------------|----------------|-------------------------|
-| EmployeeID       | INT            | Primary Key             |
-| StoreID          | INT            | Foreign Key (Stores)    |
+| EmployeeID       | INT            | Primary Key,AutoIc      |
 | EmployeeName     | VARCHAR(100)   | NOT NULL                |
 | Role             | VARCHAR(50)    |                         |
 | DateOfJoining    | DATE           |                         |
-| ContactNumber    | VARCHAR(15)    |                         |
+| DatofLeaving     | DATE           |                         |
+| ContactNumber    | VARCHAR(15)    | Uniqe,Not Null          |
+| StoreID          | INT            | Foreign Key (Stores)    |
+
 	
 ### 3. Customers Table
-| Column Name     | Data Type      | Constraints          |
+| Column Name      | Data Type      | Constraints          |
 |------------------|----------------|----------------------|
-| CustomerID       | INT            | Primary Key          |
-| StoreID          | INT            | Foreign Key (Stores) |
+| CustomerID       | INT            | Primary Key,AutoIc   |
 | Name             | VARCHAR(100)   | NOT NULL             |
 | Email            | VARCHAR(100)   | 		           |
-| ContactNumber    | VARCHAR(15)    |   NOT NULL           |
-| DateOfBirth      | DATE           |                      |
+| ContactNumber    | VARCHAR(15)    | NOT NULL,Unique      |
+
 
 ### 4. Orders Table
 | Column Name   | Data Type      | Constraints             |
 |---------------|----------------|-------------------------|
-| OrderID       | INT            | Primary Key             |
-| InvoiceNumber | VARCHAR(512)   |  NOT NULL               |
+| OrderID       | INT            | Primary Key,AutoIc      |
+| StoreID       | INT            | Foreign Key (Stores)    |
 | CustomerID    | INT            | Foreign Key (Customers) |
+| EmployeeID    | INT            | Foreign Key (Employee)  |
 | OrderDate     | DATE           |  NOT NULL               |
-| ProductID     | INT            |  NOT NULL               |
-| Quantity      | INT            |  NOT NULL               |
 
-### 5. Billing Table
+
+### 5. OrderProducts Table
+| Column Name   | Data Type      | Constraints                   |
+|---------------|----------------|-------------------------------|
+|OrderProductsId| INT            |  Primary Key,AutoIc     	 |
+| OrderID       | INT            | Foreign Key(Orders)     	 |
+| ProductID     | INT            |  Foreign Key (ProductMaster)  |
+| Quantity      | INT            |  Foreign Key (ProductMaster)  |
+
+
+
+### 6. Billing Table
 | Column Name   | Data Type      | Constraints         |
 |---------------|----------------|---------------------|
-| BillID        | INT            | Primary Key         |
+| BillID        | INT            | Primary Key,AutoIc  |
 | BillNumber    | VARCHAR(512)   | NOT NULL            |
 | OrderID       | INT            | Foreign Key (Orders)|
 | PaymentMode   | VARCHAR(50)    |  NOT NULL           |
 | BillingDate   | DATE           |  NOT NULL           |
 | Amount        | DECIMAL(10, 2) |  NOT NULL           |
 
-### 6. Stock Table
+
+### 7. Stock Table
 | Column Name        | Data Type      | Constraints          |
-|---------------------|----------------|----------------------|
+|--------------------|----------------|--------------------- |
+| StockID            | INT            |  Primary Key         |
+| ProductID          | INT            | Foreign Key (ProMast)|
+| StoreID            | INT            | Foreign Key (Stores) |
+| QuantityAvailable  | INT            | Not Null             |
+
+
+### 8. ProductsMaster Table
+| Column Name        | Data Type      | Constraints          |
+|--------------------|----------------|--------------------- |
 | ProductID          | INT            | Primary Key          |
 | ProductCode        | VARCHAR(500)   |                      |
-| StoreID            | INT            | Foreign Key (Stores) |
-| ProductName        | NVARCHAR(100)  | NOT NULL             |
-| QuantityAvailable  | INT            |                      |
-| PricePerUnit       | DECIMAL(10, 2) |                      |
+| ProductName        | VARCHAR(100)   | NOT NULL             |
+| PricePerUnit       | DECIMAL(10, 2) | Not Null             |
+
+
+
 
 # Business Rules
 1. The Order of files processing would be Store-> Stock -> Customers->Orders-> Billing
-2. 
+
 ## Validation:
 1. StoreID in each file must exist in the Stores table.
 2. Email addresses must be in a valid format.

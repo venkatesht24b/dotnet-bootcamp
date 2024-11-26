@@ -1,0 +1,19 @@
+Create a main folder named as DailyDataLoaded
+Prepare The Schema Of Requirements
+Give the seed data to central store
+Create sub folders by using storecodes by using the seed  data
+In first step we have read that  main central database store code matches to storecode sub folders  once the storecodes will matches it will enters the local subfolder bases on storecode folder
+Once storecode is matched is matched in both databases then we have to process the files on that particular folder
+In this criteria loop mechanism first executed on store codes
+In this mechanism filenames are started with particular format like Store-yyyymmdd.csv ;Employee-yyyymmdd.pipe
+In particular filenames have diffrent type of coloumns based on requirements
+We sent some specifications of formatting the data with central database of storecode under related 
+After that flatfiles of data was recieved from local databases 
+We have matched that data with similar entities of data with central database of seed data schema like coloumns
+The loop was generated on storecodes-filenames -records  similar with centarl store 
+The loop was ended at one of the data does not matched  to central storecode filename records based 
+After that the storecode was change to next in central store
+Again all process must be repeated
+In this scenario the processed files stored into seperate folder with particular path 
+Any blocks on the process they have set an archieve file
+In our sql server we have set up time of every 1hr local server was read all files 
