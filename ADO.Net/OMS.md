@@ -166,7 +166,6 @@ Sheet2: ProductCategories
 | Column Name      | Data Type      | Constraints             |
 |-------------------|----------------|-------------------------|
 | CustomerID         | INT            | Primary Key             |
-| OrderID          | INT            | Foreign Key (Orders)    |
 | customername      | varchar(100)          |                         |
 | Phoneno         | VARCHAR(100)   |  Not Null                       |
 
