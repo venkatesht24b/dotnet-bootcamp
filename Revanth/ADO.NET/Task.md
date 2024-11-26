@@ -122,7 +122,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 1. Stores Table
 | Column Name   | Data Type      | Constraints       |
 |---------------|----------------|-------------------|
-| StoreID       | INT            | PrimaryKey,AutoIc |
+| StoreIdPk     | INT            | PrimaryKey,AutoIc |
 | StoreCode     | VARCHAR(50)    | NOT NULL,Unique   |
 | StoreName     | VARCHAR(100)   | NOT NULL          |
 | Location      | VARCHAR(50)    | NOT NULL          |
@@ -132,7 +132,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 2. Employees Table
 | Column Name      | Data Type       | Constraints            |
 |------------------|----------------|-------------------------|
-| EmployeeID       | INT            | Primary Key,AutoIc      |
+| EmployeeIdPk     | INT            | Primary Key,AutoIc      |
 | EmployeeName     | VARCHAR(100)   | NOT NULL                |
 | Role             | VARCHAR(50)    |                         |
 | DateOfJoining    | DATE           |                         |
@@ -146,7 +146,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 3. Customers Table
 | Column Name      | Data Type      | Constraints          |
 |------------------|----------------|----------------------|
-| CustomerID       | INT            | Primary Key,AutoIc   |
+| CustomerIdPk     | INT            | Primary Key,AutoIc   |
 | Name             | VARCHAR(100)   | NOT NULL             |
 | Email            | VARCHAR(100)   | 		           |
 | ContactNumber    | VARCHAR(15)    | NOT NULL,Unique      |
@@ -155,7 +155,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 4. Orders Table
 | Column Name   | Data Type      | Constraints             |
 |---------------|----------------|-------------------------|
-| OrderID       | INT            | Primary Key,AutoIc      |
+| OrderIdPk     | INT            | Primary Key,AutoIc      |
 | StoreIdFk     | INT            | Foreign Key (Stores)    |
 | CustomerIdFk  | INT            | Foreign Key (Customers) |
 | EmployeeIdFk  | INT            | Foreign Key (Employee)  |
@@ -168,14 +168,14 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 |OrderProductsId| INT            |  Primary Key,AutoIc     	 |
 | OrderIdFk     | INT            | Foreign Key(Orders)     	 |
 | ProductIdFk   | INT            |  Foreign Key (ProductMaster)  |
-| Quantity      | DECIMAL(10, 2) |  Not null                     |
+| Quantity      | DECIMAL(10, 2) |  NOT NULL                     |
 
 
 
 ### 6. Billing Table
 | Column Name   | Data Type      | Constraints         |
 |---------------|----------------|---------------------|
-| BillID        | INT            | Primary Key,AutoIc  |
+| BillIdPk      | INT            | Primary Key,AutoIc  |
 | BillNumber    | VARCHAR(512)   | NOT NULL            |
 | OrderIdFk     | INT            | Foreign Key (Orders)|
 | PaymentMode   | VARCHAR(50)    |  NOT NULL           |
@@ -186,19 +186,19 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 ### 7. Stock Table
 | Column Name        | Data Type      | Constraints          |
 |--------------------|----------------|--------------------- |
-| StockID            | INT            |  Primary Key         |
+| StockIdPk          | INT            |  Primary Key         |
 | ProductIdFk        | INT            | Foreign Key (ProMast)|
 | StoreIdFk          | INT            | Foreign Key (Stores) |
-| QuantityAvailable  | DECIMAL(10, 2) | Not Null             |
+| QuantityAvailable  | DECIMAL(10, 2) | NOT Null             |
 
 
 ### 8. ProductsMaster Table
 | Column Name        | Data Type      | Constraints          |
 |--------------------|----------------|--------------------- |
-| ProductID          | INT            | Primary Key          |
+| ProductIdPk        | INT            | Primary Key          |
 | ProductCode        | VARCHAR(500)   |                      |
 | ProductName        | VARCHAR(100)   | NOT NULL             |
-| PricePerUnit       | DECIMAL(10, 2) | Not Null             |
+| PricePerUnit       | DECIMAL(10, 2) | NOT Null             |
 
 
 
