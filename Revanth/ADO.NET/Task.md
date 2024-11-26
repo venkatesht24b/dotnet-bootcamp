@@ -140,7 +140,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | ContactNumber    | VARCHAR(15)    | Uniqe,Not Null          |
 | Gender           | VARCHAR(10)    |                         |
 | Salary           | Int            | Not Null                |
-| StoreID          | INT            | Foreign Key (Stores)    |
+| StoreIdFk        | INT            | Foreign Key (Stores)    |
 
 	
 ### 3. Customers Table
@@ -156,9 +156,9 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | Column Name   | Data Type      | Constraints             |
 |---------------|----------------|-------------------------|
 | OrderID       | INT            | Primary Key,AutoIc      |
-| StoreID       | INT            | Foreign Key (Stores)    |
-| CustomerID    | INT            | Foreign Key (Customers) |
-| EmployeeID    | INT            | Foreign Key (Employee)  |
+| StoreIdFk     | INT            | Foreign Key (Stores)    |
+| CustomerIdFk  | INT            | Foreign Key (Customers) |
+| EmployeeIdFk  | INT            | Foreign Key (Employee)  |
 | OrderDate     | DATE           |  NOT NULL               |
 
 
@@ -166,9 +166,9 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | Column Name   | Data Type      | Constraints                   |
 |---------------|----------------|-------------------------------|
 |OrderProductsId| INT            |  Primary Key,AutoIc     	 |
-| OrderID       | INT            | Foreign Key(Orders)     	 |
-| ProductID     | INT            |  Foreign Key (ProductMaster)  |
-| Quantity      | INT            |  Foreign Key (ProductMaster)  |
+| OrderIdFk     | INT            | Foreign Key(Orders)     	 |
+| ProductIdFk   | INT            |  Foreign Key (ProductMaster)  |
+| Quantity      | DECIMAL(10, 2) |  Not null                     |
 
 
 
@@ -177,7 +177,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 |---------------|----------------|---------------------|
 | BillID        | INT            | Primary Key,AutoIc  |
 | BillNumber    | VARCHAR(512)   | NOT NULL            |
-| OrderID       | INT            | Foreign Key (Orders)|
+| OrderIdFk     | INT            | Foreign Key (Orders)|
 | PaymentMode   | VARCHAR(50)    |  NOT NULL           |
 | BillingDate   | DATE           |  NOT NULL           |
 | Amount        | DECIMAL(10, 2) |  NOT NULL           |
@@ -187,9 +187,9 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | Column Name        | Data Type      | Constraints          |
 |--------------------|----------------|--------------------- |
 | StockID            | INT            |  Primary Key         |
-| ProductID          | INT            | Foreign Key (ProMast)|
-| StoreID            | INT            | Foreign Key (Stores) |
-| QuantityAvailable  | INT            | Not Null             |
+| ProductIdFk        | INT            | Foreign Key (ProMast)|
+| StoreIdFk          | INT            | Foreign Key (Stores) |
+| QuantityAvailable  | DECIMAL(10, 2) | Not Null             |
 
 
 ### 8. ProductsMaster Table
