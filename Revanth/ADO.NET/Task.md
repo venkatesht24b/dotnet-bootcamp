@@ -125,39 +125,41 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | StoreID       | INT            | PrimaryKey,AutoIc |
 | StoreCode     | VARCHAR(50)    | NOT NULL,Unique   |
 | StoreName     | VARCHAR(100)   | NOT NULL          |
-| City          | VARCHAR(50)    | NOT NULL          |
+| Location      | VARCHAR(50)    | NOT NULL          |
 | ManagerName   | VARCHAR(100)   |                   |
 | ContactNumber | VARCHAR(15)    |                   |
-     store
+     
 ### 2. Employees Table
-| Column Name     | Data Type      | Constraints             |
+| Column Name      | Data Type       | Constraints            |
 |------------------|----------------|-------------------------|
-| EmployeeID       | INT            | Primary Key             |
+| EmployeeID       | INT            | Primary Key,AutoIc      |
 | StoreID          | INT            | Foreign Key (Stores)    |
 | EmployeeName     | VARCHAR(100)   | NOT NULL                |
 | Role             | VARCHAR(50)    |                         |
 | DateOfJoining    | DATE           |                         |
-| ContactNumber    | VARCHAR(15)    |                         |
+| DatofLeaving     | DATE           |                         |
+| ContactNumber    | VARCHAR(15)    | Uniqe,Not Null          |
 	
 ### 3. Customers Table
-| Column Name     | Data Type      | Constraints          |
+| Column Name      | Data Type      | Constraints          |
 |------------------|----------------|----------------------|
-| CustomerID       | INT            | Primary Key          |
+| CustomerID       | INT            | Primary Key,AutoIc   |
 | StoreID          | INT            | Foreign Key (Stores) |
 | Name             | VARCHAR(100)   | NOT NULL             |
 | Email            | VARCHAR(100)   | 		           |
-| ContactNumber    | VARCHAR(15)    |   NOT NULL           |
-| DateOfBirth      | DATE           |                      |
+| ContactNumber    | VARCHAR(15)    | NOT NULL,Unique      |
+
 
 ### 4. Orders Table
 | Column Name   | Data Type      | Constraints             |
 |---------------|----------------|-------------------------|
-| OrderID       | INT            | Primary Key             |
+| OrderID       | INT            | Primary Key,AutoIc      |
 | InvoiceNumber | VARCHAR(512)   |  NOT NULL               |
 | CustomerID    | INT            | Foreign Key (Customers) |
 | OrderDate     | DATE           |  NOT NULL               |
 | ProductID     | INT            |  NOT NULL               |
 | Quantity      | INT            |  NOT NULL               |
+
 
 ### 5. Billing Table
 | Column Name   | Data Type      | Constraints         |
@@ -171,13 +173,14 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 
 ### 6. Stock Table
 | Column Name        | Data Type      | Constraints          |
-|---------------------|----------------|----------------------|
+|--------------------|----------------|--------------------- |
 | ProductID          | INT            | Primary Key          |
 | ProductCode        | VARCHAR(500)   |                      |
 | StoreID            | INT            | Foreign Key (Stores) |
 | ProductName        | NVARCHAR(100)  | NOT NULL             |
 | QuantityAvailable  | INT            |                      |
 | PricePerUnit       | DECIMAL(10, 2) |                      |
+
 
 # Business Rules
 1. The Order of files processing would be Store-> Stock -> Customers->Orders-> Billing
