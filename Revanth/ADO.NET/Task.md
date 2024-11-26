@@ -139,7 +139,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 | DatofLeaving     | DATE           |                         |
 | ContactNumber    | VARCHAR(15)    | Uniqe,Not Null          |
 | Gender           | VARCHAR(10)    |                         |
-| Salary           | Int            | Not Null                |
+| Salary           | DECIMAL(10, 2) | Not Null                |
 | StoreIdFk        | INT            | Foreign Key (Stores)    |
 
 	
