@@ -197,6 +197,7 @@ Log all activities in D:/Logs/EcommerceDataLog.txt.
 
 ### Sample log entries:
 [Timestamp] INFO: Successfully processed PartnerCode: WHHYD001. Files: 4, Records: 150
+
 [Timestamp] ERROR: Insufficient stock for OrderID: 102, ProductID: PRD002.
 
 ### Log Success and Failure Counts:
