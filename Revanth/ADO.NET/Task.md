@@ -107,16 +107,16 @@ OrderCode  | CustomerCode | EmployeCode   | StoreCode | ProductCode | NoOfIteams
 
 ### Sheet3: CustomerBilling
 | BillingNumber | ModeOfPayment | OrderCode | BillingDate  | Amount  |
-|-------------- |-----------|---------|--------------|---------|
-| OR-001-01    | Cash     | OR-001     | 2023-03-10   | 500.00  |
-| OR-001-02    | PhonePay  | OR-001     | 2023-03-10   | 1000.00  |
+|-------------- |---------------|-----------|--------------|---------|
+| OR-001-01     | Cash          | OR-001    | 2023-03-10   | 500.00  |
+| OR-001-02     | PhonePay      | OR-001    | 2023-03-10   | 1000.00 |
 
 # 4. Stock Information (Stock.txt)
 ## Format: Semicolon-delimited.
 ### Sample Data:
     ProductCode;StoreID;ProductName;QuantityAvailable;Date;PricePerUnit
-    PR-001;STHYD001;Soap;50;10.00,27-11-2024,20
-    PR-002;STHYD001;Shampoo;30;50.00,27-11-2024,21
+    PR-001;STHYD001;Soap;50;10.00;27-11-2024;20
+    PR-002;STHYD001;Shampoo;30;50.00;27-11-2024;21
 
 
 # Database Schema
