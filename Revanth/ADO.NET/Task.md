@@ -78,7 +78,7 @@ Error details for debugging.
 ### Format: Comma-delimited.
 #### Sample Data: Always ONLY 1 record will exists in this file.
 
-    StoreID,StoreCode,StoreName,City,ManagerName,ContactNumber
+    StoreID,StoreCode,StoreName,location,ManagerName,ContactNumber
     1,STHYD001,Hyderabad Main,Hyderabad,John Doe,9876543210
 
 ## 2. Employee Information (Employee.txt)
