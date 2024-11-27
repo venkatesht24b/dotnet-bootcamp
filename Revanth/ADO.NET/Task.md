@@ -166,7 +166,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 |OrderProductsId| INT            |  Primary Key,AutoIc     	 |
 | OrderID       | INT            | Foreign Key(Orders)     	 |
 | ProductID     | INT            |  Foreign Key (ProductMaster)  |
-| Quantity      | INT            |  Foreign Key (ProductMaster)  |
+| Quantity      | DECIMAL(10, 2) |         not null          |
 
 
 
