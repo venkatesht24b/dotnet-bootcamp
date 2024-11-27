@@ -169,6 +169,13 @@ Sheet2: ProductCategories
 | customername      | varchar(100)          |                         |
 | Phoneno         | VARCHAR(100)   |  Not Null                       |
 
+## 6. Employee Table
+| Column Name      | Data Type      | Constraints             |
+|-------------------|----------------|-------------------------|
+| EmpID         | INT            | Primary Key             |
+| EmpName      | varchar(100)          |                         |
+| Phoneno         | VARCHAR(100)   |  Not Null                       |
+
 
 ## Business Rules
 ### Validation:
@@ -190,6 +197,7 @@ Log all activities in D:/Logs/EcommerceDataLog.txt.
 
 ### Sample log entries:
 [Timestamp] INFO: Successfully processed PartnerCode: WHHYD001. Files: 4, Records: 150
+
 [Timestamp] ERROR: Insufficient stock for OrderID: 102, ProductID: PRD002.
 
 ### Log Success and Failure Counts:
