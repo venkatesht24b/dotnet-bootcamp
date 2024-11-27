@@ -1,0 +1,24 @@
+1.All files shared path location is D:/DailyDataLoad.
+2.In that folder create all shop code folders.Each store has a unic name of the store code  (e.x., STHYD001,STHYD002).
+3.In that store code folder  we need to maintain store information files.Each file having some sample data  and the file information  in some particular format and based on that we need to prepare some data
+4.The information files are
+---Store Information:StoreInformation_yyyymmdd.csv(comma-delimited)
+--- Employee Information: EmployeeInformation_yyyymmdd.txt (Pipe-delimited)
+---Customer Information:Customer information maintain in three files in excel format:CustomerInformation_yyyymmdd.xlsx 
+    --sheet1: Customer Details (Customer details)
+    --sheet2: CustomerOrders (Purchase orders)
+    --sheet3: CustomerBilling (Billing details)
+--- Stock Information: StockInformation_yyyymmdd.txt (Semicolon-delimited)
+5. we have to maintain store,customer,employee and stock data for that first we need to create tables in data base.For table creation we need to find table columns names and after find primary key for each table.
+6.After completion of tables creation first search store information in db and if we go to folder location in your system and identify store code.How to identify store code folder means go to database and search store information and compare this shop codes in db store information table if it match means that is store code folder and open that folder.
+7.how to compare the store code means take one loop for example if we are taking one store code and compare all codes in  store code table. If condition true means the store code is their in that folder.
+8.In that store code folder first we serach store information file.For finding this file we are taking file name and compare all files in db.The file name is saved by name and today date.
+9. Based on bussiness rule,the store information table having one row data.(store name,store address and contact number).
+10.In store code folder we need to create another two files. they are Process file and Archive file
+11.Check the all columns of information based on type. If any data is miss match his type that file is not processed and that file is go to Archive folder and all information is correct means that file is procssed and that file is go to processed folder.
+12.Every one hour we process the all files and prepare log for infomation(the file processed or the file is not processed)this type of information is their in logs.
+13. Every store group of employees are working .In employee table columns are (employee name, emp contact number,store Id) why i am taking store id means, In one store number of employess are working so employee table is child and store is parent(here one to many relation for store and employee)
+14.Next we identify employee file in db  based on file name .After we need to process that data.
+
+
+
