@@ -183,7 +183,7 @@ Sheet2: ProductCategories
 | TotalAmount      | DECIMAL(10, 2) |                         |
 
 ---
-## 8. OrdersItems
+## 9. OrdersItems
 | Column Name      | Data Type      | Constraints             |
 |-------------------|----------------|-------------------------|
 | OrderItemID          | INT            | Primary Key             |
@@ -195,7 +195,7 @@ Sheet2: ProductCategories
 | TotalAmount      | DECIMAL(10, 2) |                         |
 
 
-## 9. Returns Table
+## 10. Returns Table
 | Column Name      | Data Type      | Constraints             |
 |-------------------|----------------|-------------------------|
 | ReturnID         | INT            | Primary Key             |
