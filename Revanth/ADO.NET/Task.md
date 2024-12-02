@@ -78,7 +78,7 @@ Error details for debugging.
 ### Format: Comma-delimited.
 #### Sample Data: Always ONLY 1 record will exists in this file.
 
-    StoreID,StoreCode,StoreName,City,ManagerName,ContactNumber
+    StoreID,StoreCode,StoreName,location,ManagerName,ContactNumber
     1,STHYD001,Hyderabad Main,Hyderabad,John Doe,9876543210
 
 ## 2. Employee Information (Employee.txt)
@@ -173,12 +173,18 @@ OrderCode  | CustomerCode | EmployeCode   | StoreCode | ProductCode | NoOfIteams
 | Column Name   | Data Type      | Constraints                   |
 |---------------|----------------|-------------------------------|
 |OrderProductsId| INT            |  Primary Key,AutoIc     	 |
+<<<<<<< HEAD
+| OrderID       | INT            | Foreign Key(Orders)     	 |
+| ProductID     | INT            |  Foreign Key (ProductMaster)  |
+| Quantity      | DECIMAL(10, 2) |         not null          |
+=======
 | OrderIdFk     | INT            | Foreign Key(Orders)     	 |
 | ProductIdFk   | INT            |  Foreign Key (ProductMaster)  |
 | Quantity      | DECIMAL(10, 2) |  NOT NULL                     |
 | PricePerUnit  | DECIMAL(10, 2) |  NOT Null                     |
 | Amount        | DECIMAL(10, 2) |  NOT Null                     |
 
+>>>>>>> 6b8eacc5eaa0bfa60b2fac7874a279d5a8313f20
 
 
 
