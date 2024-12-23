@@ -148,7 +148,7 @@ OrderCode  | CustomerCode | OrderDate   | ProductCode | Quantity |
 |------------------|----------------|----------------------|
 | CustomerIdPk     | INT            | Primary Key,AutoIc   |
 | Name             | VARCHAR(100)   | NOT NULL             |
-| Email            | VARCHAR(100)   | 		           |
+| Email            | VARCHAR(100)   | 		               |
 | ContactNumber    | VARCHAR(15)    | NOT NULL,Unique      |
 
 
